@@ -10,4 +10,5 @@ export const inputText = async() => {
   );
 }
 
+
 export default inputText;
