@@ -1,0 +1,12 @@
+.c_inputText{
+  display: block;
+}
+
+.c_inputTextD{
+  display: none;
+  color: #F0F0F0;
+  &::before{
+    content: "必須";
+    display: inline-block;
+  }
+}
