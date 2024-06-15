@@ -1,0 +1,18 @@
+// foundation
+@use './foundation/reset.scss';
+
+// component
+@use './components/head/h2.scss';
+
+// global
+@use './global/globals.scss';
+
+// layout
+@use './layout/global_container.scss';
+@use './layout/header.scss';
+@use './layout/main.scss';
+@use './layout/container.scss';
+@use './layout/component_wrap.scss';
+
+// utility
+@use './utility/margin.scss'

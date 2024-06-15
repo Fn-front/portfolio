@@ -5,11 +5,7 @@ import Sidebar from "@/components/SideBar";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-import "@/styles/global/globals.css"
-import '@/styles/layout/global_container.scss'
-import '@/styles/layout/header.scss'
-import '@/styles/layout/main.scss'
-import '@/styles/layout/container.scss'
+import '@/styles/app.scss'
 
 
 const inter = Inter({ subsets: ["latin"] });
