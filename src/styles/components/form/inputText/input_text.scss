@@ -1,6 +1,15 @@
 .c_input_text{
-  background-color: #fff;
-  border-radius: 4px;
-  color: rgb(var(--color-black));
-  padding: 4px;
+  display: flex;
+  align-items: baseline;
+  &_item{
+    &_label{
+      padding-right: calc(var(--base-px)*2px);
+    }
+    &_form{
+      background-color: #fff;
+      border-radius: 4px;
+      color: rgb(var(--color-black));
+      padding: 4px;
+    }
+  }
 }
