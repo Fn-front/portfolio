@@ -8,7 +8,7 @@ export const LayoutCodeView = ({
   return (
     <>
       <h2 className="c_h2">{ head }</h2>
-      <div className="l_code_views u_mt16">{children}</div>
+      <div className="l_code_views u_mt32">{children}</div>
     </>
   )
 }
