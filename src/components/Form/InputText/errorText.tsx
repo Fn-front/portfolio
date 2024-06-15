@@ -3,7 +3,7 @@ import { getFile } from '@/features/ReadFile'
 
 const Error = async() => {
   
-  const contentPath = '/src/styles/components/text/error.scss'
+  const contentPath = '/src/styles/components/text/_error.scss'
   const content: string = await getFile(contentPath)
 
   return (

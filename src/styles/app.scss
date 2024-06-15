@@ -1,22 +1,23 @@
 // foundation
-@use './foundation/reset.scss';
+@use './foundation/_reset';
 
 // component
-@use './components/code/code_block.scss';
-@use './components/form/inputText/input_text.scss';
-@use './components/head/h2.scss';
-@use './components/head/h3.scss';
-@use './components/text/error.scss';
+@use './components/code/_code_block';
+@use './components/form/inputText/input_text';
+@use './components/head/_h2';
+@use './components/head/_h3';
+@use './components/text/_error';
 
 // global
-@use './global/globals.scss';
+@use './global/_globals';
 
 // layout
-@use './layout/global_container.scss';
-@use './layout/header.scss';
-@use './layout/main.scss';
-@use './layout/container.scss';
-@use './layout/component_wrap.scss';
+@use './layout/_global_container';
+@use './layout/_header';
+@use './layout/_main';
+@use './layout/_container';
+@use './layout/_component_wrap';
+@use './layout/_sidebar';
 
 // utility
-@use './utility/margin.scss'
+@use './utility/_margin'

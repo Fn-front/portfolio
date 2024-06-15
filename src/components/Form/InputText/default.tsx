@@ -3,7 +3,7 @@ import { getFile } from '@/features/ReadFile'
 
 const Default = async() => {
   
-  const contentPath = '/src/styles/components/form/inputText/input_text.scss'
+  const contentPath = '/src/styles/components/form/inputText/_default.scss'
   const content: string = await getFile(contentPath)
 
   return (
