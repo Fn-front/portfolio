@@ -1,12 +1,14 @@
 import Default from "./default";
-import Error from './error'
+import ErrorText from './errorText'
+import ErrorBg from './errorBg'
 
 const InputText = () => {
   
   return (
     <>
       <Default />
-      <Error />
+      <ErrorText />
+      <ErrorBg />
     </>
   )
 }
