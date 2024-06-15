@@ -1,0 +1,8 @@
+.l_component_wrapper{
+  padding: 16px;
+  background-color: gray;
+  border-radius: calc(var(--base-px) / 2 * 1px);
+  &+*{
+    margin-top: 16px;
+  }
+}
