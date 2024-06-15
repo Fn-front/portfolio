@@ -1,5 +1,3 @@
-import '@/styles/layout/sidebar.scss'
-
 const Sidebar = () => {
 
 
