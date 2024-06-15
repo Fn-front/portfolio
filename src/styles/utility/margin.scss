@@ -1,8 +1,8 @@
 .u_mt{
   &8{
-    margin-top: 8px;
+    margin-top: calc(var(--base-px)*1px);
   }
   &16{
-    margin-top: 16px;
+    margin-top: calc(var(--base-px)*2px);
   }
 }
