@@ -1,7 +1,5 @@
 import CodeBlock from '@/components/Code'
 import { getFile } from '@/features/ReadFile'
-import '@/styles/components/form/inputText/input_text.scss'
-import '@/styles/components/form/label/input_text.scss'
 
 const Default = async() => {
   
