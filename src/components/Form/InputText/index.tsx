@@ -1,4 +1,4 @@
-import Default from "./default";
+import Default from './default';
 import ErrorText from './errorText'
 import ErrorBg from './errorBg'
 
