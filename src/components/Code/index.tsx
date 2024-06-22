@@ -7,17 +7,20 @@ import 'highlight.js/styles/tokyo-night-dark.css';
 import scss from 'highlight.js/lib/languages/scss';
 import ContentCopyIcon from '../Icons/Copy';
 import { handleCopyToClipboard } from '@/utils/CopyToClipboard';
-// import { SystemMessage } from '../System/Message';
+import { SystemMessage } from '../System/Message';
 highlight.registerLanguage('scss', scss);
 
 export const CodeBlock = (props: any) => {
 
-  const [successMessage, setSuccessMessage] = useState<string>('')
+  const [successMessage, setSuccessMessage] = useState<boolean>(false)
 
   const highlightedCode: string = highlight.highlight(props.content, {language: 'scss'}).value;
 
   const handleCopyCodeBlock = (e: any) => {
-    const copyResult = handleCopyToClipboard(e.parentNode.parentNode.querySelector('.scss'))
+    const copyResult = handleCopyToClipboard(e.parentNode.querySelector('.scss'))
+    setSuccessMessage(copyResult)
+
+    setTimeout(() => setSuccessMessage(false), 2000)
   }
 
 
@@ -42,7 +45,12 @@ export const CodeBlock = (props: any) => {
           </div>
         </div>
       </details>
-      {/* <SystemMessage message='copy done！' type='success' /> */}
+      
+      <SystemMessage
+        visible={successMessage}
+        message='copy done！'
+        type='success'
+      />
     </>
   )
 }
