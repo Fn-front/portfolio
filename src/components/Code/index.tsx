@@ -1,26 +1,30 @@
 'use client'
 
-import { useState } from 'react'
+import { useContext } from 'react'
+import { SystemMessageContext } from '@/hooks/SystemMessageContext';
 import parse from 'html-react-parser';
 import highlight from 'highlight.js';
 import 'highlight.js/styles/tokyo-night-dark.css';
 import scss from 'highlight.js/lib/languages/scss';
 import ContentCopyIcon from '../Icons/Copy';
 import { handleCopyToClipboard } from '@/utils/CopyToClipboard';
-import { SystemMessage } from '../System/Message';
 highlight.registerLanguage('scss', scss);
 
 export const CodeBlock = (props: any) => {
 
-  const [successMessage, setSuccessMessage] = useState<boolean>(false)
-
+  const { setMessage, setType, setVisible } = useContext(SystemMessageContext)
   const highlightedCode: string = highlight.highlight(props.content, {language: 'scss'}).value;
 
   const handleCopyCodeBlock = (e: any) => {
     const copyResult = handleCopyToClipboard(e.parentNode.querySelector('.scss'))
-    setSuccessMessage(copyResult)
 
-    setTimeout(() => setSuccessMessage(false), 2000)
+    // システムメッセージ格納
+    setType('success')
+    setMessage('done copy！')
+    setVisible(copyResult)
+
+    // システムメッセージ非表示
+    setTimeout(() => setVisible(false), 5000)
   }
 
 
@@ -45,12 +49,6 @@ export const CodeBlock = (props: any) => {
           </div>
         </div>
       </details>
-      
-      <SystemMessage
-        visible={successMessage}
-        message='copy done！'
-        type='success'
-      />
     </>
   )
 }
