@@ -1,0 +1,15 @@
+.c_h3{
+  position: relative;
+  padding-left: calc(var(--base-px)*2px);
+  &::before{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: calc(var(--base-px) / 2 * 1px);
+    height: calc(var(--base-px)*2px);
+    background-color: #fff;
+    transform: translateY(-50%);
+  }
+}

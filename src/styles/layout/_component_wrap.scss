@@ -1,0 +1,9 @@
+.l_component_wrapper{
+  padding: 16px;
+  background-color: rgb(255, 255, 255);
+  border-radius: calc(var(--base-px) / 2 * 1px);
+  color: rgb(var(--color-black));
+  &+*{
+    margin-top: 16px;
+  }
+}

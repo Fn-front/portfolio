@@ -1,12 +1,15 @@
 import InputText from '@/components/Form/InputText'
-import CodeBlock from '@/components/Code'
+import CodeView from '@/components/Layout/CodeView'
 
 export const inputText = async() => {
 
-  const content = await InputText()
-
+  const head: string = 'inputテキスト';
   return (
-    <CodeBlock content={content} />
+    <>
+      <CodeView head={head}>
+        <InputText />
+      </CodeView>
+    </>
   );
 }
 

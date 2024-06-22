@@ -1,1 +1,1 @@
-declare module "@eai/moji";
+declare module '@eai/moji';
