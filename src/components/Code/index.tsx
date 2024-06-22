@@ -7,7 +7,7 @@ import 'highlight.js/styles/tokyo-night-dark.css';
 import scss from 'highlight.js/lib/languages/scss';
 import ContentCopyIcon from '../Icons/Copy';
 import { handleCopyToClipboard } from '@/utils/CopyToClipboard';
-import { SystemMessage } from '../System/Message';
+// import { SystemMessage } from '../System/Message';
 highlight.registerLanguage('scss', scss);
 
 export const CodeBlock = (props: any) => {
@@ -42,7 +42,7 @@ export const CodeBlock = (props: any) => {
           </div>
         </div>
       </details>
-      <SystemMessage message='copy done！' type='success' />
+      {/* <SystemMessage message='copy done！' type='success' /> */}
     </>
   )
 }
