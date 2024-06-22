@@ -3,6 +3,7 @@ import Icon from '@mui/icons-material/ContentCopy';
 type Props = {
   color: string
   marginTop: string
+  size: string
 }
 
 export const ContentCopyIcon = (props: Props) => {
@@ -10,7 +11,8 @@ export const ContentCopyIcon = (props: Props) => {
     <Icon
       sx={{
         color: props.color ? props.color : 'inherit',
-        marginTop: props.marginTop ? props.marginTop : 0
+        marginTop: props.marginTop ? props.marginTop : 0,
+        fontSize: props.size ? props.size : 'inherit'
       }}
     />
   )
