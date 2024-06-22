@@ -1,7 +1,7 @@
 import CodeBlock from '@/components/Code'
 import { getFile } from '@/features/ReadFile'
 
-const Error = async() => {
+const ErrorBg = async() => {
   
   const contentPath = '/src/styles/components/form/inputText/_error_bg.scss'
   const content: string = await getFile(contentPath)
@@ -21,4 +21,4 @@ const Error = async() => {
   )
 }
 
-export default Error;
+export default ErrorBg;

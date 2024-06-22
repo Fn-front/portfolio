@@ -1,6 +1,7 @@
 import Default from './default';
-import ErrorText from './errorText'
 import ErrorBg from './errorBg'
+import ErrorBox from './errorBox'
+import ErrorText from './errorText'
 
 const InputText = () => {
   
@@ -9,6 +10,7 @@ const InputText = () => {
       <Default />
       <ErrorText />
       <ErrorBg />
+      <ErrorBox />  
     </>
   )
 }
