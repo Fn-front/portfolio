@@ -1,7 +1,5 @@
-export const codeView = () => {
+export default function codeView() {
   return (
     <p>コードビュー</p>
   );
 }
-
-export default codeView;

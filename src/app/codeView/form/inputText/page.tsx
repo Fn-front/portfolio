@@ -1,7 +1,7 @@
 import InputText from '@/components/Form/InputText'
 import CodeView from '@/components/Layout/CodeView'
 
-export const inputText = async() => {
+export default function Page() {
 
   const head: string = 'inputテキスト';
   return (
@@ -12,6 +12,3 @@ export const inputText = async() => {
     </>
   );
 }
-
-
-export default inputText;
