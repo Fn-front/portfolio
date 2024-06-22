@@ -1,0 +1,27 @@
+.c_system_message{
+  position: fixed;
+  bottom: 16px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 0;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 999;
+  &_item{
+    display: inline-block;
+    padding: calc(var(--base-px)*1px) calc(var(--base-px)*3px);
+    border-radius: 100px;
+    background-color: var(--color-black-default);
+    font-size: 1.6rem;
+    border: 1px solid rgba(var(--color-white), 0.3);
+  }
+  &.is_active{
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.c_success_message{
+  color: rgb(var(--color-green-light));
+}
