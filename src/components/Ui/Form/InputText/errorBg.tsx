@@ -1,4 +1,4 @@
-import CodeBlock from '@/components/Code'
+import CodeBlock from '@/components/Ui/Code'
 import { getFile } from '@/features/ReadFile'
 
 const ErrorBg = async() => {

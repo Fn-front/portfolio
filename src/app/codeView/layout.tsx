@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from 'react';
-import { SystemMessage } from '@/components/System/Message';
+import { SystemMessage } from '@/components/Ui/System/Message';
 import { SystemMessageContext } from '@/hooks/SystemMessageContext';
 
 export default function Layout({

@@ -1,4 +1,4 @@
-import InputText from '@/components/Form/InputText'
+import InputText from '@/components/Ui/Form/InputText'
 import CodeView from '@/components/Layout/CodeView'
 
 export default function Page() {
