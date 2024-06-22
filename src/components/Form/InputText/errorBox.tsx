@@ -1,6 +1,6 @@
 import CodeBlock from '@/components/Code'
+import ErrorIcon from '@/components/Icons/Error'
 import { getFile } from '@/features/ReadFile'
-import ErrorIcon from '@mui/icons-material/Error';
 
 const ErrorBox = async() => {
   
@@ -16,11 +16,9 @@ const ErrorBox = async() => {
           <div className='c_input_text_item'>
             <input type='text' name='input' className='c_input_text_item_form' />
             <div className='c_error_box u_mt8'>
-              <ErrorIcon
-                sx={{
-                  color: 'red',
-                  marginTop: '3px'
-                }}
+              <ErrorIcon 
+                color='red'
+                marginTop='3px'
               />
               <p className='c_text_error'>エラーテキスト</p>
             </div>
