@@ -1,7 +1,7 @@
-import Default from './default';
-import ErrorBg from './errorBg'
-import ErrorBox from './errorBox'
-import ErrorText from './errorText'
+import Default from './inputTextDefault';
+import ErrorBg from './inputTextErrorBg'
+import ErrorBox from './inputTextErrorBox'
+import ErrorText from './inputTextErrorText'
 
 const InputText = () => {
   
