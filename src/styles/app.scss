@@ -3,6 +3,7 @@
 
 // component
 @use './components/code/_code_block';
+@use './components/form/checkBox/check_box';
 @use './components/form/inputText/input_text';
 @use './components/head/_h2';
 @use './components/head/_h3';
@@ -14,6 +15,8 @@
 @use './global/_globals';
 
 // layout
+@use './layout/form/check_box_list';
+@use './layout/form/form_column';
 @use './layout/_global_container';
 @use './layout/_header';
 @use './layout/_main';

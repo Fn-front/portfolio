@@ -1,8 +1,8 @@
 .c_input_text{
-  &_item_form_bg{
+  &_error_bg{
     &:has(+ .c_text_error){
-      background-color: rgba(#FF0000, 0.5);
-      border: 1px solid #FF0000;
+      background-color: rgba(var(--color-red-error), 0.5);
+      border: 1px solid rgb(var(--color-red-error));
     }
   }
 }

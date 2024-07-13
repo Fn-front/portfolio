@@ -1,4 +1,4 @@
-import CodeBlock from '@/components/Code'
+import CodeBlock from '@/components/Ui/Code'
 import ErrorIcon from '@/components/Icons/Error'
 import { getFile } from '@/features/ReadFile'
 
@@ -11,10 +11,10 @@ const ErrorBox = async() => {
     <>
       <h3 className='c_h3 u_mt40'>エラーメッセージ：ボックスエリア</h3>
       <div className='l_component_wrapper u_mt16'>
-        <div className='c_input_text'>
-          <div className='c_input_text_item'><label htmlFor='input' className='c_input_text_item_label'>入力フォーム</label></div>
-          <div className='c_input_text_item'>
-            <input type='text' name='input' className='c_input_text_item_form' />
+        <div className='l_form_column_2'>
+          <div className='l_form_column_item'><label htmlFor='input' className='c_input_text_item_label'>入力フォーム</label></div>
+          <div className='l_form_column_item'>
+            <input type='text' name='input' className='c_input_text' />
             <div className='c_error_box u_mt8'>
               <ErrorIcon 
                 color='red'

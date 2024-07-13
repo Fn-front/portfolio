@@ -1,0 +1,11 @@
+.l_form_column_2{
+  display: flex;
+  align-items: baseline;
+  gap: calc(var(--base-px)*2px);
+}
+
+.l_form_column_align_{
+  &center{
+    align-items: center;
+  }
+}

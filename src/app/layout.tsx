@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import { Noto_Sans_JP } from 'next/font/google';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
 
-import Sidebar from '@/components/SideBar';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import Sidebar from '@/components/Ui/SideBar';
+import Header from '@/components/Ui/Header';
+import Footer from '@/components/Ui/Footer';
 
 import '@/styles/app.scss'
 
