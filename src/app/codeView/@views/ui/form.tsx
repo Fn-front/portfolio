@@ -1,5 +1,5 @@
 import {} from 'react'
-import { getFileDir } from '@/features/CodeView/getFileDir'
+import { getFileDir } from '@/features/GetFileDir/getFileDir'
 
 export default async function viewUiForm() {
 
