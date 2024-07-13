@@ -1,5 +1,5 @@
-import { useEffect } from 'react'
-import { getFileDir } from '@/hooks/CodeView/getFileDir'
+import {} from 'react'
+import { getFileDir } from '@/features/CodeView/getFileDir'
 
 export default async function viewUiForm() {
 
