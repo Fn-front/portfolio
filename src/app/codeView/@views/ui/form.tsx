@@ -1,5 +1,11 @@
-export default function viewUiForm() {
+import { useEffect } from 'react'
+import { getFileDir } from '@/hooks/CodeView/getFileDir'
+
+export default async function viewUiForm() {
+
+  const test = await getFileDir('./src/app/codeView/ui')
+
   return (
-    <p>form</p>
+    <p>{ test }</p>
   );
 }
