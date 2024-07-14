@@ -3,6 +3,10 @@
   background-color: rgb(255, 255, 255);
   border-radius: calc(var(--base-px) / 2 * 1px);
   color: rgb(var(--color-black));
+  &_dark{
+    background-color: transparent;
+    color: rgb(var(--color-white));
+  }
   &+*{
     margin-top: 16px;
   }
