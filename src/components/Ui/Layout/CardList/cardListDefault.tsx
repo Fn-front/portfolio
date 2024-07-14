@@ -11,7 +11,7 @@ const Default = async() => {
     <>
       <h3 className='c_h3'>デフォルト</h3>
       <div className='l_component_wrapper u_mt16'>
-        <ul className='c_card_list p_code_view_card_list u_mt16'>
+        <ul className='c_card_list'>
           <li className='c_card_list_item'>
               <div className='c_card_list_item_main'>
                 <Image

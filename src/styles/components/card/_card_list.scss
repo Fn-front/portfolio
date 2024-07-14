@@ -3,7 +3,7 @@
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 16px;
   &_item{
-    border: 1px solid rgba(var(--color-white), .2);
+    border: 1px solid rgba(var(--color-black), .2);
     border-radius: 8px;
     overflow: hidden;
     &_main{}
