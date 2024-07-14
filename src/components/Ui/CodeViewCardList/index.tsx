@@ -1,6 +1,4 @@
-'use client'
-
-import { useRef, useEffect, RefObject, createRef } from 'react'
+import {} from 'react'
 import Link from 'next/link'
 
 type Props = {
@@ -10,25 +8,6 @@ type Props = {
 export const CodeViewCardList = (props: Props) => {
 
   const { editFilePaths } = props
-  // 複数のrefを指定するためRefObjectを定義
-  const el = useRef<RefObject<HTMLIFrameElement>[]>([])
-  
-  // ref初期設定
-  editFilePaths.forEach((_, i) => {
-    el.current[i] = createRef<HTMLIFrameElement>();
-  });
-  
-  useEffect(() => {
-
-    el.current.forEach((item) => {
-      const iframe = item.current
-      const iframeWindow = iframe!.contentWindow;
-      iframeWindow!.scrollTo({
-        top: 80,
-      });
-    })
-
-  }, [])
 
   return (
     <>
@@ -45,7 +24,6 @@ export const CodeViewCardList = (props: Props) => {
                     src={`${item}?iframe=1`}
                     className='c_iframe'
                     scrolling='no'
-                    ref={el.current[index]}
                     loading='lazy'
                   />
                 </div>
