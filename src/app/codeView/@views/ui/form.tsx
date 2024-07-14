@@ -1,22 +1,15 @@
 import {} from 'react'
-import Link from 'next/link'
 import { getFileDir } from '@/features/GetFileDir/getFileDir'
+import CodeViewCardList from '@/components/Ui/CodeViewCardList'
 
-export default async function viewUiForm() {
+export default async function ViewUiForm() {
 
-  const test = await getFileDir('./src/app/codeView/ui')
-  const test2 = Object.entries(test).map(([num, path]) => (path))  
+  const filePaths = await getFileDir('./src/app/codeView/ui')
+  const editFilePaths = Object.entries(filePaths).map(([num, path]) => (path))  
 
   return (
     <>
-      { test2.map((item: any, index) => {
-        return (
-          <div key={index}>
-            <Link href={ item }>{ item }</Link>
-          </div>
-        )
-      })
-      }
+      <CodeViewCardList editFilePaths={editFilePaths} />
     </>
   );
 }
