@@ -8,9 +8,6 @@ export default function codeView() {
         <span className='c_h1_inner_underline'>UI</span>
       </h1>
       <UiForm />
-      <h1 className='c_h1 u_ta_center u_mt40'>
-        <span className='c_h1_inner_underline'>Layout</span>
-      </h1>
       <UiLayout />
     </>
   );
