@@ -13,12 +13,21 @@ export const CodeViewCardList = (props: Props) => {
   // 複数のrefを指定するためRefObjectを定義
   const el = useRef<RefObject<HTMLIFrameElement>[]>([])
   
+  // ref初期設定
   editFilePaths.forEach((_, i) => {
     el.current[i] = createRef<HTMLIFrameElement>();
   });
   
   useEffect(() => {
-    console.log(el.current);
+
+    el.current.forEach((item) => {
+      const iframe = item.current
+      const iframeWindow = iframe!.contentWindow;
+      iframeWindow!.scrollTo({
+        top: 80,
+      });
+    })
+
   }, [])
 
   return (
@@ -33,7 +42,7 @@ export const CodeViewCardList = (props: Props) => {
               >
                 <div className='c_card_list_item_main'>
                   <iframe
-                    src={ item }
+                    src={`${item}?iframe=1`}
                     className='c_iframe'
                     scrolling='no'
                     ref={el.current[index]}
