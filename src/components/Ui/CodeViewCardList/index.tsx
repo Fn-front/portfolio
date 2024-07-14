@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef, useEffect } from 'react'
+import { useRef, useEffect, RefObject, createRef } from 'react'
 import Link from 'next/link'
 
 type Props = {
@@ -9,29 +9,41 @@ type Props = {
 
 export const CodeViewCardList = (props: Props) => {
 
-  const el = useRef(null)
+  const { editFilePaths } = props
+  // 複数のrefを指定するためRefObjectを定義
+  const el = useRef<RefObject<HTMLIFrameElement>[]>([])
+  
+  editFilePaths.forEach((_, i) => {
+    el.current[i] = createRef<HTMLIFrameElement>();
+  });
   
   useEffect(() => {
     console.log(el.current);
-  }, [el])
+  }, [])
 
   return (
     <>
-      {/* {
-        test2.map((item: any, index) => {
-          return (
-            <div key={index}>
-              <Link href={ item }>{ item }</Link>
-            </div>
-          )
-        })
-      } */}
-      <iframe
-        src="/codeView/ui/form/inputText"
-        scrolling='yes'
-        ref={el}
-        loading='lazy'
-      />
+      <ul className='c_card_list'>
+        {
+          editFilePaths.map((item: any, index) => {
+            return (
+              <li
+                key={index}
+                className='c_card_list_item'
+              >
+                <Link href={ item }>
+                  <iframe
+                    src={ item }
+                    scrolling='yes'
+                    ref={el.current[index]}
+                    loading='lazy'
+                  />
+                </Link>
+              </li>
+            )
+          })
+        }
+      </ul>
     </>
   )
 }
