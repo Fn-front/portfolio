@@ -10,8 +10,8 @@ export const CodeViewCardList = (props: Props) => {
   const { editFilePaths } = props
 
   return (
-    <>
-      <ul className='c_card_list p_code_view_card_list u_mt16'>
+    <div className='p_code_view_card_list u_mt16'>
+      <ul className='c_card_list'>
         {
           editFilePaths.map((item: any, index) => {
             return (
@@ -35,7 +35,7 @@ export const CodeViewCardList = (props: Props) => {
           })
         }
       </ul>
-    </>
+    </div>
   )
 }
 
