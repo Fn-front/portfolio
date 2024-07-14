@@ -1,7 +1,7 @@
 'use client'
 
 import { useContext } from 'react'
-import { SystemMessageContext } from '@/hooks/System/systemMessageContext';
+import { SystemMessageContext } from '@/hooks/System/Context/SystemMessage';
 import parse from 'html-react-parser';
 import highlight from 'highlight.js';
 import 'highlight.js/styles/tokyo-night-dark.css';

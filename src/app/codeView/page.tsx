@@ -1,5 +1,5 @@
-import UiForm from '@/app/codeView/@views/ui/form'
-import UiLayout from '@/app/codeView/@views/ui/layout'
+import UiForm from '@/app/codeView/_views/ui/form'
+import UiLayout from '@/app/codeView/_views/ui/layout'
 
 export default function codeView() {
   return (
