@@ -9,7 +9,7 @@ const Default = async() => {
 
   return (
     <>
-      <h3 className='c_h3'>デフォルト</h3>
+      <h3 className='c_h3 u_mt40'>黒背景ver</h3>
       <div className='l_component_wrapper l_component_wrapper_dark u_mt16'>
         <ul className='c_card_list c_card_list_dark'>
           <li className='c_card_list_item'>
