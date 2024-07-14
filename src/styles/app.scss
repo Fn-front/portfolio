@@ -26,5 +26,8 @@
 @use './layout/_component_wrap';
 @use './layout/_sidebar';
 
+// project
+@use './project/codeViewCardList/codeViewCardList';
+
 // utility
-@use './utility/_margin'
+@use './utility/_margin';
