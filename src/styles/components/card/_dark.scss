@@ -1,8 +1,8 @@
-.c_card_list{
-  &_item{
+.c_card_list_dark{
+  .c_card_list_item{
     border-color: rgba(var(--color-white), .2);
-    &_other{
-      background-color: rgba(var(--color-white), 0.04);
-    }
+  }
+  .c_card_list_item_other{
+    background-color: rgba(var(--color-white), 0.04);
   }
 }
