@@ -27,7 +27,7 @@ export const CodeViewCardList = (props: Props) => {
                     loading='lazy'
                   />
                 </div>
-                <div className='c_card_list_item_other u_mt16'>
+                <div className='c_card_list_item_other'>
                   <p><Link href={ item }>{ item }</Link></p>
                 </div>
               </li>

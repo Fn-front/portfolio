@@ -1,5 +1,8 @@
 .p_code_view_card_list {
   .c_iframe{
     height: 250px;
-  }  
+  } 
+  .c_card_list_item_other{
+    background-color: rgba(var(--color-white), 0.04);
+  }
 }
