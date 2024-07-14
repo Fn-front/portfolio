@@ -31,14 +31,18 @@ export const CodeViewCardList = (props: Props) => {
                 key={index}
                 className='c_card_list_item'
               >
-                <Link href={ item }>
+                <div className='c_card_list_item_main'>
                   <iframe
                     src={ item }
-                    scrolling='yes'
+                    className='c_iframe'
+                    scrolling='no'
                     ref={el.current[index]}
                     loading='lazy'
                   />
-                </Link>
+                </div>
+                <div className='c_card_list_item_other u_mt16'>
+                  <p><Link href={ item }>{ item }</Link></p>
+                </div>
               </li>
             )
           })
