@@ -1,0 +1,8 @@
+.c_card_list{
+  &_item{
+    border-color: rgba(var(--color-white), .2);
+    &_other{
+      background-color: rgba(var(--color-white), 0.04);
+    }
+  }
+}
