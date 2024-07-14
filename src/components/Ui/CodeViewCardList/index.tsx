@@ -11,7 +11,7 @@ export const CodeViewCardList = (props: Props) => {
 
   return (
     <>
-      <ul className='c_card_list p_code_view_card_list'>
+      <ul className='c_card_list p_code_view_card_list u_mt16'>
         {
           editFilePaths.map((item: any, index) => {
             return (
