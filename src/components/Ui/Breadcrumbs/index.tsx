@@ -30,10 +30,10 @@ export const Breadcrumbs = (props: Props) => {
       {
         breadcrumbs.map((item, index) => {
           return (
-            <li key={index} className='c_breadcrumbs_item'>
+            <li key={index} className={`c_breadcrumbs_item ${item[0].segment == segment ? 'c_breadcrumbs_item_disabled' : null}`}>
               <Link
                 href={item[0].segment !== segment ? item[0].path : ''}
-                className={`c_breadcrumbs_item_link ${item[0].segment == segment ? 'c_breadcrumbs_item_link_disabled' : null}`}
+                className={`c_breadcrumbs_item_link`}
               >
                 {item[0].breadcrumb}
               </Link>
