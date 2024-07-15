@@ -10,14 +10,14 @@ const routes = [
     breadcrumb: 'ホーム',
   },
   {
-    path: "codeView",
+    path: "/codeView",
     segment: 'codeView',
     breadcrumb: 'コードビュー',
   },
   {
-    path: "codeView/ui/form/inputText",
+    path: "/codeView/ui/form/inputText",
     segment: 'inputText',
-    breadcrumb: 'input',
+    breadcrumb: 'inputテキスト',
   }
 ];
 
