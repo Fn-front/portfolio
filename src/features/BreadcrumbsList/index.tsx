@@ -2,24 +2,9 @@
 
 import { useSelectedLayoutSegments } from "next/navigation"
 import Breadcrumbs from '@/components/Ui/Breadcrumbs'
+import { route } from '@/routes'
 
-const routes = [
-  {
-    path: "/",
-    segment: '(TOP)',
-    breadcrumb: 'ホーム',
-  },
-  {
-    path: "/codeView",
-    segment: 'codeView',
-    breadcrumb: 'コードビュー',
-  },
-  {
-    path: "/codeView/ui/form/inputText",
-    segment: 'inputText',
-    breadcrumb: 'inputテキスト',
-  }
-];
+const routes = route();
 
 export const BreadcrumbsList = () => {
 
