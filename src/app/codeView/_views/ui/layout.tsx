@@ -1,5 +1,5 @@
 import {} from 'react'
-import { getFileDir } from '@/features/GetFileDir/getFileDir'
+import { getFileDir } from '@/hooks/System/GetFileDir'
 import CodeViewCardList from '@/components/Ui/CodeViewCardList'
 
 export default async function ViewUiForm() {
