@@ -1,3 +1,39 @@
 .c_breadcrumbs{
   display: flex;
+  font-size: 1.4rem;
+  &_item{
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-right: 24px;
+    &_link{
+      display: block;
+    }
+    &::before{
+      content: "-";
+      position: absolute;
+      top: 50%;
+      right: 9px;
+      display: block;
+      transform: translateY(-50%);
+    }
+    &_disabled{
+      opacity: .5;
+      pointer-events: none;
+      &::before{
+        content: none;
+      }
+    }
+  }
+  &_hidden{
+    display: none;
+  }
+  &+*{
+    margin-top: 32px;
+  }
+  &.c_breadcrumbs_hidden{
+    &+*{
+      margin-top: 0;
+    }
+  }
 }
