@@ -14,7 +14,7 @@ const Default = async() => {
           <div className="l_form_list_item">
             <div className='l_form_column_2 l_form_column_align_center'>
               <div className='l_form_column_item'>
-                <input type='radio' name='radio' id='radio3' className='c_radio' defaultChecked={true} />
+                <input type='radio' name='radio1' id='radio3' className='c_radio' defaultChecked={true} />
               </div>
               <div className='l_form_column_item'>
                 <label htmlFor='radio3' className='c_radio_label'>inputテキスト</label>
@@ -24,7 +24,7 @@ const Default = async() => {
           <div className="l_form_list_item">
             <div className='l_form_column_2 l_form_column_align_center'>
               <div className='l_form_column_item'>
-                <input type='radio' name='radio' id='radio4' className='c_radio' />
+                <input type='radio' name='radio1' id='radio4' className='c_radio' />
               </div>
               <div className='l_form_column_item'>
                 <label htmlFor='radio4' className='c_radio_label'>inputテキスト</label>
