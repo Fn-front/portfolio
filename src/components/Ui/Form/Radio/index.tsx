@@ -1,12 +1,12 @@
 import Default from './radioDefault';
-import Error from './radioError'
+import ErrorText from './radioErrorText'
 
 const Radio = () => {
   
   return (
     <>
       <Default /> 
-      <Error />
+      <ErrorText />
     </>
   )
 }
