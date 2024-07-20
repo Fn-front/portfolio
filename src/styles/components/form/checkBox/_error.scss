@@ -1,9 +1,9 @@
 .c_check_box{
   border-color: rgb(var(--color-red-error));
   &::before{
-    background-color: rgb(var(--color-red-error));;
+    background-color: rgb(var(--color-red-error));
   }
   &::after{
-    background-color: rgb(var(--color-red-error));;
+    background-color: rgb(var(--color-red-error));
   }
 }
