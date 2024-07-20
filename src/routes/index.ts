@@ -14,8 +14,12 @@ export const route = () => {
       path: "/codeView/ui/form/inputText",
       segment: 'inputText',
       breadcrumb: 'inputテキスト',
-    }
-  ];
+    },
+    {
+      path: "/codeView/ui/form/radio",
+      segment: 'radio',
+      breadcrumb: 'radioボタン',
+    }  ];
 
   return routes
 }

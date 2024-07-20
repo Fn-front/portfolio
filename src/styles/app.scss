@@ -5,8 +5,10 @@
 @use './components/breadcrumbs/breadcrumbs';
 @use './components/card/card_list';
 @use './components/code/code_block';
+@use './components/error/error.scss';
 @use './components/form/checkBox/check_box';
 @use './components/form/inputText/input_text';
+@use './components/form/radio/radio';
 @use './components/head/_h1';
 @use './components/head/_h2';
 @use './components/head/_h3';
@@ -14,13 +16,13 @@
 @use './components/iframe/iframe';
 @use './components/image/image.scss';
 @use './components/system/system';
-@use './components/text/_error';
+@use './components/text/_text_error';
 
 // global
 @use './global/_globals';
 
 // layout
-@use './layout/form/check_box_list';
+@use './layout/form/form_list';
 @use './layout/form/form_column';
 @use './layout/_global_container';
 @use './layout/_header';

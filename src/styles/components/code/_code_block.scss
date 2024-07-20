@@ -6,6 +6,9 @@
   max-height: 700px;
   overflow-y: scroll;
   overflow-x: hidden;
+  pre{
+    padding: calc(var(--base-px)/2*1px);
+  }
   .c_icon_copy{
     position: absolute;
     top: 8px;

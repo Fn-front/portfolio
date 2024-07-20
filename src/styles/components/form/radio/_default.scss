@@ -1,0 +1,29 @@
+.c_radio{
+  position: relative;
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: calc(var(--base-px)*10px);
+  border: 1px solid rgba(var(--color-black), .5);
+  cursor: pointer;
+  &_wrapper{
+    display: flex;
+    align-items: center;
+    .c_radio_label{
+      padding-left: calc(var(--base-px)*1px);
+    }
+  }
+  &:checked{
+    &::before{
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 15px;
+      height: 15px;
+      transform: translate(-50%, -50%);
+      background-color: rgba(var(--color-black));
+      border-radius: calc(var(--base-px)*10px);
+    }
+  }
+}
