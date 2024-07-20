@@ -1,0 +1,7 @@
+* {
+  &:has(+ .c_text_error){
+    color: rgb(var(--color-red-error));
+    @import '../form/checkBox/_error';
+    @import '../form/radio/error';
+  }
+}
