@@ -6,6 +6,13 @@
   border-radius: calc(var(--base-px)*10px);
   border: 1px solid rgba(var(--color-black), .5);
   cursor: pointer;
+  &_wrapper{
+    display: flex;
+    align-items: center;
+    .c_radio_label{
+      padding-left: calc(var(--base-px)*1px);
+    }
+  }
   &:checked{
     &::before{
       content: "";
