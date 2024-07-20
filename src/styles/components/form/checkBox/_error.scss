@@ -1,14 +1,9 @@
-.l_form_list{
-  &:has(+ .c_text_error){
-    color: rgb(var(--color-red-error));
-    .c_check_box{
-      border-color: rgb(var(--color-red-error));
-      &::before{
-        background-color: rgb(var(--color-red-error));;
-      }
-      &::after{
-        background-color: rgb(var(--color-red-error));;
-      }
-    }
+.c_check_box{
+  border-color: rgb(var(--color-red-error));
+  &::before{
+    background-color: rgb(var(--color-red-error));;
+  }
+  &::after{
+    background-color: rgb(var(--color-red-error));;
   }
 }
