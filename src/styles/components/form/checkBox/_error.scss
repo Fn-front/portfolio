@@ -1,4 +1,4 @@
-.l_check_box_list{
+.l_form_list{
   &:has(+ .c_text_error){
     color: rgb(var(--color-red-error));
     .c_check_box{
