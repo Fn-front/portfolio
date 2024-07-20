@@ -2,6 +2,7 @@
 @use './foundation/_reset';
 
 // component
+@use './components/breadcrumbs/breadcrumbs';
 @use './components/card/card_list';
 @use './components/code/code_block';
 @use './components/form/checkBox/check_box';
