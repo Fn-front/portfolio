@@ -1,6 +1,7 @@
-import CodeBlock from '@/components/Ui/Code'
 import ErrorIcon from '@/components/Icons/Error'
 import { getFile } from '@/features/ReadFile'
+import ComponentWrapper from '@/components/Layout/ComponentWrapper'
+
 
 const ErrorBox = async() => {
   
@@ -10,7 +11,7 @@ const ErrorBox = async() => {
   return (
     <>
       <h3 className='c_h3 u_mt40'>エラーメッセージ：ボックスエリア</h3>
-      <div className='l_component_wrapper u_mt16'>
+      <ComponentWrapper styleCode={content}>
         <div className='l_form_column_2'>
           <div className='l_form_column_item'><label htmlFor='input' className='c_input_text_item_label'>入力フォーム</label></div>
           <div className='l_form_column_item'>
@@ -24,9 +25,7 @@ const ErrorBox = async() => {
             </div>
           </div>
         </div>
-        
-      </div>
-      <CodeBlock content={content} />
+      </ComponentWrapper>
     </>
   )
 }
