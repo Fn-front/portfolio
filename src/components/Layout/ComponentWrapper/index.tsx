@@ -1,8 +1,8 @@
 'use client'
 
 import { useRef, useEffect, useState } from 'react'
-import Modal from '@/components/Ui/System/Modal'
 import StyleCodeBlock from '@/components/Ui/Code/styleCodeBlock'
+import HtmlCodeBlock from '@/components/Ui/Code/htmlCodeBlock'
 
 export const ComponentWrapper = ({
   children,
@@ -23,7 +23,7 @@ export const ComponentWrapper = ({
   return (
     <>
       <div className='l_component_wrapper u_mt16' ref={ref}>{children}</div>
-      <Modal element={test}/>
+      <HtmlCodeBlock element={test}/>
       <StyleCodeBlock content={styleCode} />
     </>
   )
