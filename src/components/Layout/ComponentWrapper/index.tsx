@@ -12,12 +12,12 @@ export const ComponentWrapper = ({
   styleCode: string
 }>) => {
 
-  const ref = useRef(null)
+  const ref = useRef<HTMLDivElement>(null)
 
-  const [test, setTest] = useState<HTMLDivElement>();
+  const [test, setTest] = useState<string>('');
 
   useEffect(() => {
-    setTest(ref.current.outerHTML)
+    if (ref.current) return setTest(ref.current.outerHTML)
   }, [ref])
 
   return (

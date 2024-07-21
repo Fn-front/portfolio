@@ -1,3 +1,5 @@
+'use client'
+
 import { useState } from 'react'
 import parse from 'html-react-parser';
 import highlight from 'highlight.js';
