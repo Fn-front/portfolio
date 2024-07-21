@@ -1,8 +1,6 @@
 import { useLayoutEffect, useState } from 'react'
 import parse from 'html-react-parser';
 import highlight from 'highlight.js';
-
-// import { renderToStaticMarkup } from 'react-dom/server'
 import  { format } from 'prettier/standalone'
 import * as parserHTML from 'prettier/parser-html';
 
