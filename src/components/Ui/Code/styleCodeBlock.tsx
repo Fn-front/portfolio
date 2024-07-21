@@ -10,7 +10,7 @@ import ContentCopyIcon from '../../Icons/Copy';
 import { handleCopyToClipboard } from '@/utils/CopyToClipboard';
 highlight.registerLanguage('scss', scss);
 
-export const CodeBlock = (props: any) => {
+export const StyleCodeBlock = (props: any) => {
 
   const { setMessage, setType, setVisible } = useContext(SystemMessageContext)
   const highlightedCode: string = highlight.highlight(props.content, {language: 'scss'}).value;
@@ -53,4 +53,4 @@ export const CodeBlock = (props: any) => {
   )
 }
 
-export default CodeBlock
+export default StyleCodeBlock

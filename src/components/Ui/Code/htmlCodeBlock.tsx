@@ -1,15 +1,14 @@
-'use client'
-
 import { useState } from 'react'
 import parse from 'html-react-parser';
 import highlight from 'highlight.js';
 import  { format } from 'prettier/standalone'
 import * as parserHTML from 'prettier/parser-html';
 
-const SystemModal = (props: any) => {
+
+export const HtmlCodeBlock = (props: any) => {
 
   const [code, setCode] = useState<string>('');
-  const [viewStatus, setViewStatus] = useState<boolean>(false);
+  const [viewStatus, setViewStatus] = useState<boolean>(true);
 
   (async() => {
     if (!props.element) return
@@ -22,8 +21,6 @@ const SystemModal = (props: any) => {
     const highlightedCode: string = highlight.highlight(test, {language: 'html'}).value;      
     setCode(highlightedCode)
   })()
-  
-  
 
   return (
     <>
@@ -32,4 +29,4 @@ const SystemModal = (props: any) => {
   )
 }
 
-export default SystemModal;
+export default HtmlCodeBlock
