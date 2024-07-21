@@ -1,6 +1,6 @@
 import Image from 'next/image'
-import CodeBlock from '@/components/Ui/Code'
 import { getFile } from '@/features/ReadFile'
+import ComponentWrapper from '@/components/Layout/ComponentWrapper'
 
 const Default = async() => {
   
@@ -10,7 +10,7 @@ const Default = async() => {
   return (
     <>
       <h3 className='c_h3 u_mt40'>黒背景ver</h3>
-      <div className='l_component_wrapper l_component_wrapper_dark u_mt16'>
+      <ComponentWrapper styleCode={content}>
         <ul className='c_card_list c_card_list_dark'>
           <li className='c_card_list_item'>
               <div className='c_card_list_item_main'>
@@ -64,8 +64,7 @@ const Default = async() => {
               </div>
           </li>
         </ul>
-      </div>
-      <CodeBlock content={content} />
+      </ComponentWrapper>
     </>
   )
 }
