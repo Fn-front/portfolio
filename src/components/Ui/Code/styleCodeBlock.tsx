@@ -30,25 +30,22 @@ export const StyleCodeBlock = (props: any) => {
 
   return (
     <>
-      <details>
-        <summary>スタイル</summary>
-        <div
-          className='c_code_block u_mt8'
-          // onMouseLeave={(e) => handleFocusCodeBlock(e)}
+      <div
+        className='c_code_block u_mt8'
+        // onMouseLeave={(e) => handleFocusCodeBlock(e)}
+      >
+        <pre><code className='scss'>{ parse(highlightedCode) }</code></pre>
+        <div 
+          className='c_icon_copy'
+          onClick={(e) => handleCopyCodeBlock(e.target)}
         >
-          <pre><code className='scss'>{ parse(highlightedCode) }</code></pre>
-          <div 
-            className='c_icon_copy'
-            onClick={(e) => handleCopyCodeBlock(e.target)}
-          >
-            <ContentCopyIcon
-              color=''
-              marginTop=''
-              size='2rem'
-            />
-          </div>
+          <ContentCopyIcon
+            color=''
+            marginTop=''
+            size='2rem'
+          />
         </div>
-      </details>
+      </div>
     </>
   )
 }
