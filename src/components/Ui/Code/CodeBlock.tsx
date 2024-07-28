@@ -4,6 +4,7 @@ import Html from '@/components/Ui/Code/HtmlCodeBlock'
 
 import SwitchRightIcon from '@mui/icons-material/SwitchRight';
 import SwitchLeftIcon from '@mui/icons-material/SwitchLeft';
+import Icon from '@/components/Ui/Icon'
 
 export const CodeBlock = ({
   htmlCode,
@@ -26,18 +27,20 @@ export const CodeBlock = ({
           <ul className='l_list_icon_switch'>
             <li className='l_list_icon_switch_item'>
               <div
-                className='c_icon_switch'
                 onClick={() => viewStyle ? setViewHtml((prev) => !prev) : false}
               >
-                <SwitchRightIcon fontSize='large' />
+                <Icon>
+                  <SwitchRightIcon fontSize='large' />
+                </Icon>
               </div>
             </li>
             <li className='l_list_icon_switch_item'>
               <div
-                className='c_icon_switch'
                 onClick={() => viewHtml ? setViewStyle((prev) => !prev) : false}
               >
-                <SwitchLeftIcon fontSize='large' />
+                <Icon>
+                  <SwitchLeftIcon fontSize='large' />
+                </Icon>
               </div>
             </li>
           </ul>
