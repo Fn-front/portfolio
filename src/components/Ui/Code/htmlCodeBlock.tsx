@@ -26,7 +26,9 @@ export const HtmlCodeBlock = (props: any) => {
 
   return (
     <>
-      { viewStatus && <pre><code className='html'>{ parse(code) }</code></pre>}
+      <div className='c_code_block'>
+        { viewStatus && <pre><code className='html'>{ parse(code) }</code></pre> }
+      </div>
     </>
   )
 }
