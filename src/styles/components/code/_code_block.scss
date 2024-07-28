@@ -8,6 +8,7 @@
   overflow-x: hidden;
   pre{
     padding: calc(var(--base-px)/2*1px);
+    white-space: pre-wrap;
   }
   .c_icon_copy{
     position: absolute;
