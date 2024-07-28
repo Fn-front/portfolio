@@ -15,7 +15,12 @@ export const HtmlCodeBlock = (props: any) => {
   (async() => {
     if (!props.element) return
     
-    const test = await format((props.element), {
+    const { element } = props;
+
+    const firstDivDelete = element.replace(/^<.+?>/, '')
+    const lastDivDelete = firstDivDelete.replace(/<\/div>$/, '')    
+
+    const test = await format((lastDivDelete), {
       parser: 'html',
       plugins: [parserHTML],
     })    
