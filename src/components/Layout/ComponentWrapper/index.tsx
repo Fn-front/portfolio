@@ -14,16 +14,16 @@ export const ComponentWrapper = ({
 
   const ref = useRef<HTMLDivElement>(null)
 
-  const [test, setTest] = useState<string>('');
+  const [element, setElement] = useState<string>('');
 
   useEffect(() => {
-    if (ref.current) return setTest(ref.current.outerHTML)
+    if (ref.current) return setElement(ref.current.outerHTML)
   }, [ref])
 
   return (
     <>
       <div className='l_component_wrapper u_mt16' ref={ref}>{children}</div>
-      <HtmlCodeBlock element={test}/>
+      <HtmlCodeBlock element={element}/>
       <StyleCodeBlock content={styleCode} />
     </>
   )
