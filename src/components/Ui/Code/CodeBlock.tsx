@@ -1,13 +1,20 @@
+import Style from '@/components/Ui/Code/StyleCodeBlock'
+import Html from '@/components/Ui/Code/HtmlCodeBlock'
+
 export const CodeBlock = ({
-  children
+  htmlCode,
+  styleCode
 }: Readonly<{
-  children: React.ReactNode
+  htmlCode: string
+  styleCode: string
 }>
 ) => {
   return (
     <>
       <div className="p_code_block">
-        {children}
+        <div></div>
+        <Html element={htmlCode}/>
+        <Style content={styleCode} />
       </div>
     </>
   )
