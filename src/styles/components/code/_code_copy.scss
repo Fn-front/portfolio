@@ -1,0 +1,9 @@
+.c_code_copy{
+  position: relative;
+  .c_icon_code{
+    position: absolute;
+    bottom: calc(100% + 4px);
+    right: 10px;
+    z-index: 2;
+  }
+}
