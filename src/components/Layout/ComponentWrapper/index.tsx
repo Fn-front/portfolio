@@ -17,7 +17,9 @@ export const ComponentWrapper = ({
   const [element, setElement] = useState<string>('');
 
   useEffect(() => {
-    if (ref.current) return setElement(ref.current.outerHTML)
+    (async() => {
+      if (ref.current) return setElement(ref.current.outerHTML)
+    })()
   }, [ref])
 
   return (
