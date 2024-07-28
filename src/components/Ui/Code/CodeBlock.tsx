@@ -6,7 +6,7 @@ export const CodeBlock = ({
 ) => {
   return (
     <>
-      <div style={{ display: 'flex' }}>
+      <div className="p_code_block">
         {children}
       </div>
     </>
