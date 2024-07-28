@@ -1,9 +1,9 @@
 'use client'
 
 import { useRef, useEffect, useState } from 'react'
-import StyleCodeBlock from '@/components/Ui/Code/styleCodeBlock'
-import HtmlCodeBlock from '@/components/Ui/Code/htmlCodeBlock'
-import CodeBlock from '@/components/Ui/Code/codeBlock'
+import Style from '@/components/Ui/Code/StyleCodeBlock'
+import Html from '@/components/Ui/Code/HtmlCodeBlock'
+import Code from '@/components/Ui/Code/CodeBlock'
 
 export const ComponentWrapper = ({
   children,
@@ -26,10 +26,10 @@ export const ComponentWrapper = ({
   return (
     <>
       <div className='l_component_wrapper u_mt16' ref={ref}>{children}</div>
-      <CodeBlock>
-        <HtmlCodeBlock element={element}/>
-        <StyleCodeBlock content={styleCode} />
-      </CodeBlock>
+      <Code>
+        <Html element={element}/>
+        <Style content={styleCode} />
+      </Code>
     </>
   )
 }
