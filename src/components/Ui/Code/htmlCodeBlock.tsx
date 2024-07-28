@@ -17,7 +17,9 @@ export const HtmlCodeBlock = (props: any) => {
     
     const { element } = props;
 
+    // 最初のdiv<div class="l_component_wrapper u_mt16">を削除
     const firstDivDelete = element.replace(/^<.+?>/, '')
+    // 末尾の</div>を削除
     const lastDivDelete = firstDivDelete.replace(/<\/div>$/, '')    
 
     const test = await format((lastDivDelete), {
