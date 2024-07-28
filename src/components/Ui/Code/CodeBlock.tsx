@@ -20,7 +20,7 @@ export const CodeBlock = (props: any) => {
     <>
       { viewCodeBlock && (
 
-        <div className="p_code_block">
+        <div className="p_code_block u_mt16">
           <ul className='l_list_icon_switch'>
             <li className='l_list_icon_switch_item'>
               <div
