@@ -2,7 +2,7 @@
   position: relative;
   .c_icon_code{
     position: absolute;
-    top: 8px;
+    bottom: calc(100% + 4px);
     right: 10px;
     z-index: 2;
   }
