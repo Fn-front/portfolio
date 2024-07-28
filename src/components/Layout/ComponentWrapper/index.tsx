@@ -3,6 +3,7 @@
 import { useRef, useEffect, useState } from 'react'
 import StyleCodeBlock from '@/components/Ui/Code/styleCodeBlock'
 import HtmlCodeBlock from '@/components/Ui/Code/htmlCodeBlock'
+import CodeBlock from '@/components/Ui/Code/codeBlock'
 
 export const ComponentWrapper = ({
   children,
@@ -18,15 +19,17 @@ export const ComponentWrapper = ({
 
   useEffect(() => {
     (async() => {
-      if (ref.current) return setElement(ref.current.outerHTML)
-    })()
-  }, [ref])
+      if (!!ref.current) return setElement(ref.current.outerHTML)
+    })()  
+  }, [])
 
   return (
     <>
       <div className='l_component_wrapper u_mt16' ref={ref}>{children}</div>
-      <HtmlCodeBlock element={element}/>
-      <StyleCodeBlock content={styleCode} />
+      <CodeBlock>
+        <HtmlCodeBlock element={element}/>
+        <StyleCodeBlock content={styleCode} />
+      </CodeBlock>
     </>
   )
 }
