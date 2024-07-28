@@ -1,9 +1,9 @@
 'use client'
 
 import { useRef, useEffect, useState } from 'react'
-import StyleCodeBlock from '@/components/Ui/Code/styleCodeBlock'
-import HtmlCodeBlock from '@/components/Ui/Code/htmlCodeBlock'
-import CodeBlock from '@/components/Ui/Code/codeBlock'
+import StyleCodeBlock from '@/components/Ui/Code/StyleCodeBlock'
+import HtmlCodeBlock from '@/components/Ui/Code/HtmlCodeBlock'
+import CodeBlock from '@/components/Ui/Code/CodeBlock'
 
 export const ComponentWrapper = ({
   children,
