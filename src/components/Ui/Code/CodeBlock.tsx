@@ -27,7 +27,7 @@ export const CodeBlock = ({
             <li className='l_list_icon_switch_item'>
               <div
                 className='c_icon_switch'
-                onClick={() => setViewHtml((prev) => !prev)}
+                onClick={() => viewStyle ? setViewHtml((prev) => !prev) : false}
               >
                 <SwitchRightIcon fontSize='large' />
               </div>
@@ -35,7 +35,7 @@ export const CodeBlock = ({
             <li className='l_list_icon_switch_item'>
               <div
                 className='c_icon_switch'
-                onClick={() => setViewStyle((prev) => !prev)}
+                onClick={() => viewHtml ? setViewStyle((prev) => !prev) : false}
               >
                 <SwitchLeftIcon fontSize='large' />
               </div>
