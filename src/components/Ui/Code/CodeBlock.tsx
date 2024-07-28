@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Style from '@/components/Ui/Code/StyleCodeBlock'
 import Html from '@/components/Ui/Code/HtmlCodeBlock'
 
@@ -6,19 +6,16 @@ import SwitchRightIcon from '@mui/icons-material/SwitchRight';
 import SwitchLeftIcon from '@mui/icons-material/SwitchLeft';
 import Icon from '@/components/Ui/Icon'
 
-export const CodeBlock = ({
-  htmlCode,
-  styleCode
-}: Readonly<{
-  htmlCode: string
-  styleCode: string
-}>
-) => {
+export const CodeBlock = (props: any) => {
 
-  const [viewCodeBlock, setViewCodeBlock] = useState<boolean>(false)
+  const {styleCode, htmlCode, viewStatus} = props
+  const [viewCodeBlock, setViewCodeBlock] = useState<boolean>(viewStatus)
   const [viewHtml, setViewHtml] = useState<boolean>(true)
   const [viewStyle, setViewStyle] = useState<boolean>(true)
 
+  useEffect(() => {
+    setViewCodeBlock(viewStatus)
+  }, [viewStatus])
   return (
     <>
       { viewCodeBlock && (
