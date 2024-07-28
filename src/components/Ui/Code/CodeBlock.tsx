@@ -14,7 +14,7 @@ export const CodeBlock = ({
 }>
 ) => {
 
-  const [viewCodeBlock, setViewCodeBlock] = useState<boolean>(true)
+  const [viewCodeBlock, setViewCodeBlock] = useState<boolean>(false)
   const [viewHtml, setViewHtml] = useState<boolean>(true)
   const [viewStyle, setViewStyle] = useState<boolean>(true)
 
