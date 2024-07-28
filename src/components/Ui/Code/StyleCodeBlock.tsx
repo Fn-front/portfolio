@@ -3,6 +3,7 @@
 import { useContext } from 'react'
 import { SystemMessageContext } from '@/hooks/System/Context/SystemMessage';
 import parse from 'html-react-parser';
+import Icon from '@/components/Ui/Icon'
 import highlight from 'highlight.js';
 import 'highlight.js/styles/tokyo-night-dark.css';
 import scss from 'highlight.js/lib/languages/scss';
@@ -39,11 +40,13 @@ export const StyleCodeBlock = (props: any) => {
           className='c_icon_copy'
           onClick={(e) => handleCopyCodeBlock(e.target)}
         >
-          <ContentCopyIcon
-            color=''
-            marginTop=''
-            size='2rem'
-          />
+          <Icon>
+            <ContentCopyIcon
+              color=''
+              marginTop=''
+              size='2rem'
+            />
+          </Icon>
         </div>
       </div>
     </>
