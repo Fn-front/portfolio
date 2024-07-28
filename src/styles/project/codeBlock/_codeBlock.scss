@@ -1,0 +1,9 @@
+.p_code_block{
+  &_list{
+    display: flex;
+    gap: 0 calc(var(--base-px)*1px);
+    .c_code_block{
+      width: 100%;
+    }
+  }
+}

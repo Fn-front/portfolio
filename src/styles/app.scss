@@ -5,6 +5,7 @@
 @use './components/breadcrumbs/breadcrumbs';
 @use './components/card/card_list';
 @use './components/code/code_block';
+@use './components/code/code_copy';
 @use './components/error/error.scss';
 @use './components/form/checkBox/check_box';
 @use './components/form/inputText/input_text';
@@ -24,6 +25,7 @@
 // layout
 @use './layout/form/form_list';
 @use './layout/form/form_column';
+@use './layout/icon/list_icon_switch';
 @use './layout/_global_container';
 @use './layout/_header';
 @use './layout/_main';
@@ -33,6 +35,7 @@
 
 // project
 @use './project/codeViewCardList/codeViewCardList';
+@use './project/codeBlock/codeBlock';
 
 // utility
 @use './utility/_margin';
