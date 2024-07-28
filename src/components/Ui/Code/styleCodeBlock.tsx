@@ -31,7 +31,7 @@ export const StyleCodeBlock = (props: any) => {
   return (
     <>
       <div
-        className='c_code_block u_mt8'
+        className='c_code_block'
         // onMouseLeave={(e) => handleFocusCodeBlock(e)}
       >
         <pre><code className='scss'>{ parse(highlightedCode) }</code></pre>
