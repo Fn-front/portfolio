@@ -15,7 +15,7 @@ export const ComponentWrapper = ({
 
   const ref = useRef<HTMLDivElement>(null)
   const [element, setElement] = useState<string>('');
-  const [codeOpen, setCodeOpen] = useState<boolean>(true);
+  const [codeOpen, setCodeOpen] = useState<boolean>(false);
 
   useEffect(() => {
     (async() => {
