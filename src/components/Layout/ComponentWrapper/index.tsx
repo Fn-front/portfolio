@@ -33,7 +33,6 @@ export const ComponentWrapper = ({
           <Icon>
             <CodeTwoToneIcon
               fontSize='large'
-              style={{color: '#000'}}
             />
           </Icon>
         </div>
