@@ -13,8 +13,10 @@ export const CodeBlock = ({
     <>
       <div className="p_code_block">
         <div></div>
-        <Html element={htmlCode}/>
-        <Style content={styleCode} />
+        <div className='p_code_block_list'>
+          <Html element={htmlCode}/>
+          <Style content={styleCode} />
+        </div>
       </div>
     </>
   )
