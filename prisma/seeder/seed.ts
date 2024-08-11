@@ -6,7 +6,7 @@ const prisma = new PrismaClient()
 async function main() {
   console.log('Seeding data...');
 
-  const user1 = await prisma.user.create({
+  const user1 = await prisma.todo.create({
     data: {
       id: 1,
       title: 'ダミーテキスト１',
