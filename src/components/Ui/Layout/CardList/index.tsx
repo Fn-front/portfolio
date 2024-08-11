@@ -1,5 +1,5 @@
-import Default from './cardListDefault';
-import Dark from './cardListDark';
+import Default from './CardListDefault';
+import Dark from './CardListDark';
 
 const CardList = () => {
   
