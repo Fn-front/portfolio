@@ -1,5 +1,5 @@
-import Default from './radioDefault';
-import ErrorText from './radioErrorText'
+import Default from './RadioDefault';
+import ErrorText from './RadioErrorText'
 
 const Radio = () => {
   
