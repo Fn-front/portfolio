@@ -6,14 +6,24 @@ const prisma = new PrismaClient()
 async function main() {
   console.log('Seeding data...');
 
-  const user1 = await prisma.todo.create({
-    data: {
-      id: 1,
-      title: 'ダミーテキスト１',
-      date: '2024-08-11T00:00:00+09:00',
+  await prisma.todo.deleteMany();
+
+  const count = 10
+  const setData: any = []
+
+  for (let i = 0; i < count; i++) {
+    const data = {
+      id: i+1,
+      title: 'ダミーテキスト'+(i+1),
+      date: new Date(),
       done: false
-    },
-  });
+    }
+    setData.push(data)
+  }
+
+  const addData = async () => await prisma.todo.createMany({ data: setData });
+
+  addData()
 
   console.log('Data seeding complete.');
 }
