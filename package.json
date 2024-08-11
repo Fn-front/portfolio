@@ -6,7 +6,8 @@
     "dev": "next dev -p 2937",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "seed": "ts-node prisma/seeder/index.ts"
   },
   "dependencies": {
     "@emotion/cache": "^11.11.0",
