@@ -10,7 +10,7 @@ async function main() {
     data: {
       id: 1,
       title: 'ダミーテキスト１',
-      date: '2024-08-11',
+      date: '2024-08-11T00:00:00+09:00',
       done: false
     },
   });
