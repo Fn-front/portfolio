@@ -4,7 +4,7 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 // データベースに接続する関数
-export const CONNECT = async () => {
+export async function CONNECT() {
   try {
     //prismaでデータベースに接続
     prisma.$connect();
