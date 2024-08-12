@@ -1,7 +1,11 @@
 import { getList } from '@/hooks/api/todo/Get'
+import { unstable_noStore as noStore } from 'next/cache';
+
+export const dynamic = 'force-dynamic'
 
 export default async function MockTodo() {
 
+  noStore();
   const data = await getList()
 
   return (
