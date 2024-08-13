@@ -15,3 +15,18 @@
     }
   }
 }
+
+.m_todo_input{
+  width: 250px;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: calc(var(--base-px)/2*1px) calc(var(--base-px)*1px);
+  font-size: calc(var(--base-px)*1.8px);
+}
+
+.m_todo_input_button{
+  margin-left: calc(var(--base-px)*2px);
+  padding: calc(var(--base-px)/2*1px) calc(var(--base-px)*1px);
+  border: 1px solid #fff;
+  font-size: calc(var(--base-px)*1.8px);
+}
