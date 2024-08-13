@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { getList } from '@/hooks/api/todo/Get'
+import { addList } from '@/hooks/api/todo/types'
 import { unstable_noStore as noStore } from 'next/cache';
 import styles from './todo.module.scss'
 
@@ -13,7 +14,7 @@ export default function MockTodo() {
   // github actions用
   noStore();
 
-  const [dataList, setDataList] = useState<Array<object>>([]);
+  const [dataList, setDataList] = useState<Array<addList>>([]);
   const [inputValue, setInputValue] = useState<string>('')
 
   const handleAddData = () => {
