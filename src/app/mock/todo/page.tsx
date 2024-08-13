@@ -21,12 +21,19 @@ export default function MockTodo() {
     const createData = {
       id: dataList[dataList.length -1].id + 1,
       title: inputValue,
-      date: new Date(),
+      date: new Date().toISOString(),
       done: false
     }
-    console.log(createData);
-    
+    setDataList(
+      [
+        ...dataList, 
+        {
+          ...createData
+        }
+      ]
+    )
   }
+
 
   useEffect(() => {    
 
@@ -34,6 +41,7 @@ export default function MockTodo() {
       const data = await getList()
       setDataList(data.data)
     })()
+    
 
   }, [])
 
