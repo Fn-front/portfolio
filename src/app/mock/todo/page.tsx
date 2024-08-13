@@ -17,6 +17,8 @@ export default function MockTodo() {
   const [dataList, setDataList] = useState<Array<addList>>([]);
   const [inputValue, setInputValue] = useState<string>('')
 
+  // データ追加のAPIは叩くが、クライアント側ではページ読み込み時の取得データの制御のみ行う
+  // データ追加した場合は、リストの再取得を行わない
   const handleAddData = () => {
     const createData = {
       id: dataList[dataList.length -1].id + 1,
@@ -32,6 +34,8 @@ export default function MockTodo() {
         }
       ]
     )
+
+    //DBにデータを追加するAPIを記述 
   }
 
 
