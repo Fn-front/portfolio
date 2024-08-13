@@ -1,0 +1,17 @@
+.m_todo_list{
+  display: block;
+  &_item{
+    display: flex;
+    gap: 16px;
+    &_num{
+      width: 3rem;
+      text-align: right;
+    }
+    &_date{
+      font-size: calc(var(--base-px)*1.7px);
+    }
+    &+.m_todo_list_item{
+      margin-top: 8px;
+    }
+  }
+}
