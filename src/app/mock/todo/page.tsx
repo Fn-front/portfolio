@@ -38,11 +38,23 @@ export default function MockTodo() {
     )
 
     //DBにデータを追加するAPIを記述
-    const res = await addData(createData)    
-    setMessage(res.message)
+    const res = await addData(createData)
+
+    // メッセージを表示、一定時間出たら消える
+    viewMessage(res.message)
 
     // データ追加が完了したら入力フィールドを空にする
     setInputValue('')
+  }
+
+  // メッセージ
+  const viewMessage = (data: string) => {
+    setMessage(data)
+
+    const deleteMessage = setTimeout(() => {
+      setMessage('')
+      clearTimeout(deleteMessage)
+    }, 3000)
   }
 
 
