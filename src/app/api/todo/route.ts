@@ -34,7 +34,7 @@ export const GET = async (req: Request) => {
 export const POST = async (req: Request, res: NextResponse) => {
   const { id, title, date, done } = await req.json();
   try {
-      const todo = await prisma.todo.create({
+      await prisma.todo.create({
           data: {
               id: id,
               title: title,
