@@ -17,6 +17,7 @@ export default function MockTodo() {
 
   const [dataList, setDataList] = useState<Array<addList>>([]);
   const [inputValue, setInputValue] = useState<string>('')
+  const [message, setMessage] = useState<string>('')
 
   // データ追加のAPIは叩くが、クライアント側ではページ読み込み時の取得データの制御のみ行う
   // データ追加した場合は、リストの再取得を行わない
@@ -37,7 +38,8 @@ export default function MockTodo() {
     )
 
     //DBにデータを追加するAPIを記述
-    const res = await addData(createData)
+    const res = await addData(createData)    
+    setMessage(res.message)
   }
 
 
@@ -72,6 +74,7 @@ export default function MockTodo() {
           追加
         </button>
       </div>
+      {/* <p>{ message }</p> */}
       <ul className={`${styles.m_todo_list} u_mt16`}>
         { dataList.map((todo: any) => (
           <li key={todo.id} className={styles.m_todo_list_item}>
