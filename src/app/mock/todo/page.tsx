@@ -40,6 +40,9 @@ export default function MockTodo() {
     //DBにデータを追加するAPIを記述
     const res = await addData(createData)    
     setMessage(res.message)
+
+    // データ追加が完了したら入力フィールドを空にする
+    setInputValue('')
   }
 
 
@@ -74,7 +77,7 @@ export default function MockTodo() {
           追加
         </button>
       </div>
-      {/* <p>{ message }</p> */}
+      <p className='u_mt16'>{ message }</p>
       <ul className={`${styles.m_todo_list} u_mt16`}>
         { dataList.map((todo: any) => (
           <li key={todo.id} className={styles.m_todo_list_item}>
