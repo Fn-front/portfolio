@@ -67,6 +67,7 @@ export default function MockTodo() {
           id=""
           placeholder='タイトル'
           onChange={(e) => setInputValue(e.target.value)}
+          value={inputValue}
           className={styles.m_todo_input}
         />
         <button
