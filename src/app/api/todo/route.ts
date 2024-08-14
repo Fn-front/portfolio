@@ -29,3 +29,26 @@ export const GET = async (req: Request) => {
     await prisma.$disconnect();
   }
 };
+
+// データベースにデータを追加する
+export const POST = async (req: Request, res: NextResponse) => {
+  const { id, title, date, done } = await req.json();
+  try {
+      const todo = await prisma.todo.create({
+          data: {
+              id: id,
+              title: title,
+              date: date,
+              done: done
+          }
+      });
+
+      return NextResponse.json({ message: "追加を完了しました"}, { status: 200 })
+
+  } catch (error) {
+      return NextResponse.json({ message: "追加に失敗しました" }, { status: 500 })
+
+  } finally {
+      await prisma.$disconnect();
+  }
+}
