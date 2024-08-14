@@ -15,4 +15,6 @@ export const addData = async(data: post) => {
         done: done
     })
   })
+
+  return res.json()
 }
