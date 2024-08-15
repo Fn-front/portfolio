@@ -2,13 +2,14 @@ const host = process.env.NEXT_PUBLIC_API_URL
 import { deleteList } from './types'
 
 export const deleteData = async(data: deleteList) => {
+  const { ids } = data
   const res = await fetch(host+'/api/todo', {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
-      id: data
+      ids: ids
     })
   })
 
