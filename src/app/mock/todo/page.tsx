@@ -48,6 +48,7 @@ export default function MockTodo() {
     setInputValue('')
   }
 
+  // データ削除
   const handleDeleteData = async() => {
     setDataList(dataList.filter((a) => !checkBox.includes(a.id)))
   }
