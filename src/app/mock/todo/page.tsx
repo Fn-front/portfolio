@@ -94,6 +94,7 @@ export default function MockTodo() {
       <ul className={`${styles.m_todo_list} u_mt16`}>
         { dataList.map((todo: any) => (
           <li key={todo.id} className={styles.m_todo_list_item}>
+            <div><input type="checkbox" className={styles.m_todo_list_item_checkbox} /></div>
             <span className={styles.m_todo_list_item_num}>{ todo.id }</span>
             <div>
               <span className={styles.m_todo_list_item_date}>Date：{ todo.date }</span>
