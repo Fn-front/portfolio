@@ -50,6 +50,7 @@ export default function MockTodo() {
 
   const handleDeleteData = () => {}
 
+  // チェックボックスにcheckが入ったIDを配列に格納
   const handleCheckBox = (check: boolean, id: number) => {
     check ? setCheckBox([...checkBox, id]) : setCheckBox(checkBox.filter((a, b) => (a != id)))
   }
