@@ -12,6 +12,6 @@ export type post = {
   done: boolean
 }
 
-export type deleteData = {
+export type deleteList = {
   id: Array<number>
 }
