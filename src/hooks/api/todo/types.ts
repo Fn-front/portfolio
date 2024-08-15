@@ -13,5 +13,5 @@ export type post = {
 }
 
 export type deleteList = {
-  id: Array<number>
+  ids: Array<number>
 }
