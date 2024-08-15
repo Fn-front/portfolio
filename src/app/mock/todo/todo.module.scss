@@ -60,4 +60,8 @@
   padding: calc(var(--base-px)/2*1px) calc(var(--base-px)*1px);
   border: 1px solid #fff;
   font-size: calc(var(--base-px)*1.8px);
+  &_done_wrap{
+    display: flex;
+    align-items: center;
+  }
 }
