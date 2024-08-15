@@ -54,6 +54,7 @@ export const POST = async (req: Request, res: NextResponse) => {
 // データベースにデータを追加する
 export const DELETE = async (req: Request, res: NextResponse) => {
   const { ids } = await req.json();
+  
   try {
       await prisma.todo.deleteMany({
           where: {
