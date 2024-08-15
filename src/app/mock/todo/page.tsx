@@ -48,6 +48,8 @@ export default function MockTodo() {
     setInputValue('')
   }
 
+  const handleDeleteData = () => {}
+
   const handleCheckBox = (check: boolean, id: number) => {
     check ? setCheckBox([...checkBox, id]) : setCheckBox(checkBox.filter((a, b) => (a != id)))
   }
@@ -93,6 +95,13 @@ export default function MockTodo() {
           onClick={handleAddData}
         >
           追加
+        </button>
+        <button
+          type='button'
+          className={styles.m_todo_input_button}
+          onClick={handleDeleteData}
+        >
+          削除
         </button>
       </div>
       <p className='u_mt16'>{ message }</p>
