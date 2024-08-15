@@ -24,8 +24,6 @@ export const GET = async (req: Request) => {
     return NextResponse.json({ message: "Error" }, { status: 500 });
 
   } finally {
-
-    //必ず実行する
     await prisma.$disconnect();
   }
 };
@@ -43,10 +41,33 @@ export const POST = async (req: Request, res: NextResponse) => {
           }
       });
 
-      return NextResponse.json({ message: "追加を完了しました"}, { status: 200 })
+      return NextResponse.json({ message: "追加が完了しました"}, { status: 200 })
 
   } catch (error) {
       return NextResponse.json({ message: "追加に失敗しました" }, { status: 500 })
+
+  } finally {
+      await prisma.$disconnect();
+  }
+}
+
+
+// データベースにデータを追加する
+export const DELETE = async (req: Request, res: NextResponse) => {
+  const { ids } = await req.json();
+  try {
+      await prisma.todo.deleteMany({
+          where: {
+              id: {
+                in: ids
+              }
+          }
+      });
+
+      return NextResponse.json({ message: "削除が完了しました"}, { status: 200 })
+
+  } catch (error) {
+      return NextResponse.json({ message: "削除に失敗しました" }, { status: 500 })
 
   } finally {
       await prisma.$disconnect();
