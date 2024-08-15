@@ -41,7 +41,7 @@ export const POST = async (req: Request, res: NextResponse) => {
   }
 }
 
-// データベースにデータを追加する
+// 選択したデータをデータベースから削除する
 export const DELETE = async (req: Request, res: NextResponse) => {
   const { ids } = await req.json();
   
