@@ -1,16 +1,6 @@
 import { NextResponse } from "next/server";
 import { prisma } from '@/lib/Prisma'
 
-// データベースに接続する関数
-// export const connect = async () => {
-//   try {
-//     //prismaでデータベースに接続
-//     prisma.$connect();
-//   } catch (error) {
-//     return Error("DB接続に失敗しました");
-//   }
-// };
-
 // データベースからデータを取得する
 export const GET = async (req: Request) => {
   try {
