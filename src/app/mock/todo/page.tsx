@@ -15,9 +15,10 @@ export default function MockTodo() {
   // github actions用
   noStore();
 
-  const [dataList, setDataList] = useState<Array<addList>>([]);
+  const [dataList, setDataList] = useState<Array<addList>>([])
   const [inputValue, setInputValue] = useState<string>('')
   const [message, setMessage] = useState<string>('')
+  const [checkBox, setCheckBox] = useState<Array<number>>([])
 
   // データ追加のAPIは叩くが、クライアント側ではページ読み込み時の取得データの制御のみ行う
   // データ追加した場合は、リストの再取得を行わない
@@ -45,6 +46,10 @@ export default function MockTodo() {
 
     // データ追加が完了したら入力フィールドを空にする
     setInputValue('')
+  }
+
+  const handleCheckBox = (check: boolean, id: number) => {
+    check ? setCheckBox([...checkBox, id]) : setCheckBox(checkBox.filter((a, b) => (a != id)))
   }
 
   // メッセージ
@@ -94,7 +99,13 @@ export default function MockTodo() {
       <ul className={`${styles.m_todo_list} u_mt16`}>
         { dataList.map((todo: any) => (
           <li key={todo.id} className={styles.m_todo_list_item}>
-            <div><input type="checkbox" className={styles.m_todo_list_item_checkbox} /></div>
+            <div>
+              <input
+                type="checkbox"
+                className={styles.m_todo_list_item_checkbox}
+                onChange={(e) => handleCheckBox(e.target.checked, todo.id)}
+              />
+            </div>
             <span className={styles.m_todo_list_item_num}>{ todo.id }</span>
             <div>
               <span className={styles.m_todo_list_item_date}>Date：{ todo.date }</span>
