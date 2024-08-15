@@ -65,6 +65,8 @@ export default function MockTodo() {
     check ? setCheckBox([...checkBox, id]) : setCheckBox(checkBox.filter((a, b) => (a != id)))
   }
 
+  const handleDone = () => {}
+
   // メッセージ
   const viewMessage = (data: string) => {
     setMessage(data)
@@ -135,7 +137,7 @@ export default function MockTodo() {
               <button
                 type='button'
                 className={styles.m_todo_input_button}
-                // onClick={}
+                onClick={handleDone}
               >
                 done
               </button>
