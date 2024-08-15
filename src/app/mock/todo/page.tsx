@@ -48,7 +48,9 @@ export default function MockTodo() {
     setInputValue('')
   }
 
-  const handleDeleteData = async() => {}
+  const handleDeleteData = async() => {
+    setDataList(dataList.filter((a) => !checkBox.includes(a.id)))
+  }
 
   // チェックボックスにcheckが入ったIDを配列に格納
   const handleCheckBox = (check: boolean, id: number) => {
