@@ -131,7 +131,7 @@ export default function MockTodo() {
               <span className={styles.m_todo_list_item_date}>Date：{ todo.date }</span>
               <p>タイトル：{ todo.title }</p>
             </div>
-            <div className={styles.m_todo_input_button_done_wrap}>
+            <div className={styles.m_todo_align_center_wrap}>
               <button
                 type='button'
                 className={styles.m_todo_input_button}
