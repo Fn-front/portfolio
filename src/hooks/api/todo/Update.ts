@@ -1,6 +1,6 @@
-import { post } from './types'
+import { updateData } from './types'
 
-export const update = (data: post) => {
+export const update = (data: updateData) => {
   const { id, title, date, done } = data
   const res = fetch('/api/todo', {
     method: 'PUT',
