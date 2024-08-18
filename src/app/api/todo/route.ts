@@ -63,3 +63,30 @@ export const DELETE = async (req: Request, res: NextResponse) => {
       await prisma.$disconnect();
   }
 }
+
+// データベースの情報を変更する
+export const UPDATE = async (req: Request, res: NextResponse) => {
+  const { id, title, date, done } = await req.json();
+  
+  try {
+      await prisma.todo.update({
+          where: {
+              id: id
+          },
+          data: {
+            id: id,
+            title: title,
+            date: date,
+            done: done
+        }
+      });
+
+      return NextResponse.json({ message: "変更が完了しました"}, { status: 200 })
+
+  } catch (error) {
+      return NextResponse.json({ message: "変更に失敗しました" }, { status: 500 })
+
+  } finally {
+      await prisma.$disconnect();
+  }
+}
