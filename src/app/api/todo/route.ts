@@ -5,7 +5,11 @@ import { prisma } from '@/lib/Prisma'
 export const GET = async (req: Request) => {
   try {
     // await connect();
-    const data = await prisma.todo.findMany();
+    const data = await prisma.todo.findMany({
+      orderBy: {
+        id: 'asc'
+      }
+    });
 
     return NextResponse.json({ data }, { status: 200 });
 
