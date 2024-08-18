@@ -1,9 +1,8 @@
-const host = process.env.NEXT_PUBLIC_API_URL
 import { post } from './types'
 
 export const addData = async(data: post) => {
   const { id, title, date, done } = data
-  const res = await fetch(host+'/api/todo', {
+  const res = await fetch('/api/todo', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
