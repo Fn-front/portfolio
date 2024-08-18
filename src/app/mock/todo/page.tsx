@@ -5,16 +5,9 @@ import { getList } from '@/hooks/api/todo/Get'
 import { addData } from '@/hooks/api/todo/Add'
 import { deleteData } from '@/hooks/api/todo/Delete'
 import { addList } from '@/hooks/api/todo/types'
-import { unstable_noStore as noStore } from 'next/cache';
 import styles from './todo.module.scss'
 
-// localhostのfetchがgithub actionsのbuildだと動かないので記述が必要
-export const dynamic = 'force-dynamic'
-
 export default function MockTodo() {
-
-  // github actions用
-  noStore();
 
   const [dataList, setDataList] = useState<Array<addList>>([])
   const [inputValue, setInputValue] = useState<string>('')
