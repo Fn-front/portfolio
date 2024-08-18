@@ -1,8 +1,8 @@
 import { updateData } from './types'
 
-export const update = (data: updateData) => {
+export const update = async(data: updateData) => {
   const { id, title, date, done } = data
-  const res = fetch('/api/todo', {
+  const res = await fetch('/api/todo', {
     method: 'PUT',
     headers: {
       'Content-type': 'application/json'
@@ -15,5 +15,5 @@ export const update = (data: updateData) => {
     })
   })
 
-  return res
+  return res.json()
 }
