@@ -19,7 +19,18 @@ export const route = () => {
       path: "/codeView/ui/form/radio",
       segment: 'radio',
       breadcrumb: 'radioボタン',
-    }  ];
+    },
+    {
+      path: "/mock",
+      segment: 'mock',
+      breadcrumb: 'mock',
+    },
+    {
+      path: "/mock/todo",
+      segment: 'todo',
+      breadcrumb: 'todo',
+    } 
+  ];
 
   return routes
 }
