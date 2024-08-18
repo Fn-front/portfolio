@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { getList } from '@/hooks/api/todo/Get'
 import { addData } from '@/hooks/api/todo/Add'
 import { deleteData } from '@/hooks/api/todo/Delete'
+import { update } from '@/hooks/api/todo/Update'
 import { addList } from '@/hooks/api/todo/types'
 import styles from './todo.module.scss'
 
@@ -58,8 +59,19 @@ export default function MockTodo() {
     check ? setCheckBox([...checkBox, id]) : setCheckBox(checkBox.filter((a, b) => (a != id)))
   }
 
-  const handleDone = (id: number, done: boolean) => {
+  const handleDone = async(id: number, title: string, date: string, done: boolean) => {
     setDataList(dataList.map((a) => a.id === id ? { ...a, done: !done } : a))
+
+    const createData = {
+      id: id,
+      title: title,
+      date: date,
+      done: !done
+    }
+
+    const res = await update(createData)
+
+    viewMessage(res.message)
   }
 
   // メッセージ
@@ -132,7 +144,7 @@ export default function MockTodo() {
               <button
                 type='button'
                 className={styles.m_todo_input_button}
-                onClick={() => handleDone(todo.id, todo.done)}
+                onClick={() => handleDone(todo.id, todo.title, todo.date, todo.done)}
               >
                 done
               </button>
