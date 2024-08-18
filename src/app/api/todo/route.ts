@@ -65,7 +65,7 @@ export const DELETE = async (req: Request, res: NextResponse) => {
 }
 
 // データベースの情報を変更する
-export const UPDATE = async (req: Request, res: NextResponse) => {
+export const PUT = async (req: Request, res: NextResponse) => {
   const { id, title, date, done } = await req.json();
   
   try {
