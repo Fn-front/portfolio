@@ -58,7 +58,9 @@ export default function MockTodo() {
     check ? setCheckBox([...checkBox, id]) : setCheckBox(checkBox.filter((a, b) => (a != id)))
   }
 
-  const handleDone = () => {}
+  const handleDone = (id: number, done: boolean) => {
+    setDataList(dataList.map((a) => a.id === id ? { ...a, done: !done } : a))
+  }
 
   // メッセージ
   const viewMessage = (data: string) => {
@@ -122,7 +124,7 @@ export default function MockTodo() {
               />
             </div>
             <span className={styles.m_todo_list_item_num}>{ todo.id }</span>
-            <div>
+            <div className={`${ todo.done ? styles.m_todo_list_item_hidden : null }`}>
               <span className={styles.m_todo_list_item_date}>Date：{ todo.date }</span>
               <p>タイトル：{ todo.title }</p>
             </div>
@@ -130,7 +132,7 @@ export default function MockTodo() {
               <button
                 type='button'
                 className={styles.m_todo_input_button}
-                onClick={handleDone}
+                onClick={() => handleDone(todo.id, todo.done)}
               >
                 done
               </button>
