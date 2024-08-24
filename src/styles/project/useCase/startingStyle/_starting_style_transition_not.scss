@@ -1,11 +1,7 @@
-.c_starting_style {
-	&_item{
-    &_ver_transition{
-      transition: width 3s ease-in-out;
-      &.is_active{
-        display: block;
-        width: 100%;
-      }
-    }
+.c_starting_style_item_ver_transition {
+	transition: width 3s ease-in-out;
+  &.is_active{
+    display: block;
+    width: 100%;
   }
 }
