@@ -17,6 +17,7 @@
 @use './components/iframe/iframe';
 @use './components/image/image.scss';
 @use './components/system/system';
+@use './components/text/explanation';
 @use './components/text/_text_error';
 
 // global
@@ -36,6 +37,10 @@
 // project
 @use './project/codeViewCardList/codeViewCardList';
 @use './project/codeBlock/codeBlock';
+@use './project/useCase/startingStyle/starting_style';
+@use './project/useCase/startingStyle/starting_style_animation';
+@use './project/useCase/startingStyle/starting_style_transition';
+@use './project/useCase/startingStyle/starting_style_transition_not';
 
 // utility
 @use './utility/_margin';
