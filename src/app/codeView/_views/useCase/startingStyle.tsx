@@ -9,7 +9,7 @@ export default async function ViewUiForm() {
 
   return (
     <>
-      <h2 className='c_h2 u_mt32'>useCase</h2>
+      <h2 className='c_h2 u_mt32'>CSS</h2>
       <CodeViewCardList editFilePaths={editFilePaths} />
     </>
   );
