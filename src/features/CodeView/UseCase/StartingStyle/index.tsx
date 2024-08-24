@@ -4,7 +4,7 @@ import Animation from './Animation'
 
 export const StartingStyle = async() => {
   
-  const contentPath = '/src/styles/components/form/checkBox/_default.scss'
+  const contentPath = '/src/styles/project/useCase/startingStyle/_starting_style_animation.scss'
   const content: string = await getFile(contentPath)
 
   return (
