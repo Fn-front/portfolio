@@ -8,18 +8,6 @@
     width: 0%;
     height: 100%;
     background-color: rgb(var(--color-black));
-    &_ver_transition{
-      transition: width 3s ease-in-out;
-      &.is_active{
-        display: block;
-        width: 100%;
-        &.starting-style{
-          @starting-style {
-            width: 0%;
-          }
-        }
-      }
-    }
   }
   &_button {
     padding: 4px 16px;
