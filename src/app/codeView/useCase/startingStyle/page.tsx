@@ -3,7 +3,7 @@ import CodeView from '@/components/Layout/CodeView'
 
 export default function Page() {
 
-  const head: string = 'CSS：@starting-style';
+  const head: string = '@starting-style';
   return (
     <>
       <CodeView head={head}>
