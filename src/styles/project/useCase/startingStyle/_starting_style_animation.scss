@@ -1,0 +1,21 @@
+.c_starting_style {
+	&_item{
+    &_ver_animation{
+      &.is_active{
+        display: block;
+        animation: ani 3s ease-in-out infinite alternate;
+      }
+    }
+  }
+}
+
+@keyframes ani {
+  0%{
+    display: block;
+    width: 0%;
+  }
+  100%{
+    display: block;
+    width: 100%;
+  }
+}

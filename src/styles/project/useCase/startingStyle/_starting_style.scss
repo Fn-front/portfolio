@@ -8,12 +8,6 @@
     width: 0%;
     height: 100%;
     background-color: rgb(var(--color-black));
-    &_ver_animation{
-      &.is_active{
-        display: block;
-        animation: ani 3s ease-in-out infinite alternate;
-      }
-    }
     &_ver_transition{
       transition: width 3s ease-in-out;
       &.is_active{
@@ -34,16 +28,5 @@
     &+*{
       margin-top: 16px;
     }
-  }
-}
-
-@keyframes ani {
-  0%{
-    display: block;
-    width: 0%;
-  }
-  100%{
-    display: block;
-    width: 100%;
   }
 }
