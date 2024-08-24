@@ -1,5 +1,6 @@
 import UiForm from '@/app/codeView/_views/ui/form'
 import UiLayout from '@/app/codeView/_views/ui/layout'
+import UseCaseStartingStyle from '@/app/codeView/_views/useCase/startingStyle'
 
 export default function codeView() {
   return (
@@ -9,6 +10,7 @@ export default function codeView() {
       </h1>
       <UiForm />
       <UiLayout />
+      <UseCaseStartingStyle />
     </>
   );
 }
