@@ -39,6 +39,7 @@
 @use './project/useCase/startingStyle/starting_style';
 @use './project/useCase/startingStyle/starting_style_animation';
 @use './project/useCase/startingStyle/starting_style_transition';
+@use './project/useCase/startingStyle/starting_style_transition_not';
 
 // utility
 @use './utility/_margin';
