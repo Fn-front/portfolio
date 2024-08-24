@@ -17,7 +17,12 @@ export const StartingStyle = async() => {
 
   return (
     <>
-      <h3 className='c_h3'>animationは、display: noneでも動く</h3>
+      <div className='c_explanation'>
+        <p>いままでdisplay: noneからblockへのプロパティ変更ではアニメーションが効かなかったが</p>
+        <p>@starting-styleで切替時のアニメーションが可能になった</p>
+        <p>ただdisplay: blockからnoneへの切替時のアニメーションはできない</p>
+      </div>
+      <h3 className='c_h3 u_mt40'>animationは、display: noneでも動く</h3>
       <ComponentWrapper styleCode={content1}>
         <Animation />
       </ComponentWrapper>
