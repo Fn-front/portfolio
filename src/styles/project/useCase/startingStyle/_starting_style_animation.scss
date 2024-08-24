@@ -1,11 +1,7 @@
-.c_starting_style {
-	&_item{
-    &_ver_animation{
-      &.is_active{
-        display: block;
-        animation: ani 3s ease-in-out infinite alternate;
-      }
-    }
+.c_starting_style_item_ver_animation {
+	&.is_active{
+    display: block;
+    animation: ani 3s ease-in-out infinite alternate;
   }
 }
 
