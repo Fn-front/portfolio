@@ -19,12 +19,10 @@ export const CodeViewCardList = async(props: Props) => {
                 className='c_card_list_item'
               >
                 <div className='c_card_list_item_main'>
-                  <div className='p_code_view_card_list_main_image'>
-                    <div
-                      className='p_code_view_card_list_main_image_item'
-                      style={{ backgroundImage: 'url(/assets/img/'+item.slice(0, item.length - 1)+'.png)' }}
-                    ></div>
-                  </div>
+                  <div
+                    className='p_code_view_card_list_main_image'
+                    style={{ backgroundImage: 'url(/assets/img/'+item.slice(0, item.length - 1)+'.png)' }}
+                  ></div>
                 </div>
                 <div className='c_card_list_item_other'>
                   <p><Link href={ item }>{ item }</Link></p>
