@@ -7,7 +7,7 @@
     "build": "npx prisma generate && next build",
     "start": "next start",
     "lint": "next lint",
-    "e2e": "npx playwright test && npx playwright show-report",
+    "e2e": "cross-env APP_ENV=\"./src/tests\" npx playwright test && npx playwright show-report",
     "e2e:actions": "npx playwright test --reporter='./playwright-reporter.ts'"
   },
   "prisma": {
