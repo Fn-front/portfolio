@@ -24,6 +24,7 @@
     "sass": "^1.77.4"
   },
   "devDependencies": {
+    "@playwright/test": "^1.46.1",
     "@prisma/client": "^5.18.0",
     "@types/highlight.js": "^10.1.0",
     "@types/node": "^20",
