@@ -6,7 +6,8 @@
     "dev": "next dev -p 2937",
     "build": "npx prisma generate && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "e2e": "npx playwright test && npx playwright show-report"
   },
   "prisma": {
     "seed": "ts-node --compilerOptions {\"module\":\"CommonJS\"} prisma/seeder/seed.ts"
