@@ -9,7 +9,7 @@ const Header = () => {
   const getParams = searchParams.get('iframe')
 
   return (
-    <header className={`l_header ${ getParams ? 'l_header_hidden' : '' }`}></header>
+    <header className={`l_header`}></header>
   )
 }
 
