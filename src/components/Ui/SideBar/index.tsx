@@ -9,7 +9,7 @@ const Sidebar = () => {
   const getParams = searchParams.get('iframe')
 
   return (
-    <aside className={`l_sidebar ${ getParams ? 'l_sidebar_hidden' : '' }`}>
+    <aside className={`l_sidebar`}>
       <p>sidebar</p>
     </aside>
   )
