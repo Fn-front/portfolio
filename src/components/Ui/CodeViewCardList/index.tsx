@@ -1,5 +1,3 @@
-import {} from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
 
 type Props = {
@@ -21,15 +19,11 @@ export const CodeViewCardList = async(props: Props) => {
                 className='c_card_list_item'
               >
                 <div className='c_card_list_item_main'>
-                  <div className='c_next_image_wrapper'>
-                    <Image
-                      src={`/assets/img/${item.slice(0, item.length - 1)}.png`}
-                      alt="Sample Image"
-                      className='c_next_image'
-                      sizes='100%'
-                      fill
-                      priority
-                    />
+                  <div className='c_card_list_item_main_image'>
+                    <div
+                      className='c_card_list_item_main_image_item'
+                      style={{ backgroundImage: 'url(/assets/img/'+item.slice(0, item.length - 1)+'.png)' }}
+                    ></div>
                   </div>
                 </div>
                 <div className='c_card_list_item_other'>
