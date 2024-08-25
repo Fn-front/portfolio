@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "e2e": "npx playwright test && npx playwright show-report",
-    "e2e:actions": "npx playwright test"
+    "e2e:actions": "npx playwright test --reporter='./my-awesome-reporter.ts'"
   },
   "prisma": {
     "seed": "ts-node --compilerOptions {\"module\":\"CommonJS\"} prisma/seeder/seed.ts"
