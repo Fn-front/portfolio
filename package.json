@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "e2e": "cross-env APP_ENV=\"./src/tests\" npx playwright test && npx playwright show-report",
-    "e2e:actions": "npx playwright test --reporter='./playwright-reporter.ts'"
+    "e2e:actions": "cross-env APP_ENV=\"./src/tests\" npx playwright test --reporter='./playwright-reporter.ts'",
+    "snapshot": "cross-env APP_ENV=\"./src/snapshot\" npx playwright test"
   },
   "prisma": {
     "seed": "ts-node --compilerOptions {\"module\":\"CommonJS\"} prisma/seeder/seed.ts"
