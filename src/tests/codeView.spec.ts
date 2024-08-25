@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+test.describe.configure({ mode: 'parallel' });
 
 test('codeView link check all', async ({ page }) => {
   await page.goto('http://localhost:2937/codeView');
