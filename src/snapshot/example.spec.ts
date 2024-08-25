@@ -3,5 +3,9 @@ test.describe.configure({ mode: 'parallel' });
 
 test('Screen Shot checkBox', async ({ page }) => {
   await page.goto('http://localhost:2937/codeView/ui/form/checkBox/');
-  await page.screenshot({ path: "public/assets/img/ui/checkBox.png" });
+  await page.screenshot({ path: "public/assets/img/codeView/ui/checkBox.png" });
+});
+test('Screen Shot inputText', async ({ page }) => {
+  await page.goto('http://localhost:2937/codeView/ui/form/inputText/');
+  await page.screenshot({ path: "public/assets/img/codeView/ui/inputText.png" });
 });
