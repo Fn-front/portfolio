@@ -21,6 +21,11 @@ export const route = () => {
       breadcrumb: 'radioボタン',
     },
     {
+      path: "/codeView/useCase/startingStyle",
+      segment: 'startingStyle',
+      breadcrumb: 'starting-style',
+    },
+    {
       path: "/mock",
       segment: 'mock',
       breadcrumb: 'mock',
