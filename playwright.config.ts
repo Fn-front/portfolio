@@ -31,6 +31,11 @@ export default defineConfig({
     trace: 'on-first-retry',
   },
 
+  webServer: {
+    command: 'npm run dev',
+    port: 2937,
+  },
+
   /* Configure projects for major browsers */
   projects: [
     {
