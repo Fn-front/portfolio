@@ -20,12 +20,12 @@ export const CodeViewCardList = async(props: Props) => {
                 className='c_card_list_item'
               >
                 <div className='c_card_list_item_main'>
-                  <iframe
+                  {/* <iframe
                     src={`${item}?iframe=1`}
                     className='c_iframe'
                     scrolling='no'
                     loading='lazy'
-                  />
+                  /> */}
                 </div>
                 <div className='c_card_list_item_other'>
                   <p><Link href={ item }>{ item }</Link></p>
