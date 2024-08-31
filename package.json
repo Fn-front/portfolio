@@ -6,7 +6,10 @@
     "dev": "next dev -p 2937",
     "build": "npx prisma generate && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "e2e": "cross-env APP_ENV=\"./src/tests\" npx playwright test && npx playwright show-report",
+    "e2e:actions": "cross-env APP_ENV=\"./src/tests\" npx playwright test --reporter='./playwright-reporter.ts'",
+    "snapshot": "cross-env APP_ENV=\"./src/snapshot\" npx playwright test"
   },
   "prisma": {
     "seed": "ts-node --compilerOptions {\"module\":\"CommonJS\"} prisma/seeder/seed.ts"
@@ -24,12 +27,14 @@
     "sass": "^1.77.4"
   },
   "devDependencies": {
+    "@playwright/test": "^1.46.1",
     "@prisma/client": "^5.18.0",
     "@types/highlight.js": "^10.1.0",
     "@types/node": "^20",
     "@types/prettier": "^3.0.0",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "cross-env": "^7.0.3",
     "eslint": "^8",
     "eslint-config-next": "14.2.3",
     "highlight.js": "^11.9.0",

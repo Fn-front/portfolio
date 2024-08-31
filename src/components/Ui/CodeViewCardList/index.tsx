@@ -1,4 +1,3 @@
-import {} from 'react'
 import Link from 'next/link'
 
 type Props = {
@@ -11,7 +10,7 @@ export const CodeViewCardList = async(props: Props) => {
 
   return (
     <div className='p_code_view_card_list u_mt16'>
-      <ul className='c_card_list'>
+      <ul className='c_card_list c_card_list_dark'>
         {
           editFilePaths.map((item: any, index) => {
             return (
@@ -20,12 +19,10 @@ export const CodeViewCardList = async(props: Props) => {
                 className='c_card_list_item'
               >
                 <div className='c_card_list_item_main'>
-                  <iframe
-                    src={`${item}?iframe=1`}
-                    className='c_iframe'
-                    scrolling='no'
-                    loading='lazy'
-                  />
+                  <div
+                    className='p_code_view_card_list_main_image'
+                    style={{ backgroundImage: 'url(/assets/img/'+item.slice(0, item.length - 1)+'.png)' }}
+                  ></div>
                 </div>
                 <div className='c_card_list_item_other'>
                   <p><Link href={ item }>{ item }</Link></p>

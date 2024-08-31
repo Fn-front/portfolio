@@ -22,5 +22,5 @@
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules", "prisma/seeder/seed.ts"]
+  "exclude": ["node_modules", "prisma/seeder/seed.ts", "playwright-reporter.ts"]
 }
