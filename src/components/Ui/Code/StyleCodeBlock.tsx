@@ -1,7 +1,7 @@
 'use client'
 
 import { useContext } from 'react'
-import { SystemMessageContext } from '@/hooks/System/Context/SystemMessage';
+import { SystemMessageContext } from '@/functions/hooks/System/Context/SystemMessage';
 import parse from 'html-react-parser';
 import Icon from '@/components/Ui/Icon'
 import highlight from 'highlight.js';

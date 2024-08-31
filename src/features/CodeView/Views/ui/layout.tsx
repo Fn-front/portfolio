@@ -1,4 +1,4 @@
-import { getFileDir } from '@/hooks/System/GetFileDir'
+import { getFileDir } from '@/functions/hooks/System/GetFileDir'
 import CodeViewCardList from '@/components/Ui/CodeViewCardList'
 
 export default async function ViewUiForm() {

@@ -1,11 +1,11 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { getList } from '@/hooks/api/todo/Get'
-import { addData } from '@/hooks/api/todo/Add'
-import { deleteData } from '@/hooks/api/todo/Delete'
-import { update } from '@/hooks/api/todo/Update'
-import { addList } from '@/hooks/api/todo/types'
+import { getList } from '@/functions/hooks/api/todo/Get'
+import { addData } from '@/functions/hooks/api/todo/Add'
+import { deleteData } from '@/functions/hooks/api/todo/Delete'
+import { update } from '@/functions/hooks/api/todo/Update'
+import { addList } from '@/functions/hooks/api/todo/types'
 import styles from './todo.module.scss'
 
 export default function MockTodo() {

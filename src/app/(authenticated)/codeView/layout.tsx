@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { SystemMessage } from '@/components/Ui/System/Message';
-import { SystemMessageContext } from '@/hooks/System/Context/SystemMessage';
+import { SystemMessageContext } from '@/functions/hooks/System/Context/SystemMessage';
 
 export default function Layout({
   children,
