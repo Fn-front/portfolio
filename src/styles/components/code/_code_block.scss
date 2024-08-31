@@ -11,5 +11,8 @@
     position: absolute;
     top: 8px;
     right: 10px;
+    .c_icon{
+      pointer-events: none;
+    }
   }
 }
