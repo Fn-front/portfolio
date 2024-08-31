@@ -1,5 +1,3 @@
-const path = require('path');
-const fs = require('fs');
 import { getFileDir } from '@/hooks/System/GetFileDir'
 import CodeViewCardList from '@/components/Ui/CodeViewCardList'
 
