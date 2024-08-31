@@ -22,11 +22,11 @@ export const CodeViewCardList = async(props: Props) => {
                 <div className='c_card_list_item_main'>
                   <div
                     className='p_code_view_card_list_main_image'
-                    style={{ backgroundImage: 'url(/assets/img/'+item.slice(0, item.length - 1)+'.png)' }}
+                    style={{ backgroundImage: 'url(/assets/img' + deleteAuthenticated(item.slice(0, item.length - 1)) + '.png)' }}
                   ></div>
                 </div>
                 <div className='c_card_list_item_other'>
-                  <p><Link href={ item }>{ item }</Link></p>
+                  <p><Link href={ deleteAuthenticated(item) }>{ deleteAuthenticated(item) }</Link></p>
                 </div>
               </li>
             )
