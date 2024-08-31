@@ -2,7 +2,7 @@
 
 import { useSelectedLayoutSegments } from "next/navigation"
 import Breadcrumbs from '@/components/Ui/Breadcrumbs'
-import { route } from '@/routes'
+import { route } from '@/functions/routes'
 
 const routes = route();
 
