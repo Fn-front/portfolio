@@ -44,6 +44,7 @@
     "react-hook-form": "^7.53.0",
     "recursive-readdir": "^2.2.3",
     "ts-node": "^10.9.2",
-    "typescript": "^5"
+    "typescript": "^5",
+    "zod": "^3.23.8"
   }
 }
