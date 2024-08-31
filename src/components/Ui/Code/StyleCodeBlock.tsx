@@ -8,7 +8,7 @@ import highlight from 'highlight.js';
 import 'highlight.js/styles/tokyo-night-dark.css';
 import scss from 'highlight.js/lib/languages/scss';
 import ContentCopyIcon from '../../Icons/Copy';
-import { handleCopyToClipboard } from '@/utils/CopyToClipboard';
+import { handleCopyToClipboard } from '@/utils/copyToClipboard';
 highlight.registerLanguage('scss', scss);
 
 export const StyleCodeBlock = (props: any) => {
