@@ -1,4 +1,4 @@
-import { getFileDir } from '@/functions/hooks/System/GetFileDir'
+import { getFileDir } from '@/functions/hooks/system/GetFileDir'
 import { viewsDir } from '@/functions/constants/paths'
 import CodeViewCardList from '../../CardList';
 
