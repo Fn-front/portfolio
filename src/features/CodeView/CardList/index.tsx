@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { deleteAuthenticated } from '@/utils/editFilePaths'
 
 type Props = {
   editFilePaths: unknown[]
