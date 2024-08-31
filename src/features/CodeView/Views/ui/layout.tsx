@@ -4,7 +4,7 @@ import CodeViewCardList from '@/components/Ui/CodeViewCardList'
 
 export default async function ViewUiForm() {
 
-  const filePaths = await getFileDir('./src/app/codeView/ui/layout')
+  const filePaths = await getFileDir('./src/app/(authenticated)/codeView/ui/layout/')
   const editFilePaths = Object.entries(filePaths).map(([num, path]) => (path))  
 
   return (
