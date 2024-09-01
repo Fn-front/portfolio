@@ -7,7 +7,14 @@ import { useForm } from 'react-hook-form';
 
 export default function Login() {
 
-  const { register, handleSubmit } = useForm()
+  const { 
+    register, 
+    handleSubmit, 
+    formState: {errors} 
+  } = useForm({
+    mode: 'onBlur',
+    criteriaMode: 'all',
+  })
 
   return (
     <>
@@ -16,8 +23,9 @@ export default function Login() {
         <AuthFormComponent mt="32">
           <InputText
             label="name"
+            error={errors.name}
             placeholder='user name'
-            {...register('name')}
+            {...register('name', { required: true })}
           />
         </AuthFormComponent>
       </LayoutSign>
