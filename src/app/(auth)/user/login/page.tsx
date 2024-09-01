@@ -40,6 +40,25 @@ export default function Login() {
             )}
           />
         </AuthFormComponent>
+        <AuthFormComponent mt="32">
+          <InputText
+            label="password"
+            error={errors.pass}
+            placeholder='user password'
+            {...register('pass', 
+              {
+                required: {
+                  value: true,
+                  message: 'name' + errorMessageInputText,
+                },
+                minLength: {
+                  value: 8,
+                  message: '8文字以上入力してください。',
+                },
+              }
+            )}
+          />
+        </AuthFormComponent>
       </LayoutSign>
     </>
   );
