@@ -1,4 +1,4 @@
-import Radio from '@/components/Ui/CodeView/Form/Radio'
+import Radio from '@/components/CodeView/UI/Form/Radio';
 import CodeView from '@/components/Layout/CodeView'
 
 export default function Page() {
