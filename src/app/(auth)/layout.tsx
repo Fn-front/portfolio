@@ -7,7 +7,7 @@ export default function RootLayout({
   return (
     <>
       <main className='l_main'>
-        <div className='l_container_other'>
+        <div className='l_container'>
           {children}
         </div>
       </main>
