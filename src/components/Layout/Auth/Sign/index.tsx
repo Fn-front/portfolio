@@ -1,4 +1,4 @@
-export const AuthFormSign = ({
+export const AuthSign = ({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -11,4 +11,4 @@ export const AuthFormSign = ({
   )
 }
 
-export default AuthFormSign
+export default AuthSign
