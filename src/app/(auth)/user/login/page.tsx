@@ -3,6 +3,7 @@
 import LayoutSign from '@/components/Layout/Auth/Sign'
 import InputText from '@/components/Ui/Form/InputText'
 import AuthFormComponent from '@/components/Layout/Auth/Form'
+import { errorMessageInputText } from '@/functions/constants/schema'
 import { useForm } from 'react-hook-form';
 
 export default function Login() {
@@ -25,7 +26,18 @@ export default function Login() {
             label="name"
             error={errors.name}
             placeholder='user name'
-            {...register('name', { required: true })}
+            {...register('name', 
+              {
+                required: {
+                  value: true,
+                  message: 'name' + errorMessageInputText,
+                },
+                minLength: {
+                  value: 8,
+                  message: '8文字以上入力してください。',
+                },
+              }
+            )}
           />
         </AuthFormComponent>
       </LayoutSign>
