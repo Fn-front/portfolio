@@ -1,9 +1,9 @@
 'use client'
 
 import { useRef, useEffect, useState } from 'react'
-import CodeBlock from '@/components/Ui/Code/CodeBlock'
 import CodeTwoToneIcon from '@mui/icons-material/CodeTwoTone';
 import Icon from '@/components/Ui/Icon'
+import CodeBlock from '@/components/Ui/CodeView/Code/CodeBlock';
 
 export const ComponentWrapper = ({
   children,
