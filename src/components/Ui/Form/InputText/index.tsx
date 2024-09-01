@@ -1,14 +1,15 @@
 import { forwardRef, ComponentPropsWithoutRef } from 'react'
 
-type label = {
+type props = {
   label: string
+  error: any | undefined
 }
 
-type Props = ComponentPropsWithoutRef<'input'> & label;
+type Props = ComponentPropsWithoutRef<'input'> & props;
 
 const InputText = forwardRef<HTMLInputElement, Props>(
-  ({label, ...register}, ref) => {
-
+  ({label, error, ...register}, ref) => {  
+    
   return (
     <>
       <label htmlFor={label} className='c_label'>{ label }</label>
@@ -18,6 +19,9 @@ const InputText = forwardRef<HTMLInputElement, Props>(
         { ...register }
         ref={ref}
       />
+      { error && 
+        <p className='c_text_error u_mt8'>{ error.message }</p>
+      }
     </>
   );
 });
