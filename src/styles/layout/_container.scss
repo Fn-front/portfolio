@@ -4,3 +4,10 @@
   border-radius: 8px;
   background-color: rgb(var(--color-black));
 }
+
+.l_container_other {
+  min-height: calc(100vh - 16px);
+  padding: 16px;
+  border-radius: 8px;
+  background-color: rgb(var(--color-black));
+}
