@@ -36,6 +36,7 @@
 @use './layout/_sidebar';
 
 // project
+@use './project/auth/form_component';
 @use './project/codeViewCardList/codeViewCardList';
 @use './project/codeBlock/codeBlock';
 @use './project/useCase/startingStyle/starting_style';
