@@ -39,6 +39,7 @@
     "eslint-config-next": "14.2.3",
     "highlight.js": "^11.9.0",
     "html-react-parser": "^5.1.10",
+    "next-auth": "^4.24.7",
     "prettier": "^3.3.3",
     "prisma": "^5.18.0",
     "react-hook-form": "^7.53.0",
