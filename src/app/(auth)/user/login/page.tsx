@@ -3,6 +3,7 @@
 import LayoutSign from '@/components/Layout/Auth/Sign'
 import InputText from '@/components/Ui/Form/InputText'
 import AuthFormComponent from '@/components/Layout/Auth/Form'
+import HeadLine from '@/components/Ui/HeadLine'
 import { errorMessageInputText } from '@/functions/constants/schema'
 import { useForm } from 'react-hook-form';
 
@@ -20,7 +21,7 @@ export default function Login() {
   return (
     <>
       <LayoutSign>
-        <h2 className='c_h2'>ログイン</h2>
+        <HeadLine Component='h2' label="ログイン" />
         <AuthFormComponent mt="32">
           <InputText
             label="name"
