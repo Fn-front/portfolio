@@ -11,10 +11,10 @@ const InputText = forwardRef<HTMLInputElement, Props>(
 
   return (
     <>
-      <label htmlFor={label}>{ label }</label>
+      <label htmlFor={label} className='c_label'>{ label }</label>
       <input
         type="text"
-        className="c_input_text"
+        className="c_input_text u_mt8"
         { ...register }
         ref={ref}
       />
