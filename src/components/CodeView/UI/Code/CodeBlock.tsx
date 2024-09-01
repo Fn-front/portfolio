@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
-import Style from '@/components/CodeView/Ui/Code/StyleCodeBlock'
-import Html from '@/components/CodeView/Ui/Code/HtmlCodeBlock'
+import Style from './StyleCodeBlock'
+import Html from './HtmlCodeBlock'
 
 import SwitchRightIcon from '@mui/icons-material/SwitchRight';
 import SwitchLeftIcon from '@mui/icons-material/SwitchLeft';
