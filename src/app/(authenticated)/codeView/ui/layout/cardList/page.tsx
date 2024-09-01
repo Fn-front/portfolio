@@ -1,4 +1,4 @@
-import CardList from '@/components/Ui/CodeView/Layout/CardList'
+import CardList from '@/components/CodeView/Layout/CardList';
 import CodeView from '@/components/Layout/CodeView'
 
 export default function Page() {

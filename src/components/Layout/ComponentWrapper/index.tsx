@@ -3,7 +3,7 @@
 import { useRef, useEffect, useState } from 'react'
 import CodeTwoToneIcon from '@mui/icons-material/CodeTwoTone';
 import Icon from '@/components/Ui/Icon'
-import CodeBlock from '@/components/Ui/CodeView/Code/CodeBlock';
+import CodeBlock from '@/components/CodeView/UI/Code/CodeBlock';
 
 export const ComponentWrapper = ({
   children,
