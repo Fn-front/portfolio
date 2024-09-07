@@ -50,7 +50,7 @@ export default function Login() {
               {
                 required: {
                   value: true,
-                  message: 'name' + errorMessageInputText,
+                  message: 'password' + errorMessageInputText,
                 },
                 minLength: {
                   value: 8,
