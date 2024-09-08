@@ -1,3 +1,5 @@
+'use client'
+
 import InputText from '@/components/Ui/Form/InputText'
 import AuthFormComponent from '@/components/Layout/Auth/Form'
 import { errorMessageInputText } from '@/functions/constants/schema'
