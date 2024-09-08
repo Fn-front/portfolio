@@ -1,0 +1,16 @@
+.c_button{
+  padding: calc(var(--base-px)/2*1px) calc(var(--base-px)*1px);
+  border: 1px solid rgb(var(--color-white));
+  border-radius: 4px;
+  text-align: center;
+
+  &_small{
+    width: 100px;
+  }
+  &_medium{
+    width: 150px;
+  }
+  &_large{
+    width: 200px;
+  }
+}
