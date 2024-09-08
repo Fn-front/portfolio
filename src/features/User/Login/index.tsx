@@ -15,30 +15,11 @@ export const L = () => {
     mode: 'onBlur',
     criteriaMode: 'all',
   })
-  
+
   return (
     <>
       <LayoutSign>
         <HeadLine Component='h2' label="ログイン" />
-        <AuthFormComponent mt="32">
-          <InputText
-            label="name"
-            error={errors.name}
-            placeholder='user name'
-            {...register('name', 
-              {
-                required: {
-                  value: true,
-                  message: 'name' + errorMessageInputText,
-                },
-                minLength: {
-                  value: 8,
-                  message: '8文字以上入力してください。',
-                },
-              }
-            )}
-          />
-        </AuthFormComponent>
         <AuthFormComponent mt="32">
           <InputText
             label="password"
