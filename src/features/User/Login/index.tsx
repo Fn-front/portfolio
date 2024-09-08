@@ -5,7 +5,7 @@ import HeadLine from '@/components/Ui/HeadLine'
 import InputText from '@/components/Ui/Form/InputText'
 import AuthFormComponent from '@/components/Layout/Auth/Form'
 import { errorMessageInputText, errorMessageMaxLength } from '@/functions/constants/schema'
-
+import Button from '@/components/Ui/Button'
 import { useForm } from 'react-hook-form';
 
 export const UserLogin = () => {
@@ -66,7 +66,12 @@ export const UserLogin = () => {
               )}
             />
           </AuthFormComponent>
-          <button type='submit'>送信</button>
+          <Button
+            type='submit'
+            label='送信'
+            mt='16'
+            position='center'
+          />
         </form>
       </LayoutSign>
     </>
