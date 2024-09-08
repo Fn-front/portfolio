@@ -3,7 +3,7 @@ import HeadLine from '@/components/Ui/HeadLine'
 import UserName from './components/UserName'
 import UserPassword from './components/UserPassword'
 
-export const Login = () => {
+export const UserLogin = () => {
 
   return (
     <>
@@ -15,3 +15,5 @@ export const Login = () => {
     </>
   )
 }
+
+export default UserLogin
