@@ -2,7 +2,7 @@
 
 import InputText from '@/components/Ui/Form/InputText'
 import AuthFormComponent from '@/components/Layout/Auth/Form'
-import { errorMessageInputText } from '@/functions/constants/schema'
+import { errorMessageInputText, errorMessageMaxLength } from '@/functions/constants/schema'
 import { useForm } from 'react-hook-form';
 
 export const UserName = () => {
@@ -31,7 +31,7 @@ export const UserName = () => {
               },
               minLength: {
                 value: 8,
-                message: '8文字以上入力してください。',
+                message: '8' + errorMessageMaxLength,
               },
             }
           )}
