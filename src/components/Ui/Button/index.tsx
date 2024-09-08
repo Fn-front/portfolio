@@ -1,3 +1,5 @@
+import { Margin } from "@/functions/types/margin"
+
 type Color = 'blue' | 'green'
 
 type Type = 'button' | 'submit'
@@ -9,17 +11,18 @@ type Props = {
   label: string
   color?: Color
   size?: Size
+  mt?: Margin
 }
 
 export const Button = (props: Props) => {
 
-  const { type, label, color, size } = props
+  const { type, label, color, size, mt } = props
 
   return (
     <>
       <button
         type={ type ?? 'button' }
-        className={`c_button c_button_${ color ? color : 'normal'} c_button_${ size ? size : 'medium'}`}
+        className={`c_button c_button_${ color ? color : 'normal'} c_button_${ size ? size : 'medium'} ${ mt ? 'u_mt'+mt : '' }`}
       >
         { label }
       </button>
