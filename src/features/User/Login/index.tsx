@@ -69,7 +69,7 @@ export const UserLogin = () => {
           <Button
             type='submit'
             label='送信'
-            mt='16'
+            mt='32'
             position='center'
           />
         </form>
