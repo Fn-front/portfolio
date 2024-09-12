@@ -11,11 +11,16 @@ import { handleCopyToClipboard } from '@/utils/copyToClipboard'
 import ContentCopyIcon from '@/components/Icons/Copy'
 highlight.registerLanguage('scss', scss)
 
-export const StyleCodeBlock = (props: any) => {
+type Props = {
+  content: string
+}
+
+export const StyleCodeBlock = (props: Props) => {
   const { setMessage, setType, setVisible } = useContext(SystemMessageContext)
   const highlightedCode: string = highlight.highlight(props.content, { language: 'scss' }).value
 
-  const handleCopyCodeBlock = (e: any) => {
+  const handleCopyCodeBlock = (e: EventTarget) => {
+    /* eslint-disable */
     const copyResult = handleCopyToClipboard(e.parentNode.querySelector('.scss'))
 
     // システムメッセージ格納
@@ -31,7 +36,7 @@ export const StyleCodeBlock = (props: any) => {
     <>
       <div
         className='c_code_block'
-        // onMouseLeave={(e) => handleFocusCodeBlock(e)}
+      // onMouseLeave={(e) => handleFocusCodeBlock(e)}
       >
         <pre>
           <code className='scss'>{parse(highlightedCode)}</code>
