@@ -1,8 +1,7 @@
-import Default from './CheckBoxDefault';
-import CheckBoxList from './CheckBoxList';
-import CheckBoxListErrorText from './CheckBoxListErrorText';
+import Default from './CheckBoxDefault'
+import CheckBoxList from './CheckBoxList'
+import CheckBoxListErrorText from './CheckBoxListErrorText'
 const CheckBox = () => {
-  
   return (
     <>
       <Default />
@@ -12,4 +11,4 @@ const CheckBox = () => {
   )
 }
 
-export default CheckBox;
+export default CheckBox
