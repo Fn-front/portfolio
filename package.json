@@ -6,14 +6,14 @@
     "dev": "next dev -p 2937",
     "build": "npx prisma generate && next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "next lint -f stylish",
     "e2e": "cross-env APP_ENV=\"./src/tests\" npx playwright test && npx playwright show-report",
     "e2e:actions": "cross-env APP_ENV=\"./src/tests\" npx playwright test --reporter='./playwright-reporter.ts'",
     "snapshot": "cross-env APP_ENV=\"./src/snapshot\" npx playwright test",
     "prisma:migrate": "npx prisma migrate dev --name init",
     "prisma:seed": "npx prisma db seed",
     "format": "prettier --write './src/**/*.{js,ts,tsx,json}'",
-    "markuplint": "markuplint \"./src/**/*.{jsx,tsx}\""
+    "markuplint": "markuplint \"./src/**/*.tsx\""
   },
   "prisma": {
     "seed": "ts-node --compilerOptions {\"module\":\"CommonJS\"} prisma/seeder/seed.ts"
