@@ -39,6 +39,7 @@
     "cross-env": "^7.0.3",
     "eslint": "^8",
     "eslint-config-next": "14.2.3",
+    "eslint-config-prettier": "^9.1.0",
     "highlight.js": "^11.9.0",
     "html-react-parser": "^5.1.10",
     "next-auth": "^4.24.7",
