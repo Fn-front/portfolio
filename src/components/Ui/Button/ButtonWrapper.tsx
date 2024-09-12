@@ -4,6 +4,7 @@ type Props = {
   type: Type
 }
 
+/* eslint-disable */
 export const ButtonWrapper = (props: Props) => {
   return <></>
 }
