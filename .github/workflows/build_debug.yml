@@ -17,6 +17,13 @@ jobs:
       - name: checkout
         uses: actions/checkout@v4
 
+      - uses: reviewdog/action-eslint@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          reporter: github-pr-review
+          eslint_flags: 'src/**/*.{ts,tsx}'
+          fail_on_error: true
+
       - name: setup-node
         uses: actions/setup-node@v4
         with:
@@ -37,13 +44,6 @@ jobs:
       - name: npm-install
         if: ${{ steps.node_modules_cache_id.outputs.cache-hit != 'true' }}
         run: npm i
-
-      - uses: reviewdog/action-eslint@v1
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          reporter: github-pr-review
-          eslint_flags: 'src/**/*.{ts,tsx}'
-          fail_on_error: true
 
       - name: app-build
         run: npm run build
