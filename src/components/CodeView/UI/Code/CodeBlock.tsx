@@ -6,7 +6,13 @@ import SwitchRightIcon from '@mui/icons-material/SwitchRight'
 import SwitchLeftIcon from '@mui/icons-material/SwitchLeft'
 import Icon from '@/components/Ui/Icon'
 
-export const CodeBlock = (props: any) => {
+type Props = {
+  styleCode: string
+  htmlCode: string
+  viewStatus: boolean
+}
+
+export const CodeBlock = (props: Props) => {
   const { styleCode, htmlCode, viewStatus } = props
   const [viewCodeBlock, setViewCodeBlock] = useState<boolean>(viewStatus)
   const [viewHtml, setViewHtml] = useState<boolean>(true)
