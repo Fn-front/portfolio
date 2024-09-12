@@ -41,9 +41,9 @@ jobs:
       - uses: reviewdog/action-setup@v1
         with:
           reviewdog_version: latest
+      - name: reviewdog-for-eslint
         env:
           REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: reviewdog-for-eslint
         run: npm run lint | reviewdog -f=eslint -reporter=github-pr-review
 
       - name: app-build
