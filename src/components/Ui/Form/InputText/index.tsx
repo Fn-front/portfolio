@@ -1,8 +1,12 @@
 import { forwardRef, ComponentPropsWithoutRef } from 'react'
 
+type Error = {
+  message: string | React.ReactElement
+}
+
 type props = {
   label: string
-  error: any | undefined
+  error: Error | undefined
 }
 
 type Props = ComponentPropsWithoutRef<'input'> & props
