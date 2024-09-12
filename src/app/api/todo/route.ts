@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server'
 import prisma from '@/lib/Prisma'
 
 // データベースからデータを取得する
-export const GET = async (req: Request) => {
+export const GET = async () => {
   try {
     // await connect();
     const data = await prisma.todo.findMany({
@@ -12,7 +12,7 @@ export const GET = async (req: Request) => {
     })
 
     return NextResponse.json({ data }, { status: 200 })
-  } catch (error) {
+  } catch {
     return NextResponse.json({ message: 'Error' }, { status: 500 })
   } finally {
     await prisma.$disconnect()
@@ -20,7 +20,7 @@ export const GET = async (req: Request) => {
 }
 
 // データベースにデータを追加する
-export const POST = async (req: Request, res: NextResponse) => {
+export const POST = async (req: Request) => {
   const { id, title, date, done } = await req.json()
   try {
     await prisma.todo.create({
@@ -33,7 +33,7 @@ export const POST = async (req: Request, res: NextResponse) => {
     })
 
     return NextResponse.json({ message: '追加が完了しました' }, { status: 200 })
-  } catch (error) {
+  } catch {
     return NextResponse.json({ message: '追加に失敗しました' }, { status: 500 })
   } finally {
     await prisma.$disconnect()
@@ -41,7 +41,7 @@ export const POST = async (req: Request, res: NextResponse) => {
 }
 
 // 選択したデータをデータベースから削除する
-export const DELETE = async (req: Request, res: NextResponse) => {
+export const DELETE = async (req: Request) => {
   const { ids } = await req.json()
 
   try {
@@ -54,7 +54,7 @@ export const DELETE = async (req: Request, res: NextResponse) => {
     })
 
     return NextResponse.json({ message: '削除が完了しました' }, { status: 200 })
-  } catch (error) {
+  } catch {
     return NextResponse.json({ message: '削除に失敗しました' }, { status: 500 })
   } finally {
     await prisma.$disconnect()
@@ -62,7 +62,7 @@ export const DELETE = async (req: Request, res: NextResponse) => {
 }
 
 // データベースの情報を変更する
-export const PUT = async (req: Request, res: NextResponse) => {
+export const PUT = async (req: Request) => {
   const { id, title, date, done } = await req.json()
 
   try {
@@ -79,7 +79,7 @@ export const PUT = async (req: Request, res: NextResponse) => {
     })
 
     return NextResponse.json({ message: '変更が完了しました' }, { status: 200 })
-  } catch (error) {
+  } catch {
     return NextResponse.json({ message: '変更に失敗しました' }, { status: 500 })
   } finally {
     await prisma.$disconnect()
