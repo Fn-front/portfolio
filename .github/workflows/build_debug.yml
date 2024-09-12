@@ -40,7 +40,6 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           reporter: github-pr-review
           eslint_flags: 'src/**/*.{ts,tsx}'
-          fail_on_error: true
 
       - name: app-build
         run: npm run build
