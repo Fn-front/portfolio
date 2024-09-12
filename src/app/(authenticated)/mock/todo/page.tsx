@@ -8,6 +8,13 @@ import { update } from '@/functions/hooks/api/todo/Update'
 import { addList } from '@/functions/hooks/api/todo/types'
 import styles from './todo.module.scss'
 
+type TodoData = {
+  id: number
+  title: string
+  date: string
+  done: boolean
+}
+
 export default function MockTodo() {
   const [dataList, setDataList] = useState<Array<addList>>([])
   const [inputValue, setInputValue] = useState<string>('')
@@ -17,7 +24,7 @@ export default function MockTodo() {
   // データ追加のAPIは叩くが、クライアント側ではページ読み込み時の取得データの制御のみ行う
   // データ追加した場合は、リストの再取得を行わない
   const handleAddData = async () => {
-    const createData = {
+    const createData: TodoData = {
       id: dataList[dataList.length - 1].id + 1,
       title: inputValue,
       date: new Date().toISOString(),
@@ -53,7 +60,12 @@ export default function MockTodo() {
 
   // チェックボックスにcheckが入ったIDを配列に格納
   const handleCheckBox = (check: boolean, id: number) => {
-    check ? setCheckBox([...checkBox, id]) : setCheckBox(checkBox.filter((a, b) => a != id))
+    if (check) {
+      setCheckBox([...checkBox, id])
+    }
+    else {
+      setCheckBox(checkBox.filter((a) => a != id))
+    }
   }
 
   const handleDone = async (id: number, title: string, date: string, done: boolean) => {
@@ -82,7 +94,7 @@ export default function MockTodo() {
   }
 
   useEffect(() => {
-    ;(async () => {
+    ; (async () => {
       const data = await getList()
       setDataList(data.data)
     })()
@@ -94,8 +106,6 @@ export default function MockTodo() {
       <div className='u_mt32'>
         <input
           type='text'
-          name=''
-          id=''
           placeholder='タイトル'
           onChange={(e) => setInputValue(e.target.value)}
           value={inputValue}
@@ -110,7 +120,7 @@ export default function MockTodo() {
       </div>
       <p className='u_mt16'>{message}</p>
       <ul className={`${styles.m_todo_list} u_mt16`}>
-        {dataList.map((todo: any) => (
+        {dataList.map((todo: TodoData) => (
           <li key={todo.id} className={styles.m_todo_list_item}>
             <div>
               <input
