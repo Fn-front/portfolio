@@ -1,7 +1,7 @@
 export const handleCopyToClipboard = (element: HTMLElement) => {
-  let ranges = []
-  let selection = window.getSelection()
-  let range = document.createRange()
+  const ranges = []
+  const selection = window.getSelection()
+  const range = document.createRange()
   let result = false
 
   for (let i = 0; i < selection!.rangeCount; i += 1) {
