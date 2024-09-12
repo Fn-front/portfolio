@@ -42,9 +42,9 @@ jobs:
         with:
           reviewdog_version: latest
       - name: reviewdog-for-eslint
+        run: npm run lint | reviewdog -f=eslint -reporter=github-pr-review -fail-on-error=true
         env:
           REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npm run lint | reviewdog -f=eslint -reporter=github-pr-review -filter-mode=diff_context -fail-on-error=true
 
       - name: app-build
         run: npm run build
