@@ -4,15 +4,14 @@ import ErrorBox from './InputTextErrorBox'
 import ErrorText from './InputTextErrorText'
 
 const InputText = () => {
-  
   return (
     <>
       <Default />
       <ErrorText />
       <ErrorBg />
-      <ErrorBox />  
+      <ErrorBox />
     </>
   )
 }
 
-export default InputText;
+export default InputText
