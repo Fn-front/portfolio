@@ -1,14 +1,13 @@
 import BreadcrumbsList from '@/features/BreadcrumbsList'
-import Sidebar from '@/components/Ui/SideBar';
-import Header from '@/components/Ui/Header';
-import Footer from '@/components/Ui/Footer';
+import Sidebar from '@/components/Ui/SideBar'
+import Header from '@/components/Ui/Header'
+import Footer from '@/components/Ui/Footer'
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
-
   return (
     <>
       <Header />
@@ -23,5 +22,5 @@ export default function RootLayout({
       </div>
       <Footer />
     </>
-  );
+  )
 }

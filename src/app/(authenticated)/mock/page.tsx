@@ -9,8 +9,8 @@ export default function mock() {
           <div className='c_card_list_item_main'>
             <div className='c_next_image_wrapper'>
               <Image
-                src="/assets/img/1920x1080.png"
-                alt="Sample Image"
+                src='/assets/img/1920x1080.png'
+                alt='Sample Image'
                 className='c_next_image'
                 sizes='100%'
                 fill
@@ -22,7 +22,9 @@ export default function mock() {
             <p>todoリスト</p>
             <p>Supabase, PostgreSQL</p>
             <p>API実装(Get, Delete, Post, Put)</p>
-            <p><Link href='/mock/todo'>詳しく見る</Link></p>
+            <p>
+              <Link href='/mock/todo'>詳しく見る</Link>
+            </p>
           </div>
         </li>
       </ul>

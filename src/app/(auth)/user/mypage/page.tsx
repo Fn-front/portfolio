@@ -3,5 +3,5 @@ export default function MyPage() {
     <>
       <p>マイページ</p>
     </>
-  );
+  )
 }

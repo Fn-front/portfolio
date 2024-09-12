@@ -15,5 +15,5 @@ export default function codeView() {
       </h1>
       <UseCaseStartingStyle />
     </>
-  );
+  )
 }
