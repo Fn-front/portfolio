@@ -1,4 +1,4 @@
-import Icon from '@mui/icons-material/Error';
+import Icon from '@mui/icons-material/Error'
 
 type Props = {
   color: string
@@ -10,7 +10,7 @@ export const ErrorIcon = (props: Props) => {
     <Icon
       sx={{
         color: props.color ? props.color : 'inherit',
-        marginTop: props.marginTop ? props.marginTop : 0
+        marginTop: props.marginTop ? props.marginTop : 0,
       }}
     />
   )
