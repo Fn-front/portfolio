@@ -5,9 +5,7 @@ type Props = {
 }
 
 export const ButtonWrapper = (props: Props) => {
-  return (
-    <></>
-  )
+  return <></>
 }
 
 export default ButtonWrapper

@@ -1,4 +1,4 @@
-import { Margin } from "@/functions/types/margin"
+import { Margin } from '@/functions/types/margin'
 
 type Color = 'blue' | 'green'
 
@@ -18,7 +18,6 @@ type Props = {
 }
 
 export const Button = (props: Props) => {
-
   const { type, label, color, size, mt, position } = props
 
   return (

@@ -1,5 +1,4 @@
 const Sidebar = () => {
-
   return (
     <aside className={`l_sidebar`}>
       <p>sidebar</p>
@@ -7,4 +6,4 @@ const Sidebar = () => {
   )
 }
 
-export default Sidebar;
+export default Sidebar
