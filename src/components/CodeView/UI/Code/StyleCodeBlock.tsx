@@ -19,8 +19,8 @@ export const StyleCodeBlock = (props: Props) => {
   const { setMessage, setType, setVisible } = useContext(SystemMessageContext)
   const highlightedCode: string = highlight.highlight(props.content, { language: 'scss' }).value
 
-  const handleCopyCodeBlock = (e: EventTarget) => {
-    /* eslint-disable */
+  /* eslint-disable */
+  const handleCopyCodeBlock = (e: any) => {
     const copyResult = handleCopyToClipboard(e.parentNode.querySelector('.scss'))
 
     // システムメッセージ格納
