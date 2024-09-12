@@ -1,12 +1,11 @@
 import { forwardRef, ComponentPropsWithoutRef } from 'react'
-
-type Error = {
-  message: string | React.ReactElement
-}
+import {
+  type FieldError,
+} from 'react-hook-form'
 
 type props = {
   label: string
-  error: Error | undefined
+  error: FieldError | undefined
 }
 
 type Props = ComponentPropsWithoutRef<'input'> & props

@@ -13,7 +13,7 @@ export const UserLogin = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({
+  } = useForm<{ name: string, password: string }>({
     mode: 'onBlur',
     criteriaMode: 'all',
   })
@@ -47,9 +47,9 @@ export const UserLogin = () => {
           <AuthFormComponent mt='32'>
             <InputText
               label='password'
-              error={errors.pass}
+              error={errors.password}
               placeholder='user password'
-              {...register('pass', {
+              {...register('password', {
                 required: {
                   value: true,
                   message: 'password' + errorMessageInputText,
