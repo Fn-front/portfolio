@@ -1,0 +1,73 @@
+{
+  "parser": {
+    ".[jt]sx$": "@markuplint/jsx-parser"
+  },
+  "specs": {
+    ".[jt]sx$": "@markuplint/react-spec"
+  },
+  "rules": {
+    "attr-duplication": true,
+    "attr-value-quotes": "single",
+    "case-sensitive-attr-name": "lower",
+    "case-sensitive-tag-name": "lower",
+    "character-reference": true,
+    "class-naming": "/.+/",
+    "deprecated-attr": true,
+    "deprecated-element": true,
+    "disallowed-element": [
+      "hgroup",
+      "strong"
+    ],
+    "doctype": "always",
+    "end-tag": false,
+    "heading-levels": true,
+    "id-duplication": true,
+    "ineffective-attr": true,
+    "invalid-attr": true,
+    "no-boolean-attr-value": true,
+    "no-default-value": false,
+    "no-duplicate-dt": true,
+    "no-empty-palpable-content": true,
+    "no-hard-code-id": false,
+    "no-orphaned-end-tag": true,
+    "no-use-event-handler-attr": false,
+    "permitted-contents": {
+      "options": {
+        "ignoreHasMutableChildren": true,
+        "evaluateConditionalChildNodes": false
+      }
+    },
+    "placeholder-label-option": false,
+    "require-datetime": true,
+    "required-attr": {
+      "rules": {
+        "required-attr": [
+          "alt"
+        ]
+      }
+    },
+    "required-element": {
+      "required-element": {
+        "options": {
+          "ignoreHasMutableContents": true
+        }
+      }
+    }
+  },
+  "childNodeRules": [
+    {
+      "regexSelector": {
+        "attrName": "class",
+        "attrValue": "/^(?<BlockName>[a-z0-9]+)(?:_[a-z][a-z0-9-]+)?$/"
+      },
+      "rules": {
+        "class-naming": {
+          "value": [
+            "/^{{BlockName}}_[a-z][a-z0-9-]+$/",
+            "/^([a-z0-9]+)$/"
+          ]
+        }
+      }
+    }
+  ]
+}
