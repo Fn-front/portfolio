@@ -10,10 +10,10 @@ import { useForm } from 'react-hook-form';
 
 export const UserLogin = () => {
 
-  const { 
-    register, 
-    handleSubmit, 
-    formState: {errors} 
+  const {
+    register,
+    handleSubmit,
+    formState: { errors }
   } = useForm({
     mode: 'onBlur',
     criteriaMode: 'all',
@@ -33,7 +33,7 @@ export const UserLogin = () => {
               label="name"
               error={errors.name}
               placeholder='user name'
-              {...register('name', 
+              {...register('name',
                 {
                   required: {
                     value: true,
@@ -52,7 +52,7 @@ export const UserLogin = () => {
               label="password"
               error={errors.pass}
               placeholder='user password'
-              {...register('pass', 
+              {...register('pass',
                 {
                   required: {
                     value: true,
