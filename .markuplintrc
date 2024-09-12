@@ -15,7 +15,7 @@
     "case-sensitive-attr-name": false,
     "case-sensitive-tag-name": "lower",
     "character-reference": true,
-    "class-naming": "/.+/",
+    "class-naming": "/^.*[a-z]_[a-z0-9]+$/",
     "deprecated-attr": true,
     "deprecated-element": true,
     "disallowed-element": [
@@ -55,22 +55,6 @@
       "selector": "img",
       "rules": {
         "required-attr": "alt"
-      }
-    }
-  ],
-  "childNodeRules": [
-    {
-      "regexSelector": {
-        "attrName": "class",
-        "attrValue": "/^(?<BlockName>[a-z0-9]+)(?:_[a-z][a-z0-9-]+)?$/"
-      },
-      "rules": {
-        "class-naming": {
-          "value": [
-            "/^{{BlockName}}_[a-z][a-z0-9-]+$/",
-            "/^([a-z0-9]+)$/"
-          ]
-        }
       }
     }
   ]
