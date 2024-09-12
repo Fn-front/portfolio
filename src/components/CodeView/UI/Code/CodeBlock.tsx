@@ -2,13 +2,12 @@ import { useState, useEffect } from 'react'
 import Style from './StyleCodeBlock'
 import Html from './HtmlCodeBlock'
 
-import SwitchRightIcon from '@mui/icons-material/SwitchRight';
-import SwitchLeftIcon from '@mui/icons-material/SwitchLeft';
+import SwitchRightIcon from '@mui/icons-material/SwitchRight'
+import SwitchLeftIcon from '@mui/icons-material/SwitchLeft'
 import Icon from '@/components/Ui/Icon'
 
 export const CodeBlock = (props: any) => {
-
-  const {styleCode, htmlCode, viewStatus} = props
+  const { styleCode, htmlCode, viewStatus } = props
   const [viewCodeBlock, setViewCodeBlock] = useState<boolean>(viewStatus)
   const [viewHtml, setViewHtml] = useState<boolean>(true)
   const [viewStyle, setViewStyle] = useState<boolean>(true)
@@ -18,23 +17,18 @@ export const CodeBlock = (props: any) => {
   }, [viewStatus])
   return (
     <>
-      { viewCodeBlock && (
-
-        <div className="p_code_block u_mt16">
+      {viewCodeBlock && (
+        <div className='p_code_block u_mt16'>
           <ul className='l_list_icon_switch'>
             <li className='l_list_icon_switch_item'>
-              <div
-                onClick={() => viewStyle ? setViewHtml((prev) => !prev) : false}
-              >
+              <div onClick={() => (viewStyle ? setViewHtml((prev) => !prev) : false)}>
                 <Icon>
                   <SwitchRightIcon fontSize='large' />
                 </Icon>
               </div>
             </li>
             <li className='l_list_icon_switch_item'>
-              <div
-                onClick={() => viewHtml ? setViewStyle((prev) => !prev) : false}
-              >
+              <div onClick={() => (viewHtml ? setViewStyle((prev) => !prev) : false)}>
                 <Icon>
                   <SwitchLeftIcon fontSize='large' />
                 </Icon>
@@ -42,12 +36,11 @@ export const CodeBlock = (props: any) => {
             </li>
           </ul>
           <div className='p_code_block_list'>
-            { viewHtml && <Html element={htmlCode}/>}
-            { viewStyle && <Style content={styleCode} />}
+            {viewHtml && <Html element={htmlCode} />}
+            {viewStyle && <Style content={styleCode} />}
           </div>
         </div>
-        
-      ) }
+      )}
     </>
   )
 }
