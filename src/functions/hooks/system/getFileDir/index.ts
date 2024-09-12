@@ -1,3 +1,4 @@
+/* eslint-disable */
 // @ts-ignore
 import recursiveReaddir from 'recursive-readdir'
 
