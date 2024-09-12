@@ -17,12 +17,12 @@ jobs:
       - name: checkout
         uses: actions/checkout@v4
 
-      - uses: reviewdog/action-eslint@v1
+      - uses: reviewdog/action-setup@v1
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          reporter: github-pr-review
-          eslint_flags: 'src/**/*.{ts,tsx}'
-          fail_on_error: true
+          reviewdog_version: latest
+
+      - name: reviewdog-for-eslint
+        run: npm run lint | reviewdog -f=eslint -reporter=github-pr-review -filter-mode=diff_context -fail-on-error=true
 
       - name: setup-node
         uses: actions/setup-node@v4
