@@ -6,7 +6,7 @@
     "dev": "next dev -p 2937",
     "build": "npx prisma generate && next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint './src/**/*.{js,ts,tsx,json}'",
     "e2e": "cross-env APP_ENV=\"./src/tests\" npx playwright test && npx playwright show-report",
     "e2e:actions": "cross-env APP_ENV=\"./src/tests\" npx playwright test --reporter='./playwright-reporter.ts'",
     "snapshot": "cross-env APP_ENV=\"./src/snapshot\" npx playwright test",
