@@ -45,5 +45,8 @@ jobs:
         if: ${{ steps.node_modules_cache_id.outputs.cache-hit != 'true' }}
         run: npm i
 
+      - name: markuplint
+        run: npm run markuplint
+
       - name: app-build
         run: npm run build
