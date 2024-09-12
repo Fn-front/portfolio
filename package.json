@@ -43,6 +43,7 @@
     "eslint-config-prettier": "^9.1.0",
     "highlight.js": "^11.9.0",
     "html-react-parser": "^5.1.10",
+    "markuplint": "^4.9.3",
     "next-auth": "^4.24.7",
     "prettier": "^3.3.3",
     "prisma": "^5.18.0",
