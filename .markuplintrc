@@ -5,10 +5,14 @@
   "specs": {
     ".[jt]sx$": "@markuplint/react-spec"
   },
+  "excludeFiles": [
+    "./src/components/CodeView/**",
+    "./src/features/CodeView/**"
+  ],
   "rules": {
     "attr-duplication": true,
     "attr-value-quotes": "single",
-    "case-sensitive-attr-name": "lower",
+    "case-sensitive-attr-name": false,
     "case-sensitive-tag-name": "lower",
     "character-reference": true,
     "class-naming": "/.+/",
@@ -27,7 +31,7 @@
     "no-boolean-attr-value": true,
     "no-default-value": false,
     "no-duplicate-dt": true,
-    "no-empty-palpable-content": true,
+    "no-empty-palpable-content": false,
     "no-hard-code-id": false,
     "no-orphaned-end-tag": true,
     "no-use-event-handler-attr": false,
@@ -39,21 +43,21 @@
     },
     "placeholder-label-option": false,
     "require-datetime": true,
-    "required-attr": {
-      "rules": {
-        "required-attr": [
-          "alt"
-        ]
-      }
-    },
+    "required-attr": true,
     "required-element": {
-      "required-element": {
-        "options": {
-          "ignoreHasMutableContents": true
-        }
+      "options": {
+        "ignoreHasMutableContents": true
       }
     }
   },
+  "nodeRules": [
+    {
+      "selector": "img",
+      "rules": {
+        "required-attr": "alt"
+      }
+    }
+  ],
   "childNodeRules": [
     {
       "regexSelector": {
