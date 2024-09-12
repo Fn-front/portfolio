@@ -37,7 +37,7 @@ export const Breadcrumbs = (props: Props) => {
           >
             <Link
               href={item[0].segment !== segment ? item[0].path : ''}
-              className={`c_breadcrumbs_item_link`}
+              className={'c_breadcrumbs_item_link'}
             >
               {item[0].breadcrumb}
             </Link>
