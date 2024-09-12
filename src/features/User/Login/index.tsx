@@ -18,7 +18,7 @@ export const UserLogin = () => {
     criteriaMode: 'all',
   })
 
-  const handleFormSubmit = (data: any) => {
+  const handleFormSubmit = (data: object) => {
     console.log(data)
   }
 
