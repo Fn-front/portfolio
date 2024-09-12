@@ -1,8 +1,7 @@
-import Default from './CardListDefault';
-import Dark from './CardListDark';
+import Default from './CardListDefault'
+import Dark from './CardListDark'
 
 const CardList = () => {
-  
   return (
     <>
       <Default />
@@ -11,4 +10,4 @@ const CardList = () => {
   )
 }
 
-export default CardList;
+export default CardList
