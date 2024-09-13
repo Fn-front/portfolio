@@ -1,13 +1,13 @@
 export const AuthSign = ({
-	children,
+  children,
 }: Readonly<{
-	children: React.ReactNode;
+  children: React.ReactNode;
 }>) => {
-	return (
-		<div className='l_form_sign'>
-			<div className='l_form_sign_inner'>{children}</div>
-		</div>
-	);
+  return (
+    <div className='l_form_sign'>
+      <div className='l_form_sign_inner'>{children}</div>
+    </div>
+  );
 };
 
 export default AuthSign;
