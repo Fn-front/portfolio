@@ -1,7 +1,7 @@
 export default function MyPage() {
-  return (
-    <>
-      <p>マイページ</p>
-    </>
-  )
+	return (
+		<>
+			<p>マイページ</p>
+		</>
+	);
 }

@@ -1,14 +1,14 @@
-import type { Metadata } from 'next'
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'トップページ',
-  description: 'トップページ',
-}
+	title: 'トップページ',
+	description: 'トップページ',
+};
 
 export default function RootLayout({
-  children,
+	children,
 }: Readonly<{
-  children: React.ReactNode
+	children: React.ReactNode;
 }>) {
-  return <div className='l_top'>{children}</div>
+	return <div className='l_top'>{children}</div>;
 }

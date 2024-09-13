@@ -1,17 +1,17 @@
-import Default from './InputTextDefault'
-import ErrorBg from './InputTextErrorBg'
-import ErrorBox from './InputTextErrorBox'
-import ErrorText from './InputTextErrorText'
+import Default from './InputTextDefault';
+import ErrorBg from './InputTextErrorBg';
+import ErrorBox from './InputTextErrorBox';
+import ErrorText from './InputTextErrorText';
 
 const InputText = () => {
-  return (
-    <>
-      <Default />
-      <ErrorText />
-      <ErrorBg />
-      <ErrorBox />
-    </>
-  )
-}
+	return (
+		<>
+			<Default />
+			<ErrorText />
+			<ErrorBg />
+			<ErrorBox />
+		</>
+	);
+};
 
-export default InputText
+export default InputText;

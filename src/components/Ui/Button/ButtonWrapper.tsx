@@ -1,12 +1,12 @@
-type Type = 'center' | 'around' | 'between'
+type Type = 'center' | 'around' | 'between';
 
 type Props = {
-  type: Type
-}
+	type: Type;
+};
 
 /* eslint-disable */
 export const ButtonWrapper = (props: Props) => {
-  return <></>
-}
+	return <></>;
+};
 
-export default ButtonWrapper
+export default ButtonWrapper;

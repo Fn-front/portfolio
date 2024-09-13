@@ -1,11 +1,15 @@
 export const AuthFormComponent = ({
-  children,
-  mt,
+	children,
+	mt,
 }: Readonly<{
-  children: React.ReactNode
-  mt: string
+	children: React.ReactNode;
+	mt: string;
 }>) => {
-  return <div className={`p_auth_form_component ${mt != '' ? 'u_mt' + mt : ''} `}>{children}</div>
-}
+	return (
+		<div className={`p_auth_form_component ${mt != '' ? 'u_mt' + mt : ''} `}>
+			{children}
+		</div>
+	);
+};
 
-export default AuthFormComponent
+export default AuthFormComponent;
