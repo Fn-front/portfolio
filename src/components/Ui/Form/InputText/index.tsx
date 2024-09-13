@@ -1,7 +1,5 @@
 import { forwardRef, ComponentPropsWithoutRef } from 'react'
-import {
-  type FieldError,
-} from 'react-hook-form'
+import { type FieldError } from 'react-hook-form'
 
 type props = {
   label: string

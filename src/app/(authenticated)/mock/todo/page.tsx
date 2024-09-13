@@ -62,8 +62,7 @@ export default function MockTodo() {
   const handleCheckBox = (check: boolean, id: number) => {
     if (check) {
       setCheckBox([...checkBox, id])
-    }
-    else {
+    } else {
       setCheckBox(checkBox.filter((a) => a != id))
     }
   }
@@ -94,7 +93,7 @@ export default function MockTodo() {
   }
 
   useEffect(() => {
-    ; (async () => {
+    ;(async () => {
       const data = await getList()
       setDataList(data.data)
     })()

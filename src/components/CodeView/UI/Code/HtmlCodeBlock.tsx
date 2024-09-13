@@ -15,24 +15,24 @@ export const HtmlCodeBlock = (props: Props) => {
   /* eslint-disable */
   const [viewStatus, setViewStatus] = useState<boolean>(true)
 
-    ; (async () => {
-      if (!props.element) return
+  ;(async () => {
+    if (!props.element) return
 
-      const { element } = props
+    const { element } = props
 
-      // 最初のdiv<div class="l_component_wrapper u_mt16">を削除
-      const firstDivDelete = element.replace(/^<.+?>/, '')
-      // 末尾の</div>を削除
-      const lastDivDelete = firstDivDelete.replace(/<\/div>$/, '')
+    // 最初のdiv<div class="l_component_wrapper u_mt16">を削除
+    const firstDivDelete = element.replace(/^<.+?>/, '')
+    // 末尾の</div>を削除
+    const lastDivDelete = firstDivDelete.replace(/<\/div>$/, '')
 
-      const test = await format(lastDivDelete, {
-        parser: 'html',
-        plugins: [parserHTML],
-      })
+    const test = await format(lastDivDelete, {
+      parser: 'html',
+      plugins: [parserHTML],
+    })
 
-      const highlightedCode: string = highlight.highlight(test, { language: 'html' }).value
-      setCode(highlightedCode)
-    })()
+    const highlightedCode: string = highlight.highlight(test, { language: 'html' }).value
+    setCode(highlightedCode)
+  })()
 
   return (
     <>

@@ -13,7 +13,7 @@ export const UserLogin = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<{ name: string, password: string }>({
+  } = useForm<{ name: string; password: string }>({
     mode: 'onBlur',
     criteriaMode: 'all',
   })

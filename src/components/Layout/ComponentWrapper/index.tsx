@@ -17,7 +17,7 @@ export const ComponentWrapper = ({
   const [codeOpen, setCodeOpen] = useState<boolean>(false)
 
   useEffect(() => {
-    (async () => {
+    ;(async () => {
       if (ref.current) return setElement(ref.current.outerHTML)
     })()
   }, [])
