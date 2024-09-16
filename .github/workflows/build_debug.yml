@@ -17,12 +17,11 @@ jobs:
       - name: checkout
         uses: actions/checkout@v4
 
-      - uses: mongolyy/reviewdog-action-biome@v1
+      - uses: reviewdog/action-eslint@v1
         with:
-          github_token: ${{ secrets.github_token }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           reporter: github-pr-review
-          level: error
-          filter_mode: 'nofilter'
+          eslint_flags: 'src/**/*.{ts,tsx}'
           fail_on_error: true
 
       - name: setup-node
