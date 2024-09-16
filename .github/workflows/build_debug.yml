@@ -20,8 +20,8 @@ jobs:
       - uses: mongolyy/reviewdog-action-biome@v1
         with:
           github_token: ${{ secrets.github_token }}
+          workdir: 'src/**/*'
           reporter: github-pr-review
-          level: 'info'
           fail_on_error: true
 
       - name: setup-node
