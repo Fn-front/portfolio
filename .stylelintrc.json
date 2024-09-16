@@ -9,6 +9,7 @@
     "declaration-property-value-no-unknown": true,
     "media-feature-name-value-no-unknown": true,
     "color-named": "never",
-    "declaration-no-important": true
+    "declaration-no-important": true,
+    "no-invalid-position-at-import-rule": null
   }
 }
