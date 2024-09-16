@@ -1,10 +1,11 @@
-.l_form_sign{
+.l_form_sign {
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: calc(100vh - 48px);
-  &_inner{
-    max-width: 700px;
+
+  &_inner {
     width: 80%;
+    max-width: 700px;
   }
 }

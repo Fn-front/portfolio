@@ -1,13 +1,14 @@
-.c_card_list{
+.c_card_list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 16px;
-  &_item{
+
+  &_item {
     border: 1px solid rgba(var(--color-black), .2);
     border-radius: 8px;
     overflow: hidden;
-    &_main{}
-    &_other{
+
+    &_other {
       padding: 16px;
     }
   }

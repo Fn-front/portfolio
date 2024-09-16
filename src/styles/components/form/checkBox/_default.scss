@@ -1,41 +1,45 @@
-%default_check_box_icon{
-  content: "";
-  display: block;
+%default_check_box_icon {
   position: absolute;
+  display: block;
   width: 2px;
-  background-color: rgb(var(--color-black));
   visibility: hidden;
+  content: "";
+  background-color: rgb(var(--color-black));
   opacity: 0;
 }
 
-.c_check_box{
+.c_check_box {
   position: relative;
   display: block;
   width: 20px;
   height: 20px;
+  cursor: pointer;
   border: 1px solid rgb(var(--color-black));
   border-radius: calc(var(--base-px)/2*1px);
-  cursor: pointer;
-  &::before{
+
+  &::before {
     @extend %default_check_box_icon;
     top: 7px;
     left: 4px;
     height: 7px;
     transform: rotate(-45deg);
   }
-  &::after{
+
+  &::after {
     @extend %default_check_box_icon;
     top: 3px;
     left: 10px;
     height: 12px;
     transform: rotate(45deg);
   }
-  &:checked{
-    &::before{
+
+  &:checked {
+    &::before {
       visibility: visible;
       opacity: 1;
     }
-    &::after{
+
+    &::after {
       visibility: visible;
       opacity: 1;
     }

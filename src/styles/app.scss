@@ -7,7 +7,7 @@
 @use './components/card/card_list';
 @use './components/code/code_block';
 @use './components/code/code_copy';
-@use './components/error/error.scss';
+@use './components/error/error';
 @use './components/form/checkBox/check_box';
 @use './components/form/inputText/input_text';
 @use './components/form/radio/radio';
@@ -16,7 +16,7 @@
 @use './components/head/_h3';
 @use './components/icon/icon';
 @use './components/iframe/iframe';
-@use './components/image/image.scss';
+@use './components/image/image';
 @use './components/system/system';
 @use './components/text/explanation';
 @use './components/text/_text_error';

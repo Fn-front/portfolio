@@ -1,9 +1,10 @@
-.c_code_copy{
+.c_code_copy {
   position: relative;
-  .c_icon_code{
+
+  .c_icon_code {
     position: absolute;
-    bottom: calc(100% + 4px);
     right: 10px;
+    bottom: calc(100% + 4px);
     z-index: 2;
   }
 }
