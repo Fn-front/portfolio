@@ -17,6 +17,15 @@ jobs:
       - name: checkout
         uses: actions/checkout@v4
 
+      - uses: mongolyy/reviewdog-action-biome@v1
+        with:
+          github_token: ${{ secrets.github_token }}
+          reporter: github-pr-review
+          workdir: ./src
+          level: error
+          filter_mode: 'diff_context'
+          fail_on_error: true
+
       - name: setup-node
         uses: actions/setup-node@v4
         with:
@@ -37,13 +46,6 @@ jobs:
       - name: npm-install
         if: ${{ steps.node_modules_cache_id.outputs.cache-hit != 'true' }}
         run: npm i
-
-      - uses: mongolyy/reviewdog-action-biome@v1
-        with:
-          github_token: ${{ secrets.github_token }}
-          reporter: github-pr-review
-          filter_mode: 'diff_context'
-          fail_on_error: true
 
       - name: markuplint
         run: npm run markuplint
