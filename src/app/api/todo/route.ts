@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import prisma from '@/lib/Prisma';
+import prisma from '@/lib/prisma/Prisma';
 
 // データベースからデータを取得する
 export const GET = async () => {
