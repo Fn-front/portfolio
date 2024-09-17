@@ -4,7 +4,7 @@ type Props = {
   type: Type;
 };
 
-/* eslint-disable */
+// biome-ignore lint: reason
 export const ButtonWrapper = (props: Props) => {
   return <></>;
 };

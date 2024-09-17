@@ -21,7 +21,7 @@ export const StyleCodeBlock = (props: Props) => {
     language: 'scss',
   }).value;
 
-  /* eslint-disable */
+  // biome-ignore lint: reason
   const handleCopyCodeBlock = (e: any) => {
     const copyResult = handleCopyToClipboard(
       e.parentNode.querySelector('.scss'),
@@ -40,7 +40,7 @@ export const StyleCodeBlock = (props: Props) => {
     <>
       <div
         className='c_code_block'
-        // onMouseLeave={(e) => handleFocusCodeBlock(e)}
+      // onMouseLeave={(e) => handleFocusCodeBlock(e)}
       >
         <pre>
           <code className='scss'>{parse(highlightedCode)}</code>
