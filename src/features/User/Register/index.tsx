@@ -6,7 +6,7 @@ import InputText from '@/components/Ui/Form/InputText';
 import AuthFormComponent from '@/components/Layout/Auth/Form';
 import Button from '@/components/Ui/Button';
 import { useForm } from 'react-hook-form';
-import { login, loginType } from '@/functions/schema/user/login'
+import { SchemaRegister, registerType } from '@/functions/schema/user/register'
 import { zodResolver } from "@hookform/resolvers/zod";
 
 export const UserLogin = () => {
@@ -14,10 +14,10 @@ export const UserLogin = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<loginType>({
+  } = useForm<registerType>({
     mode: 'onBlur',
     criteriaMode: 'all',
-    resolver: zodResolver(login)
+    resolver: zodResolver(SchemaRegister)
   });
 
   const handleFormSubmit = (data: object) => {
@@ -41,10 +41,30 @@ export const UserLogin = () => {
           </AuthFormComponent>
           <AuthFormComponent mt='32'>
             <InputText
+              label='email'
+              error={errors.email}
+              placeholder='email'
+              {...register('email', {
+                required: true
+              })}
+            />
+          </AuthFormComponent>
+          <AuthFormComponent mt='32'>
+            <InputText
               label='password'
               error={errors.password}
               placeholder='user password'
               {...register('password', {
+                required: true
+              })}
+            />
+          </AuthFormComponent>
+          <AuthFormComponent mt='32'>
+            <InputText
+              label='role'
+              error={errors.role}
+              placeholder='role'
+              {...register('role', {
                 required: true
               })}
             />
