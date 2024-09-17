@@ -1,7 +1,7 @@
 import { register } from './types';
 
 export const userRegister = async (data: register) => {
-  const { name, email, password } = data;
+  const { name, email, password, role } = data;
   const res = await fetch('/api/user/register', {
     method: 'POST',
     headers: {
@@ -11,6 +11,7 @@ export const userRegister = async (data: register) => {
       name: name,
       email: email,
       password: password,
+      role: role,
     }),
   });
 
