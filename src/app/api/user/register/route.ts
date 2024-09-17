@@ -21,11 +21,11 @@ export const POST = async (req: Request) => {
     // ユーザー登録prisma
     const user = await prisma.user.create({
       data: {
-        email,
         name,
+        email,
+        emailVerified: new Date(),
         password: hashedPassword,
         image: '',
-        emailVerified: new Date(),
         role: role,
       },
     });
