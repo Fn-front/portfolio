@@ -4,10 +4,6 @@ import LayoutSign from '@/components/Layout/Auth/Sign';
 import HeadLine from '@/components/Ui/HeadLine';
 import InputText from '@/components/Ui/Form/InputText';
 import AuthFormComponent from '@/components/Layout/Auth/Form';
-import {
-  errorMessageInputText,
-  errorMessageMaxLength,
-} from '@/functions/constants/schema';
 import Button from '@/components/Ui/Button';
 import { useForm } from 'react-hook-form';
 import { login, loginType } from '@/functions/schema/user/login'
