@@ -10,5 +10,5 @@
   "scss.validate": false,
   "stylelint.validate": ["scss"],
   "stylelint.configFile": "./.stylelintrc.json",
-  "cSpell.ignoreWords": ["NEXTAUTH"]
+  "cSpell.ignoreWords": ["NEXTAUTH", "hookform"]
 }
