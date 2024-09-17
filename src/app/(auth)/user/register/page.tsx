@@ -1,7 +1,9 @@
+import UserRegister from '@/features/User/Register';
+
 export default function Register() {
   return (
     <>
-      <p>登録</p>
+      <UserRegister />
     </>
   );
 }
