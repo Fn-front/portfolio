@@ -5,7 +5,7 @@ import prisma from '@/lib/prisma/Prisma';
 // ユーザー新規登録
 export const POST = async (req: Request) => {
   try {
-    const { name, email, password } = await req.json();
+    const { name, email, password, role } = await req.json();
 
     const existingUser = await prisma.user.findUnique({ where: { email } });
 
@@ -26,6 +26,7 @@ export const POST = async (req: Request) => {
         password: hashedPassword,
         image: '',
         emailVerified: new Date(),
+        role: role,
       },
     });
 
