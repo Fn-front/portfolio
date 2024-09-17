@@ -10,15 +10,18 @@ import {
 } from '@/functions/constants/schema';
 import Button from '@/components/Ui/Button';
 import { useForm } from 'react-hook-form';
+import { login, loginType } from '@/functions/schema/user/login'
+import { zodResolver } from "@hookform/resolvers/zod";
 
 export const UserLogin = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<{ name: string; password: string }>({
+  } = useForm<loginType>({
     mode: 'onBlur',
     criteriaMode: 'all',
+    resolver: zodResolver(login)
   });
 
   const handleFormSubmit = (data: object) => {
@@ -36,14 +39,7 @@ export const UserLogin = () => {
               error={errors.name}
               placeholder='user name'
               {...register('name', {
-                required: {
-                  value: true,
-                  message: 'name' + errorMessageInputText,
-                },
-                minLength: {
-                  value: 8,
-                  message: '8' + errorMessageMaxLength,
-                },
+                required: true
               })}
             />
           </AuthFormComponent>
@@ -53,14 +49,7 @@ export const UserLogin = () => {
               error={errors.password}
               placeholder='user password'
               {...register('password', {
-                required: {
-                  value: true,
-                  message: 'password' + errorMessageInputText,
-                },
-                minLength: {
-                  value: 8,
-                  message: '8' + errorMessageMaxLength,
-                },
+                required: true
               })}
             />
           </AuthFormComponent>
