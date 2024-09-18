@@ -1,0 +1,9 @@
+.c_radio_white {
+  border-color: rgba(var(--color-white), .5);
+
+  &:checked {
+    &::before {
+      background-color: rgba(var(--color-white));
+    }
+  }
+}
