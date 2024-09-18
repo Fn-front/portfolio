@@ -24,6 +24,7 @@ const InputText = forwardRef<HTMLInputElement, Props>(
                       type='radio'
                       className='c_radio c_radio_white'
                       value={item}
+                      id={item}
                       {...register}
                       ref={ref}
                     />
