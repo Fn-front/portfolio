@@ -3,6 +3,7 @@ import {
   errorMessageMaxLength,
   errorMessageInputText,
   errorMessageAlphanumeric,
+  errorMessageEmail,
 } from '@/functions/constants/schema';
 
 export const SchemaRegister = z.object({
@@ -12,16 +13,13 @@ export const SchemaRegister = z.object({
     .regex(/^[a-zA-Z0-9]+$/, errorMessageAlphanumeric),
   email: z
     .string()
-    .min(8, '8' + errorMessageMaxLength)
-    .regex(/^[a-zA-Z0-9]+$/, errorMessageAlphanumeric),
+    .regex(/^[a-zA-Z0-9!-/:-@[-`{-~]*$/, errorMessageAlphanumeric)
+    .email(errorMessageEmail),
   password: z
     .string()
     .min(8, '8' + errorMessageMaxLength)
     .regex(/^[a-zA-Z0-9]+$/, errorMessageAlphanumeric),
-  role: z
-    .string()
-    .min(8, '8' + errorMessageMaxLength)
-    .regex(/^[a-zA-Z0-9]+$/, errorMessageAlphanumeric),
+  role: z.string(),
 });
 
 export type registerType = z.infer<typeof SchemaRegister>;
