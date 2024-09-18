@@ -9,6 +9,14 @@ import Button from '@/components/Ui/Button';
 import { useForm } from 'react-hook-form';
 import { SchemaRegister, registerType } from '@/functions/schema/user/register'
 import { zodResolver } from "@hookform/resolvers/zod";
+import { userRegister } from '@/functions/hooks/api/auth/user/Register'
+
+type Submit = {
+  name: string
+  email: string
+  password: string
+  role: string
+}
 
 export const UserLogin = () => {
   const {
@@ -23,8 +31,11 @@ export const UserLogin = () => {
 
   const radioData = ['admin', 'user', 'mock', 'codeView']
 
-  const handleFormSubmit = (data: object) => {
-    console.log(data);
+  const handleFormSubmit = async (data: Submit) => {
+    const res = await userRegister(data);
+
+    console.log(res);
+
   };
 
   return (
