@@ -3,6 +3,7 @@
 import LayoutSign from '@/components/Layout/Auth/Sign';
 import HeadLine from '@/components/Ui/HeadLine';
 import InputText from '@/components/Ui/Form/InputText';
+import Radio from '@/components/Ui/Form/Radio';
 import AuthFormComponent from '@/components/Layout/Auth/Form';
 import Button from '@/components/Ui/Button';
 import { useForm } from 'react-hook-form';
@@ -19,6 +20,8 @@ export const UserLogin = () => {
     criteriaMode: 'all',
     resolver: zodResolver(SchemaRegister)
   });
+
+  const radioData = ['admin', 'user', 'mock', 'codeView']
 
   const handleFormSubmit = (data: object) => {
     console.log(data);
@@ -60,10 +63,10 @@ export const UserLogin = () => {
             />
           </AuthFormComponent>
           <AuthFormComponent mt='32'>
-            <InputText
+            <Radio
               label='role'
               error={errors.role}
-              placeholder='role'
+              data={radioData}
               {...register('role', {
                 required: true
               })}
