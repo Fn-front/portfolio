@@ -17,9 +17,9 @@ const InputText = forwardRef<HTMLInputElement, Props>(
         <div className='l_form_list u_mt8'>
           {data.map((item, index) => {
             return (
-              <div className='l_form_list_item'>
+              <div className='l_form_list_item' key={index}>
                 <div className='l_form_column_2 l_form_column_align_center'>
-                  <div className='l_form_column_item' key={index}>
+                  <div className='l_form_column_item'>
                     <input
                       type='radio'
                       className='c_radio c_radio_white'
