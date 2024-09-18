@@ -22,7 +22,7 @@ const InputText = forwardRef<HTMLInputElement, Props>(
                   <div className='l_form_column_item' key={index}>
                     <input
                       type='radio'
-                      className='c_radio'
+                      className='c_radio c_radio_white'
                       value={item}
                       {...register}
                       ref={ref}
