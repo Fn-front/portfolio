@@ -4,12 +4,13 @@ import { type FieldError } from 'react-hook-form';
 type props = {
   label: string;
   error: FieldError | undefined;
+  errorBg?: boolean;
 };
 
 type Props = ComponentPropsWithoutRef<'input'> & props;
 
 const InputText = forwardRef<HTMLInputElement, Props>(
-  ({ label, error, ...register }, ref) => {
+  ({ label, error, errorBg, ...register }, ref) => {
     return (
       <>
         <label htmlFor={label} className='c_label'>
@@ -17,7 +18,7 @@ const InputText = forwardRef<HTMLInputElement, Props>(
         </label>
         <input
           type='text'
-          className='c_input_text u_mt8'
+          className={`c_input_text u_mt8 ${errorBg ? 'c_input_text_error_bg' : ''}`}
           {...register}
           ref={ref}
         />
