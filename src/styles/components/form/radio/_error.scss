@@ -1,7 +1,8 @@
-.c_radio{
+.c_radio {
   border-color: rgba(var(--color-red-error), .5);
-  &:checked{
-    &::before{
+
+  &:checked {
+    &::before {
       background-color: rgb(var(--color-red-error));
     }
   }
