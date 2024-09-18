@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import LayoutSign from '@/components/Layout/Auth/Sign';
 import HeadLine from '@/components/Ui/HeadLine';
 import InputText from '@/components/Ui/Form/InputText';
@@ -28,14 +29,13 @@ export const UserLogin = () => {
     criteriaMode: 'all',
     resolver: zodResolver(SchemaRegister)
   });
+  const [errorMessage, setErrorMessage] = useState<string>('')
 
   const radioData = ['admin', 'user', 'mock', 'codeView']
 
   const handleFormSubmit = async (data: Submit) => {
     const res = await userRegister(data);
-
-    console.log(res);
-
+    setErrorMessage(res.message)
   };
 
   return (
@@ -86,6 +86,9 @@ export const UserLogin = () => {
               })}
             />
           </AuthFormComponent>
+          <div className='u_mt16 u_ta_center'>
+            {errorMessage && <p className='c_text_error u_mt8'>{errorMessage}</p>}
+          </div>
           <Button type='submit' label='送信' mt='32' position='center' />
         </form>
       </LayoutSign>
