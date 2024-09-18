@@ -36,6 +36,7 @@ export const UserLogin = () => {
             <InputText
               label='name'
               error={errors.name}
+              errorBg={true}
               placeholder='user name'
               {...register('name', {
                 required: true
@@ -46,6 +47,7 @@ export const UserLogin = () => {
             <InputText
               label='email'
               error={errors.email}
+              errorBg={true}
               placeholder='email'
               {...register('email', {
                 required: true
@@ -56,6 +58,7 @@ export const UserLogin = () => {
             <InputText
               label='password'
               error={errors.password}
+              errorBg={true}
               placeholder='user password'
               {...register('password', {
                 required: true
