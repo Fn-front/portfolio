@@ -19,7 +19,11 @@ export const SchemaRegister = z.object({
     .string()
     .min(8, '8' + errorMessageMaxLength)
     .regex(/^[a-zA-Z0-9]+$/, errorMessageAlphanumeric),
-  role: z.string(),
+  role: z.enum(['admin', 'user', 'mock', 'codeView'], {
+    errorMap: () => {
+      return { message: 'roleを選択してください' };
+    },
+  }),
 });
 
 export type registerType = z.infer<typeof SchemaRegister>;
