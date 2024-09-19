@@ -8,6 +8,12 @@ import Button from '@/components/Ui/Button';
 import { useForm } from 'react-hook-form';
 import { login, loginType } from '@/functions/schema/user/login'
 import { zodResolver } from "@hookform/resolvers/zod";
+import { signIn } from 'next-auth/react'
+
+type Submit = {
+  email: string
+  password: string
+}
 
 export const UserLogin = () => {
   const {
@@ -20,8 +26,21 @@ export const UserLogin = () => {
     resolver: zodResolver(login)
   });
 
-  const handleFormSubmit = (data: object) => {
-    console.log(data);
+  const handleFormSubmit = async (data: Submit) => {
+    await signIn('credentials', {
+      redirect: false,
+      email: data.email,
+      password: data.password,
+    })
+      .then((res) => {
+        if (res?.error) {
+          alert(res.error)
+        }
+        router.push('/')
+      })
+      .catch((err) => {
+        console.log(err)
+      })
   };
 
   return (
@@ -31,10 +50,10 @@ export const UserLogin = () => {
         <form onSubmit={handleSubmit(handleFormSubmit)}>
           <AuthFormComponent mt='32'>
             <InputText
-              label='name'
+              label='email'
               error={errors.name}
               placeholder='user name'
-              {...register('name', {
+              {...register('email', {
                 required: true
               })}
             />
