@@ -1,15 +1,15 @@
 import { z } from 'zod';
 import {
   errorMessageMaxLength,
-  errorMessageInputText,
+  errorMessageEmail,
   errorMessageAlphanumeric,
 } from '@/functions/constants/schema';
 
 export const login = z.object({
   email: z
     .string()
-    .min(8, '8' + errorMessageMaxLength)
-    .regex(/^[a-zA-Z0-9]+$/, errorMessageAlphanumeric),
+    .regex(/^[a-zA-Z0-9!-/:-@[-`{-~]*$/, errorMessageAlphanumeric)
+    .email(errorMessageEmail),
   password: z
     .string()
     .min(8, '8' + errorMessageMaxLength)
