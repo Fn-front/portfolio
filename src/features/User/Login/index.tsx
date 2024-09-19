@@ -9,6 +9,7 @@ import { useForm } from 'react-hook-form';
 import { login, loginType } from '@/functions/schema/user/login'
 import { zodResolver } from "@hookform/resolvers/zod";
 import { signIn } from 'next-auth/react'
+import { useRouter } from 'next/navigation';
 
 type Submit = {
   email: string
@@ -25,6 +26,7 @@ export const UserLogin = () => {
     criteriaMode: 'all',
     resolver: zodResolver(login)
   });
+  const router = useRouter();
 
   const handleFormSubmit = async (data: Submit) => {
     await signIn('credentials', {
@@ -51,7 +53,7 @@ export const UserLogin = () => {
           <AuthFormComponent mt='32'>
             <InputText
               label='email'
-              error={errors.name}
+              error={errors.email}
               placeholder='user name'
               {...register('email', {
                 required: true
