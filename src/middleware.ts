@@ -25,8 +25,6 @@ export default withAuth(
     callbacks: {
       // 認可に関する処理。ロールが `admin` ならOK
       async authorized({ token }) {
-        console.log(token);
-
         return token?.role === 'user';
       },
     },
