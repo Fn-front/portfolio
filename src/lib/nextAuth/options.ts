@@ -57,17 +57,12 @@ const options: NextAuthOptions = {
   session: {
     strategy: 'jwt',
   },
-  jwt: {
-    secret: process.env.NEXTAUTH_JWT_SECRET,
-  },
   secret: process.env.NEXTAUTH_SECRET,
   callbacks: {
     async jwt({ token, user, account }) {
       if (user) {
         token.user = user;
-        // biome-ignore lint:
-        const u = user as any;
-        token.role = u.role;
+        token.role = user.role;
       }
       if (account) {
         token.accessToken = account.access_token;
@@ -75,7 +70,7 @@ const options: NextAuthOptions = {
 
       return token;
     },
-    session: ({ session, token }) => {
+    async session({ session, token }) {
       token.accessToken;
       return {
         ...session,
