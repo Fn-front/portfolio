@@ -6,7 +6,7 @@ import {
 } from '@/functions/constants/schema';
 
 export const login = z.object({
-  name: z
+  email: z
     .string()
     .min(8, '8' + errorMessageMaxLength)
     .regex(/^[a-zA-Z0-9]+$/, errorMessageAlphanumeric),
