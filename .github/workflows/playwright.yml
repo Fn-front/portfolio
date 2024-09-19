@@ -3,11 +3,11 @@ on:
   push:
     branches-ignore:
       - '**'
-  pull_request:
-    branches:
-      - main
-      - develop
-      - 'feature/**'
+  # pull_request:
+  #   branches:
+  #     - main
+  #     - develop
+  #     - 'feature/**'
 jobs:
   test:
     timeout-minutes: 60
