@@ -61,6 +61,31 @@ const options: NextAuthOptions = {
     secret: process.env.NEXTAUTH_JWT_SECRET,
   },
   secret: process.env.NEXTAUTH_SECRET,
+  callbacks: {
+    async jwt({ token, user, account }) {
+      if (user) {
+        token.user = user;
+        // biome-ignore lint:
+        const u = user as any;
+        token.role = u.role;
+      }
+      if (account) {
+        token.accessToken = account.access_token;
+      }
+
+      return token;
+    },
+    session: ({ session, token }) => {
+      token.accessToken;
+      return {
+        ...session,
+        user: {
+          ...session.user,
+          role: token.role,
+        },
+      };
+    },
+  },
 };
 
 export default options;
