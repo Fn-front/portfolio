@@ -9,8 +9,9 @@ import { useForm } from 'react-hook-form';
 import { login, loginType } from '@/functions/schema/user/login'
 import { zodResolver } from "@hookform/resolvers/zod";
 import { signIn } from 'next-auth/react'
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { useState } from 'react';
+
 
 type Submit = {
   email: string
@@ -30,6 +31,10 @@ export const UserLogin = () => {
   const router = useRouter();
   const [errorMessage, setErrorMessage] = useState<string>('')
 
+  // リダイレクト前URl情報
+  const searchParams = useSearchParams()
+  const callbackUrl = searchParams.get("callbackUrl") || '/'
+
   const handleFormSubmit = async (data: Submit) => {
     await signIn('credentials', {
       redirect: false,
@@ -40,7 +45,7 @@ export const UserLogin = () => {
         if (res?.error) {
           setErrorMessage(res.error)
         }
-        router.push('/')
+        router.push(callbackUrl)
       })
       .catch((err) => {
         setErrorMessage(err)
