@@ -1,16 +1,17 @@
 import Header from '@/components/Ui/Header';
-import UiHeaderLogout from './components/logout';
-import UiHeaderLogin from './components/login';
+import UiHeaderUserInfo from './components/userInfo/';
+import { getServerSession } from 'next-auth';
+import options from '@/lib/nextAuth/options';
 
-export const UiHeader = () => {
+export const UiHeader = async () => {
+  const session = await getServerSession(options)
   return (
     <Header>
       <div>
         {/* 予定地 */}
       </div>
       <div className='c_header_user_info'>
-        <UiHeaderLogin />
-        <UiHeaderLogout />
+        <UiHeaderUserInfo info={session?.user} />
       </div>
     </Header>
   );
