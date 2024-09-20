@@ -34,7 +34,7 @@ const options: NextAuthOptions = {
 
         // ユーザーかパスワードがない場合にエラーを返す
         if (!user || !user.password) {
-          throw new Error('Eメールが一致しません');
+          throw new Error('メールアドレスが一致しません');
         }
 
         // パスワードのハッシュをデコードし確認
