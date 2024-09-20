@@ -1,6 +1,6 @@
 import BreadcrumbsList from '@/features/BreadcrumbsList';
 import Sidebar from '@/components/Ui/SideBar';
-import Header from '@/components/Ui/Header';
+import Header from '@/features/Ui/Header';
 import Footer from '@/components/Ui/Footer';
 
 export default function RootLayout({
