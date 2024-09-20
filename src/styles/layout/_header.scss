@@ -1,4 +1,10 @@
 .l_header {
   height: 80px;
-  padding: 16px;
+
+  &_in {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    padding: 16px;
+  }
 }
