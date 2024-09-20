@@ -4,7 +4,7 @@ import { type FieldError } from 'react-hook-form';
 type props = {
   label: string;
   error: FieldError | undefined;
-  data: Array<string>
+  data: Array<string>;
 };
 
 type Props = ComponentPropsWithoutRef<'input'> & props;
@@ -30,13 +30,11 @@ const InputText = forwardRef<HTMLInputElement, Props>(
                     />
                   </div>
                   <div className='l_form_column_item'>
-                    <label htmlFor={item}>
-                      {item}
-                    </label>
+                    <label htmlFor={item}>{item}</label>
                   </div>
                 </div>
               </div>
-            )
+            );
           })}
         </div>
         {error && <p className='c_text_error u_mt8'>{error.message}</p>}

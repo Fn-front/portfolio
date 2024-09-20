@@ -1,5 +1,5 @@
 export const Header = ({
-  children
+  children,
 }: Readonly<{
   children: React.ReactNode;
 }>) => {

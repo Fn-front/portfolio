@@ -6,17 +6,16 @@ import InputText from '@/components/Ui/Form/InputText';
 import AuthFormComponent from '@/components/Layout/Auth/Form';
 import Button from '@/components/Ui/Button';
 import { useForm } from 'react-hook-form';
-import { login, loginType } from '@/functions/schema/user/login'
-import { zodResolver } from "@hookform/resolvers/zod";
-import { signIn } from 'next-auth/react'
+import { login, loginType } from '@/functions/schema/user/login';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { signIn } from 'next-auth/react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useState } from 'react';
 
-
 type Submit = {
-  email: string
-  password: string
-}
+  email: string;
+  password: string;
+};
 
 export const UserLogin = () => {
   const {
@@ -26,14 +25,14 @@ export const UserLogin = () => {
   } = useForm<loginType>({
     mode: 'onBlur',
     criteriaMode: 'all',
-    resolver: zodResolver(login)
+    resolver: zodResolver(login),
   });
   const router = useRouter();
-  const [errorMessage, setErrorMessage] = useState<string>('')
+  const [errorMessage, setErrorMessage] = useState<string>('');
 
   // リダイレクト前URl情報
-  const searchParams = useSearchParams()
-  const callbackUrl = searchParams.get("callbackUrl") || '/'
+  const searchParams = useSearchParams();
+  const callbackUrl = searchParams.get('callbackUrl') || '/';
 
   const handleFormSubmit = async (data: Submit) => {
     await signIn('credentials', {
@@ -43,13 +42,13 @@ export const UserLogin = () => {
     })
       .then((res) => {
         if (res?.error) {
-          setErrorMessage(res.error)
+          setErrorMessage(res.error);
         }
-        router.push(callbackUrl)
+        router.push(callbackUrl);
       })
       .catch((err) => {
-        setErrorMessage(err)
-      })
+        setErrorMessage(err);
+      });
   };
 
   return (
@@ -63,7 +62,7 @@ export const UserLogin = () => {
               error={errors.email}
               placeholder='user name'
               {...register('email', {
-                required: true
+                required: true,
               })}
             />
           </AuthFormComponent>
@@ -73,12 +72,14 @@ export const UserLogin = () => {
               error={errors.password}
               placeholder='user password'
               {...register('password', {
-                required: true
+                required: true,
               })}
             />
           </AuthFormComponent>
           <div className='u_mt16 u_ta_center'>
-            {errorMessage && <p className='c_text_error u_mt8'>{errorMessage}</p>}
+            {errorMessage && (
+              <p className='c_text_error u_mt8'>{errorMessage}</p>
+            )}
           </div>
           <Button type='submit' label='送信' mt='32' position='center' />
         </form>

@@ -8,16 +8,16 @@ import Radio from '@/components/Ui/Form/Radio';
 import AuthFormComponent from '@/components/Layout/Auth/Form';
 import Button from '@/components/Ui/Button';
 import { useForm } from 'react-hook-form';
-import { SchemaRegister, registerType } from '@/functions/schema/user/register'
-import { zodResolver } from "@hookform/resolvers/zod";
-import { userRegister } from '@/functions/hooks/api/auth/user/Register'
+import { SchemaRegister, registerType } from '@/functions/schema/user/register';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { userRegister } from '@/functions/hooks/api/auth/user/Register';
 
 type Submit = {
-  name: string
-  email: string
-  password: string
-  role: string
-}
+  name: string;
+  email: string;
+  password: string;
+  role: string;
+};
 
 export const UserLogin = () => {
   const {
@@ -27,15 +27,15 @@ export const UserLogin = () => {
   } = useForm<registerType>({
     mode: 'onBlur',
     criteriaMode: 'all',
-    resolver: zodResolver(SchemaRegister)
+    resolver: zodResolver(SchemaRegister),
   });
-  const [errorMessage, setErrorMessage] = useState<string>('')
+  const [errorMessage, setErrorMessage] = useState<string>('');
 
-  const radioData = ['admin', 'user', 'mock', 'codeView']
+  const radioData = ['admin', 'user', 'mock', 'codeView'];
 
   const handleFormSubmit = async (data: Submit) => {
     const res = await userRegister(data);
-    setErrorMessage(res.message)
+    setErrorMessage(res.message);
   };
 
   return (
@@ -50,7 +50,7 @@ export const UserLogin = () => {
               errorBg={true}
               placeholder='user name'
               {...register('name', {
-                required: true
+                required: true,
               })}
             />
           </AuthFormComponent>
@@ -61,7 +61,7 @@ export const UserLogin = () => {
               errorBg={true}
               placeholder='email'
               {...register('email', {
-                required: true
+                required: true,
               })}
             />
           </AuthFormComponent>
@@ -72,7 +72,7 @@ export const UserLogin = () => {
               errorBg={true}
               placeholder='user password'
               {...register('password', {
-                required: true
+                required: true,
               })}
             />
           </AuthFormComponent>
@@ -82,12 +82,14 @@ export const UserLogin = () => {
               error={errors.role}
               data={radioData}
               {...register('role', {
-                required: true
+                required: true,
               })}
             />
           </AuthFormComponent>
           <div className='u_mt16 u_ta_center'>
-            {errorMessage && <p className='c_text_error u_mt8'>{errorMessage}</p>}
+            {errorMessage && (
+              <p className='c_text_error u_mt8'>{errorMessage}</p>
+            )}
           </div>
           <Button type='submit' label='送信' mt='32' position='center' />
         </form>

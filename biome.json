@@ -82,7 +82,9 @@
       }
     }
   },
-  "javascript": { "formatter": { "quoteStyle": "double" } },
+  "javascript": {
+    "formatter": { "quoteStyle": "single" }
+  },
   "overrides": [
     {
       "include": ["*.ts", "*.tsx", "*.mts", "*.cts"],
