@@ -10,9 +10,7 @@ export const UiHeader = async () => {
       <div>
         {/* 予定地 */}
       </div>
-      <div className='c_header_user_info'>
-        <UiHeaderUserInfo info={session?.user} />
-      </div>
+      <UiHeaderUserInfo info={session?.user} />
     </Header>
   );
 };
