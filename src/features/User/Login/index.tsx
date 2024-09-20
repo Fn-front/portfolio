@@ -10,6 +10,7 @@ import { login, loginType } from '@/functions/schema/user/login'
 import { zodResolver } from "@hookform/resolvers/zod";
 import { signIn } from 'next-auth/react'
 import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 
 type Submit = {
   email: string
@@ -27,6 +28,7 @@ export const UserLogin = () => {
     resolver: zodResolver(login)
   });
   const router = useRouter();
+  const [errorMessage, setErrorMessage] = useState<string>('')
 
   const handleFormSubmit = async (data: Submit) => {
     await signIn('credentials', {
@@ -36,12 +38,12 @@ export const UserLogin = () => {
     })
       .then((res) => {
         if (res?.error) {
-          alert(res.error)
+          setErrorMessage(res.error)
         }
         router.push('/')
       })
       .catch((err) => {
-        console.log(err)
+        setErrorMessage(err)
       })
   };
 
@@ -70,6 +72,9 @@ export const UserLogin = () => {
               })}
             />
           </AuthFormComponent>
+          <div className='u_mt16 u_ta_center'>
+            {errorMessage && <p className='c_text_error u_mt8'>{errorMessage}</p>}
+          </div>
           <Button type='submit' label='送信' mt='32' position='center' />
         </form>
       </LayoutSign>
