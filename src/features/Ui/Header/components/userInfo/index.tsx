@@ -1,5 +1,6 @@
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import UserInfoLogout from '@/features/Ui/Header/components/logout'
 
 type Props = {
   info: {
@@ -34,7 +35,7 @@ export const UiHeaderLogout = (props: Props) => {
         <ArrowDropDownIcon fontSize='large' />
       </div>
       <div className='c_header_user_info_drop'>
-        <button className='c_button'>ログアウト</button>
+        <UserInfoLogout />
       </div>
     </div>
   )
