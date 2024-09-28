@@ -5,7 +5,7 @@ import HeadLine from '@/components/Ui/HeadLine';
 import InputText from '@/components/Ui/Form/InputText';
 import AuthFormComponent from '@/components/Layout/Auth/Form';
 import Button from '@/components/Ui/Button';
-import { useForm } from 'react-hook-form';
+import { useForm, Controller } from 'react-hook-form';
 import { login, loginType } from '@/functions/schema/user/login';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { signIn } from 'next-auth/react';
@@ -19,13 +19,17 @@ type Submit = {
 
 export const UserLogin = () => {
   const {
-    register,
+    control,
     handleSubmit,
     formState: { errors },
   } = useForm<loginType>({
     mode: 'onBlur',
     criteriaMode: 'all',
     resolver: zodResolver(login),
+    defaultValues: {
+      email: '',
+      password: '',
+    },
   });
   const router = useRouter();
   const [errorMessage, setErrorMessage] = useState<string>('');
@@ -57,23 +61,33 @@ export const UserLogin = () => {
         <HeadLine Component='h2' label='ログイン' />
         <form onSubmit={handleSubmit(handleFormSubmit)}>
           <AuthFormComponent mt='32'>
-            <InputText
-              label='email'
-              error={errors.email}
-              placeholder='user name'
-              {...register('email', {
-                required: true,
-              })}
+            <Controller
+              name='email'
+              control={control}
+              render={({ field }) => (
+                <InputText
+                  label={field.name}
+                  error={errors.email}
+                  placeholder='user name'
+                  onBlur={field.onBlur}
+                  onChange={field.onChange}
+                />
+              )}
             />
           </AuthFormComponent>
           <AuthFormComponent mt='32'>
-            <InputText
-              label='password'
-              error={errors.password}
-              placeholder='user password'
-              {...register('password', {
-                required: true,
-              })}
+            <Controller
+              name='password'
+              control={control}
+              render={({ field }) => (
+                <InputText
+                  label={field.name}
+                  error={errors.password}
+                  placeholder='user password'
+                  onBlur={field.onBlur}
+                  onChange={field.onChange}
+                />
+              )}
             />
           </AuthFormComponent>
           <div className='u_mt16 u_ta_center'>
