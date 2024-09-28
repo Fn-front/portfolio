@@ -1,0 +1,15 @@
+{
+  "extends": [
+    "stylelint-config-recommended-scss",
+    "stylelint-config-prettier-scss",
+    "stylelint-config-recess-order"
+  ],
+  "plugins": ["stylelint-order"],
+  "rules": {
+    "declaration-property-value-no-unknown": true,
+    "media-feature-name-value-no-unknown": true,
+    "color-named": "never",
+    "declaration-no-important": true,
+    "no-invalid-position-at-import-rule": null
+  }
+}

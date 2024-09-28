@@ -1,0 +1,28 @@
+.c_button {
+  display: block;
+  padding: calc(var(--base-px)/2*1px) calc(var(--base-px)*1px);
+  text-align: center;
+  border: 1px solid rgb(var(--color-white));
+  border-radius: 4px;
+
+  &_small {
+    width: 100px;
+  }
+
+  &_medium {
+    width: 150px;
+  }
+
+  &_large {
+    width: 200px;
+  }
+
+  &_center {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  &_right {
+    margin-left: auto;
+  }
+}

@@ -1,14 +1,16 @@
-.l_component_wrapper{
+.l_component_wrapper {
   position: relative;
   padding: 16px;
+  color: rgb(var(--color-black));
   background-color: rgb(255, 255, 255);
   border-radius: calc(var(--base-px) / 2 * 1px);
-  color: rgb(var(--color-black));
-  &_dark{
-    background-color: transparent;
+
+  &_dark {
     color: rgb(var(--color-white));
+    background-color: transparent;
   }
-  &+*{
+
+  &+* {
     margin-top: 16px;
   }
 }

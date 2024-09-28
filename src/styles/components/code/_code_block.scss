@@ -1,15 +1,21 @@
-.c_code_block{
+.c_code_block {
   position: relative;
-  background-color: #282c34;
   padding: calc(var(--base-px) / 2 * 1px) calc(var(--base-px) * 1px);
+  background-color: #282c34;
   border-radius: calc(var(--base-px) / 2 * 1px);
-  pre{
+
+  pre {
     // padding: calc(var(--base-px)/2*1px);
     white-space: pre-wrap;
   }
-  .c_icon_copy{
+
+  .c_icon_copy {
     position: absolute;
     top: 8px;
     right: 10px;
+
+    .c_icon {
+      pointer-events: none;
+    }
   }
 }
