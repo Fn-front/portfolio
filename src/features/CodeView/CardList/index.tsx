@@ -5,7 +5,7 @@ type Props = {
   editFilePaths?: Array<string>;
 };
 
-export const CodeViewCardList = async (props: Props) => {
+export const CodeViewCardList = (props: Props) => {
   const { editFilePaths } = props;
 
   return (
