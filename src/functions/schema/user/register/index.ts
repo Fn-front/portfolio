@@ -9,7 +9,7 @@ import {
 export const SchemaRegister = z.object({
   name: z
     .string()
-    .min(8, '8' + errorMessageMaxLength)
+    .min(1, '1' + errorMessageMaxLength)
     .regex(/^[a-zA-Z0-9]+$/, errorMessageAlphanumeric),
   email: z
     .string()
