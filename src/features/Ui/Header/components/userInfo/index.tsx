@@ -31,7 +31,7 @@ export const UiHeaderLogout = (props: Props) => {
         <AccountCircleIcon fontSize='large' sx={{ fontSize: '3rem' }} />
         <div className='c_header_user_info_name_container'>
           <span className='c_header_user_info_name_main'>
-            {handleNameLength(info.name)}
+            {info && handleNameLength(info.name)}
           </span>{' '}
           さん
         </div>
