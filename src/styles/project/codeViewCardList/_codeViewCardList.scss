@@ -1,11 +1,12 @@
 .p_code_view_card_list {
-  .c_card_list{
+  .c_card_list {
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   }
-  &_main_image{
+
+  &_main_image {
     padding-bottom: 56.25%;
-    background-size: 100%;
-    background-position: left top;
     background-repeat: no-repeat;
+    background-position: left top;
+    background-size: 100%;
   }
 }

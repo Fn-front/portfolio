@@ -1,12 +1,14 @@
-.c_error_box{
+.c_error_box {
   display: flex;
   padding: 4px 8px;
   background-color: rgba(#FF0000, 0.2);
   border-radius: 4px;
-  svg{
+
+  svg {
     flex-shrink: 0;
   }
-  .c_text_error{
+
+  .c_text_error {
     margin-left: 8px;
   }
 }

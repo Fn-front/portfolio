@@ -1,15 +1,9 @@
 const Icon = ({
   children,
 }: Readonly<{
-  children: React.ReactNode
-}>
-) => {
+  children: React.ReactNode;
+}>) => {
+  return <div className='c_icon'>{children}</div>;
+};
 
-  return (
-    <div className="c_icon">
-      {children}
-    </div>
-  )
-}
-
-export default Icon
+export default Icon;

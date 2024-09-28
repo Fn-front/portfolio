@@ -1,0 +1,35 @@
+.c_header_user_info_drop {
+  position: absolute;
+  top: calc(100% - 4px);
+  display: none;
+  width: max-content;
+  min-width: 100%;
+  padding: calc(var(--base-px) * 2px);
+  font-size: 1.2rem;
+  background: rgba(var(--color-white), 0.4);
+  border-radius: calc(var(--base-px) / 2 * 1px);
+}
+
+.c_header_user_info {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+
+  &_name {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    &_container {
+      padding-left: calc(var(--base-px) / 2 * 1px);
+      font-size: 1.2rem;
+    }
+  }
+
+  &:hover {
+    .c_header_user_info_drop {
+      display: block;
+    }
+  }
+}

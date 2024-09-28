@@ -1,40 +1,44 @@
 // foundation
-@use './foundation/_reset';
+@use './foundation/reset';
 
 // component
 @use './components/breadcrumbs/breadcrumbs';
+@use './components/button/button';
 @use './components/card/card_list';
 @use './components/code/code_block';
 @use './components/code/code_copy';
-@use './components/error/error.scss';
+@use './components/error/error';
 @use './components/form/checkBox/check_box';
 @use './components/form/inputText/input_text';
 @use './components/form/radio/radio';
-@use './components/head/_h1';
-@use './components/head/_h2';
-@use './components/head/_h3';
+@use './components/head/h1';
+@use './components/head/h2';
+@use './components/head/h3';
+@use './components/header/c_header';
 @use './components/icon/icon';
 @use './components/iframe/iframe';
-@use './components/image/image.scss';
+@use './components/image/image';
 @use './components/system/system';
 @use './components/text/explanation';
-@use './components/text/_text_error';
+@use './components/text/text_error';
 
 // global
-@use './global/_globals';
+@use './global/globals';
 
 // layout
+@use './layout/auth/form_sign';
 @use './layout/form/form_list';
 @use './layout/form/form_column';
 @use './layout/icon/list_icon_switch';
-@use './layout/_global_container';
-@use './layout/_header';
-@use './layout/_main';
-@use './layout/_container';
-@use './layout/_component_wrap';
-@use './layout/_sidebar';
+@use './layout/global_container';
+@use './layout/header';
+@use './layout/main';
+@use './layout/container';
+@use './layout/component_wrap';
+@use './layout/sidebar';
 
 // project
+@use './project/auth/form_component';
 @use './project/codeViewCardList/codeViewCardList';
 @use './project/codeBlock/codeBlock';
 @use './project/useCase/startingStyle/starting_style';
@@ -43,5 +47,5 @@
 @use './project/useCase/startingStyle/starting_style_transition_not';
 
 // utility
-@use './utility/_margin';
+@use './utility/margin';
 @use './utility/text_align';
