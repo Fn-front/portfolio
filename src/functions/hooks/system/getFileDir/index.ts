@@ -3,7 +3,7 @@
 import recursiveReaddir from 'recursive-readdir';
 
 export const getFileDir = async (dir: string) => {
-  const files = await recursiveReaddir(dir);
+  const files = await recursiveReaddir(process.cwd() + '/' + dir);
 
   let pathnames;
   if (files) {
