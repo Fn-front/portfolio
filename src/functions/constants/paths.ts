@@ -1,1 +1,1 @@
-export const viewsDir = 'src/app/(authenticated)/';
+export const viewsDir = process.cwd() + '/app/(authenticated)/';
