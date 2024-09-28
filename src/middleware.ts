@@ -15,7 +15,7 @@ export default withAuth(
 
     // 管理者権限のないユーザーが管理者権限が必要なパスにアクセスした場合は404
     if (
-      req.nextauth.token?.userRole !== 'admin' &&
+      req.nextauth.token?.role !== 'user' &&
       adminOnlyPathRegex.some((regex) => regex.test(pathname))
     ) {
       return NextResponse.rewrite(new URL('/404', req.url));
