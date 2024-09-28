@@ -1,7 +1,3 @@
-/* eslint-disable */
-// @ts-ignore
-// import recursiveReaddir from 'recursive-readdir';
-
 import { route } from '@/functions/routes';
 
 export const getFileDir = async (dir: string) => {
