@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { deleteAuthenticated } from '@/utils/editFilePaths';
 
 type Props = {
   editFilePaths?: Array<string>;
@@ -19,16 +18,14 @@ export const CodeViewCardList = (props: Props) => {
                   className='p_code_view_card_list_main_image'
                   style={{
                     backgroundImage:
-                      'url(/assets/img' +
-                      deleteAuthenticated(item.slice(0, item.length - 1)) +
-                      '.png)',
+                      'url(/assets/img' + item + '.png)',
                   }}
                 ></div>
               </div>
               <div className='c_card_list_item_other'>
                 <p>
-                  <Link href={deleteAuthenticated(item)}>
-                    {deleteAuthenticated(item)}
+                  <Link href={item}>
+                    {item}
                   </Link>
                 </p>
               </div>

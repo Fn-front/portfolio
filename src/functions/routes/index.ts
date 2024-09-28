@@ -16,9 +16,19 @@ export const route = () => {
       breadcrumb: 'inputテキスト',
     },
     {
+      path: '/codeView/ui/form/checkBox',
+      segment: 'checkBox',
+      breadcrumb: 'チェックボックス',
+    },
+    {
       path: '/codeView/ui/form/radio',
       segment: 'radio',
       breadcrumb: 'radioボタン',
+    },
+    {
+      path: '/codeView/ui/layout/cardList',
+      segment: 'cardList',
+      breadcrumb: 'カードリスト',
     },
     {
       path: '/codeView/useCase/startingStyle',

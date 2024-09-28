@@ -1,9 +1,8 @@
 import { getFileDir } from '@/functions/hooks/system/getFileDir';
-import { viewsDir } from '@/functions/constants/paths';
 import CodeViewCardList from '../../CardList';
 
 export const ViewUiForm = async () => {
-  const filePaths = await getFileDir(viewsDir + 'codeView/useCase/');
+  const filePaths = await getFileDir('/codeView/useCase/');
 
   return (
     <>

@@ -1,23 +1,10 @@
-/* eslint-disable */
-// @ts-ignore
-import recursiveReaddir from 'recursive-readdir';
+import { route } from '@/functions/routes';
 
 export const getFileDir = async (dir: string) => {
-  const files = await recursiveReaddir(dir);
+  const routes = route();
 
-  let pathnames;
-  if (files) {
-    const deleteDir = 'src/app/';
-    pathnames = files.map((file: string) => {
-      const pathname = file
-        .replace(deleteDir, '')
-        .replace(/.[jt]sx?$/, '')
-        .replace('page', '');
-      return pathname;
-    });
-    // .filter((file: string) => !/^_.+/.test(file))
-    // .filter((file: string) => file !== "index")
-  }
+  const path = routes.filter((i) => i.path.match(dir));
+  const paths = path.map((a) => a.path);
 
-  return pathnames;
+  return paths;
 };
