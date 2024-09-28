@@ -4,7 +4,7 @@ import recursiveReaddir from 'recursive-readdir';
 
 export const getFileDir = (dir: string) => {
   const files = recursiveReaddir(dir);
-  const pathnames = files;
+  let pathnames = files;
   // if (files) {
   //   const deleteDir = 'src/app/';
   //   pathnames = files.map((file: string) => {
