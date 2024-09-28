@@ -32,7 +32,7 @@ export const UserLogin = () => {
       name: '',
       email: '',
       password: '',
-      role: 'admin'
+      role: 'admin',
     },
   });
   const [errorMessage, setErrorMessage] = useState<string>('');

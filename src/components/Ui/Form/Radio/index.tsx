@@ -7,12 +7,11 @@ type props = {
   onBlur: Noop;
   // biome-ignore lint:reason
   onChange: (...event: any[]) => void;
-  value: string
+  value: string;
 };
 
-
 export const InputText = (props: props) => {
-  const { label, error, data, value, ...field } = props
+  const { label, error, data, value, ...field } = props;
   return (
     <>
       <p className='c_label'>{label}</p>
