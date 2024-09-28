@@ -1,10 +1,24 @@
 /* eslint-disable */
 // @ts-ignore
-import recursiveReaddir from 'recursive-readdir';
+// import recursiveReaddir from 'recursive-readdir';
+const fs = require('fs');
 
 export const getFileDir = async (dir: string) => {
   // const files = await recursiveReaddir(dir);
-  let pathnames = ['aaa'];
+  const readdirRecursively = (dir: string, files = []) => {
+    const dirents = fs.readdirSync(dir, { withFileTypes: true });
+    const dirs = [];
+    for (const dirent of dirents) {
+      if (dirent.isDirectory()) dirs.push(`${dir}/${dirent.name}`);
+      if (dirent.isFile()) files.push(`${dir}/${dirent.name}`);
+    }
+    for (const d of dirs) {
+      files = readdirRecursively(d, files);
+    }
+    return files;
+  };
+
+  // let pathnames = ['aaa'];
   // if (files) {
   //   const deleteDir = 'src/app/';
   //   pathnames = files.map((file: string) => {
@@ -18,5 +32,5 @@ export const getFileDir = async (dir: string) => {
   //   // .filter((file: string) => file !== "index")
   // }
 
-  return pathnames;
+  return readdirRecursively(dir);
 };
