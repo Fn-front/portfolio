@@ -8,7 +8,6 @@ export const ViewUiForm = async () => {
   return (
     <>
       <h2 className='c_h2 u_mt32'>Form</h2>
-      <p>{viewsDir + 'codeView/ui/form/'}</p>
       <CodeViewCardList editFilePaths={filePaths} />
     </>
   );
