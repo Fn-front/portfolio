@@ -10,6 +10,7 @@ export const getFileDir = async (dir: string) => {
     const dirs = [];
     for (const dirent of dirents) {
       if (dirent.isDirectory()) dirs.push(`${dir}/${dirent.name}`);
+      /// @ts-ignore
       if (dirent.isFile()) files.push(`${dir}/${dirent.name}`);
     }
     for (const d of dirs) {
