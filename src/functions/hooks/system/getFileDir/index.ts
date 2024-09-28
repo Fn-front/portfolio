@@ -1,12 +1,10 @@
 /* eslint-disable */
 // @ts-ignore
-// import recursiveReaddir from 'recursive-readdir';
+import recursiveReaddir from 'recursive-readdir';
 
 export const getFileDir = async (dir: string) => {
-  // const files = await recursiveReaddir(dir);
-  let pathnames = [
-    'src/app/(authenticated)/codeView/useCase/startingStyle/page.tsx',
-  ];
+  const files = await recursiveReaddir(dir);
+  let pathnames = files;
   // if (files) {
   //   const deleteDir = 'src/app/';
   //   pathnames = files.map((file: string) => {
