@@ -43,11 +43,11 @@ export const UserLogin = () => {
 
   const handleFormSubmit = async (data: Submit) => {
     // ローディング開始
-    setLoading(true)
+    setLoading(true);
     const res = await userRegister(data);
     setErrorMessage(res.message);
     // ローディング停止
-    setLoading(false)
+    setLoading(false);
   };
 
   return (
