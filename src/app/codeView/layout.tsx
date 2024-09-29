@@ -1,4 +1,4 @@
-'use client';
+// 'use client';
 
 import React, { useState } from 'react';
 import { SystemMessage } from '@/components/Ui/System/Message';
@@ -9,26 +9,27 @@ export default function Layout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [systemMessage, setMessage] = useState<string>('');
-  const [systemType, setType] = useState<string>('');
-  const [systemVisible, setVisible] = useState<boolean>(false);
+  // const [systemMessage, setMessage] = useState<string>('');
+  // const [systemType, setType] = useState<string>('');
+  // const [systemVisible, setVisible] = useState<boolean>(false);
 
   return (
     <>
-      <SystemMessageContext.Provider
+      {/* <SystemMessageContext.Provider
         value={{ setMessage, setType, setVisible }}
-      >
-        {children}
+      > */}
 
-        {/* システムメッセージ */}
-        {systemVisible && (
+
+      {/* システムメッセージ */}
+      {/* {systemVisible && (
           <SystemMessage
             visible={systemVisible}
             message={systemMessage}
             type={systemType}
           />
-        )}
-      </SystemMessageContext.Provider>
+        )} */}
+      {/* </SystemMessageContext.Provider> */}
+      {children}
     </>
   );
 }

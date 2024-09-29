@@ -7,9 +7,9 @@ const InputText = () => {
   return (
     <>
       <Default />
-      <ErrorText />
+      {/* <ErrorText />
       <ErrorBg />
-      <ErrorBox />
+      <ErrorBox /> */}
     </>
   );
 };
