@@ -11,6 +11,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { signIn } from 'next-auth/react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useState } from 'react';
+import Loading from '@/features/Ui/Loading';
 
 type Submit = {
   email: string;
@@ -57,47 +58,49 @@ export const UserLogin = () => {
 
   return (
     <>
-      <LayoutSign>
-        <HeadLine Component='h2' label='ログイン' />
-        <form onSubmit={handleSubmit(handleFormSubmit)}>
-          <AuthFormComponent mt='32'>
-            <Controller
-              name='email'
-              control={control}
-              render={({ field }) => (
-                <InputText
-                  label={field.name}
-                  error={errors.email}
-                  placeholder='user name'
-                  onBlur={field.onBlur}
-                  onChange={field.onChange}
-                />
+      <Loading visible={true}>
+        <LayoutSign>
+          <HeadLine Component='h2' label='ログイン' />
+          <form onSubmit={handleSubmit(handleFormSubmit)}>
+            <AuthFormComponent mt='32'>
+              <Controller
+                name='email'
+                control={control}
+                render={({ field }) => (
+                  <InputText
+                    label={field.name}
+                    error={errors.email}
+                    placeholder='user name'
+                    onBlur={field.onBlur}
+                    onChange={field.onChange}
+                  />
+                )}
+              />
+            </AuthFormComponent>
+            <AuthFormComponent mt='32'>
+              <Controller
+                name='password'
+                control={control}
+                render={({ field }) => (
+                  <InputText
+                    label={field.name}
+                    error={errors.password}
+                    placeholder='user password'
+                    onBlur={field.onBlur}
+                    onChange={field.onChange}
+                  />
+                )}
+              />
+            </AuthFormComponent>
+            <div className='u_mt16 u_ta_center'>
+              {errorMessage && (
+                <p className='c_text_error u_mt8'>{errorMessage}</p>
               )}
-            />
-          </AuthFormComponent>
-          <AuthFormComponent mt='32'>
-            <Controller
-              name='password'
-              control={control}
-              render={({ field }) => (
-                <InputText
-                  label={field.name}
-                  error={errors.password}
-                  placeholder='user password'
-                  onBlur={field.onBlur}
-                  onChange={field.onChange}
-                />
-              )}
-            />
-          </AuthFormComponent>
-          <div className='u_mt16 u_ta_center'>
-            {errorMessage && (
-              <p className='c_text_error u_mt8'>{errorMessage}</p>
-            )}
-          </div>
-          <Button type='submit' label='送信' mt='32' position='center' />
-        </form>
-      </LayoutSign>
+            </div>
+            <Button type='submit' label='送信' mt='32' position='center' />
+          </form>
+        </LayoutSign>
+      </Loading>
     </>
   );
 };
