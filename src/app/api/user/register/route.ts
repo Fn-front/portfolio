@@ -10,11 +10,12 @@ export const POST = async (req: Request) => {
     const existingUser = await prisma.user.findUnique({ where: { email } });
 
     // 既存のユーザーかどうか確認
-    if (existingUser)
+    if (existingUser) {
       return NextResponse.json(
         { message: '入力されたEmailはすでに存在しています' },
         { status: 422 },
       );
+    }
 
     const hashedPassword = await bcrypt.hash(password, 12);
 
