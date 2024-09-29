@@ -1,0 +1,27 @@
+.l_flex_wrapper {
+  display: flex;
+}
+
+.l_flex_wrapper_gap {
+  &8 {
+    gap: 8px;
+  }
+
+  &16 {
+    gap: 16px;
+  }
+}
+
+.l_flex_wrapper_justify {
+  &center {
+    justify-content: center;
+  }
+
+  &between {
+    justify-content: space-between;
+  }
+
+  &around {
+    justify-content: space-around;
+  }
+}
