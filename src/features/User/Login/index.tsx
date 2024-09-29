@@ -34,12 +34,16 @@ export const UserLogin = () => {
   });
   const router = useRouter();
   const [errorMessage, setErrorMessage] = useState<string>('');
+  const [loading, setLoading] = useState<boolean>(false);
 
   // リダイレクト前URl情報
   const searchParams = useSearchParams();
   const callbackUrl = searchParams.get('callbackUrl') || '/';
 
   const handleFormSubmit = async (data: Submit) => {
+    // ローディング開始
+    setLoading(true);
+
     await signIn('credentials', {
       redirect: false,
       email: data.email,
@@ -49,16 +53,22 @@ export const UserLogin = () => {
         if (res?.error) {
           setErrorMessage(res.error);
         }
+
+        // ローディング停止
+        setLoading(false);
         router.push(callbackUrl);
       })
       .catch((err) => {
+        // ローディング停止
+        setLoading(false);
+
         setErrorMessage(err);
       });
   };
 
   return (
     <>
-      <Loading visible={true}>
+      <Loading visible={loading}>
         <LayoutSign>
           <HeadLine Component='h2' label='ログイン' />
           <form onSubmit={handleSubmit(handleFormSubmit)}>
