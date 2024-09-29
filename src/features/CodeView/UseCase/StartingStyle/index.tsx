@@ -6,17 +6,17 @@ import TransitionNot from './TransitionNot';
 
 export const StartingStyle = async () => {
   const contentPath1 =
-    '/src/styles/project/useCase/startingStyle/';
+    './src/styles/project/useCase/startingStyle/';
   const contentFile1 = '_starting_style_animation.scss';
   const content1: string = await getFile(contentPath1, contentFile1);
 
   const contentPath2 =
-    '/src/styles/project/useCase/startingStyle/';
+    './src/styles/project/useCase/startingStyle/';
   const contentFile2 = '_starting_style_transition.scss';
   const content2: string = await getFile(contentPath2, contentFile2);
 
   const contentPath3 =
-    '/src/styles/project/useCase/startingStyle/';
+    './src/styles/project/useCase/startingStyle/';
   const contentFile3 = '_starting_style_transition_not.scss';
   const content3: string = await getFile(contentPath3, contentFile3);
 
