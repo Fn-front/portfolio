@@ -4,12 +4,12 @@ import ComponentWrapper from '@/components/Layout/ComponentWrapper';
 
 const Default = async () => {
   const contentPath = '/src/styles/components/card/_dark.scss';
-  const content: string = await getFile(contentPath);
+  // const content: string = await getFile(contentPath);
 
   return (
     <>
       <h3 className='c_h3 u_mt40'>黒背景ver</h3>
-      <ComponentWrapper styleCode={content}>
+      {/* <ComponentWrapper styleCode={content}>
         <ul className='c_card_list c_card_list_dark'>
           <li className='c_card_list_item'>
             <div className='c_card_list_item_main'>
@@ -63,7 +63,7 @@ const Default = async () => {
             </div>
           </li>
         </ul>
-      </ComponentWrapper>
+      </ComponentWrapper> */}
     </>
   );
 };
