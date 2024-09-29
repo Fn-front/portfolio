@@ -17,16 +17,13 @@ export const CodeViewCardList = (props: Props) => {
                 <div
                   className='p_code_view_card_list_main_image'
                   style={{
-                    backgroundImage:
-                      'url(/assets/img' + item + '.png)',
+                    backgroundImage: 'url(/assets/img' + item + '.png)',
                   }}
                 ></div>
               </div>
               <div className='c_card_list_item_other'>
                 <p>
-                  <Link href={item}>
-                    {item}
-                  </Link>
+                  <Link href={item}>{item}</Link>
                 </p>
               </div>
             </li>

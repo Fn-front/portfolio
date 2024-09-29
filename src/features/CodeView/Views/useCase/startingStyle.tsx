@@ -10,6 +10,6 @@ export const ViewUiForm = async () => {
       <CodeViewCardList editFilePaths={filePaths} />
     </>
   );
-}
+};
 
 export default ViewUiForm;
