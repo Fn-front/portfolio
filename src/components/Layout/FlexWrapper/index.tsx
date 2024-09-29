@@ -15,7 +15,7 @@ export const FlexWrapper = ({
 
   return (
     <>
-      <div className={`l_flex_wrapper ${'l_flex_wrapper_gap' + gap} ${'l_flex_wrapper_justify' + justify} ${mt ? 'u_mt' + mt : ''}`}>
+      <div className={`l_flex_wrapper ${'l_flex_wrapper_gap' + gap} ${'l_flex_wrapper_justify_' + justify} ${mt ? 'u_mt' + mt : ''}`}>
         {children}
       </div>
     </>
