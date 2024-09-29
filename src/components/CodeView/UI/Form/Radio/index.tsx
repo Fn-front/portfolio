@@ -4,8 +4,8 @@ import ErrorText from './RadioErrorText';
 const Radio = () => {
   return (
     <>
-      <Default />
-      <ErrorText />
+      {/* <Default />
+      <ErrorText /> */}
     </>
   );
 };

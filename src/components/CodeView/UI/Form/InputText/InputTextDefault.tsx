@@ -2,8 +2,9 @@ import { getFile } from '@/features/ReadFile';
 import ComponentWrapper from '@/components/Layout/ComponentWrapper';
 
 const Default = async () => {
-  const contentPath = '/src/styles/components/form/inputText/_default.scss';
-  const content: string = await getFile(contentPath);
+  const contentPath = './src/styles/components/form/inputText/';
+  const contentFile = '_default.scss';
+  const content: string = await getFile(contentPath, contentFile);
 
   return (
     <>
