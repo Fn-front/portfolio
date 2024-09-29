@@ -1,10 +1,4 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  experimental: {
-    outputFileTracingIncludes: {
-      '/styles/': ['./src/styles/**/*'],
-    },
-  },
-};
+const nextConfig = {};
 
 export default nextConfig;
