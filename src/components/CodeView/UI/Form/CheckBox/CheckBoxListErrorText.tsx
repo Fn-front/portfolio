@@ -2,8 +2,9 @@ import { getFile } from '@/features/ReadFile';
 import ComponentWrapper from '@/components/Layout/ComponentWrapper';
 
 const CheckBoxList = async () => {
-  const contentPath = '/src/styles/components/form/checkBox/_error.scss';
-  const content: string = await getFile(contentPath);
+  const contentPath = './src/styles/components/form/checkBox/';
+  const contentFile = '_error.scss';
+  const content: string = await getFile(contentPath, contentFile);
 
   return (
     <>

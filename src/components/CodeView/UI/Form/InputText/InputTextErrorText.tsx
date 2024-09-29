@@ -2,8 +2,9 @@ import { getFile } from '@/features/ReadFile';
 import ComponentWrapper from '@/components/Layout/ComponentWrapper';
 
 const ErrorText = async () => {
-  const contentPath = '/src/styles/components/text/_text_error.scss';
-  const content: string = await getFile(contentPath);
+  const contentPath = './src/styles/components/text/';
+  const contentFile = '_text_error.scss';
+  const content: string = await getFile(contentPath, contentFile);
 
   return (
     <>
