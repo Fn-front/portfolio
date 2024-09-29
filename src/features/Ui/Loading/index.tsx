@@ -11,7 +11,11 @@ export const Loading = ({
     <>
       <div className='c_loading'>
         {children}
-        {visible && <div className='c_loading_item'><CircularProgressIcon /></div>}
+        {visible && (
+          <div className='c_loading_item'>
+            <CircularProgressIcon />
+          </div>
+        )}
       </div>
     </>
   );
