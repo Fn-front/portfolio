@@ -12,6 +12,7 @@ import { SchemaRegister, registerType } from '@/functions/schema/user/register';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { userRegister } from '@/functions/hooks/api/auth/user/Register';
 import Loading from '@/features/Ui/Loading';
+import FlexWrapper from '@/components/Layout/FlexWrapper';
 
 type Submit = {
   name: string;
@@ -122,7 +123,10 @@ export const UserLogin = () => {
                 <p className='c_text_error u_mt8'>{errorMessage}</p>
               </div>
             )}
-            <Button type='submit' label='送信' mt='32' position='center' />
+            <FlexWrapper gap='16' justify='center' mt='32'>
+              <Button type='submit' label='送信' />
+              <Button type='button' label='戻る' />
+            </FlexWrapper>
           </form>
         </LayoutSign>
       </Loading>
