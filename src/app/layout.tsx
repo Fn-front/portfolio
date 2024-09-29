@@ -2,10 +2,6 @@ import { Suspense } from 'react';
 import type { Metadata } from 'next';
 import { Noto_Sans_JP } from 'next/font/google';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
-import BreadcrumbsList from '@/features/BreadcrumbsList';
-import Sidebar from '@/components/Ui/SideBar';
-import Header from '@/features/Ui/Header';
-import Footer from '@/components/Ui/Footer';
 
 import '@/styles/app.scss';
 
@@ -32,17 +28,7 @@ export default function RootLayout({
     <html lang='ja'>
       <body className={noto.className}>
         <AppRouterCacheProvider options={{ key: 'css' }}>
-          <Header />
-          <div className='l_global_container'>
-            <Sidebar />
-            <main className='l_main'>
-              <div className='l_container'>
-                <BreadcrumbsList />
-                <Suspense>{children}</Suspense>
-              </div>
-            </main>
-          </div>
-          <Footer />
+          <Suspense>{children}</Suspense>
         </AppRouterCacheProvider>
       </body>
     </html>
