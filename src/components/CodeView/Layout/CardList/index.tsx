@@ -4,8 +4,8 @@ import Dark from './CardListDark';
 const CardList = () => {
   return (
     <>
-      <Default />
-      <Dark />
+      {/* <Default />
+      <Dark /> */}
     </>
   );
 };
