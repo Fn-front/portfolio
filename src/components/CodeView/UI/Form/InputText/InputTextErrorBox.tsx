@@ -3,8 +3,9 @@ import { getFile } from '@/features/ReadFile';
 import ComponentWrapper from '@/components/Layout/ComponentWrapper';
 
 const ErrorBox = async () => {
-  const contentPath = '/src/styles/components/form/inputText/_error_box.scss';
-  const content: string = await getFile(contentPath);
+  const contentPath = './src/styles/components/form/inputText/';
+  const contentFile = '_error_box.scss';
+  const content: string = await getFile(contentPath, contentFile);
 
   return (
     <>

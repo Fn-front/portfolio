@@ -2,8 +2,9 @@ import { getFile } from '@/features/ReadFile';
 import ComponentWrapper from '@/components/Layout/ComponentWrapper';
 
 const Default = async () => {
-  const contentPath = '/src/styles/components/form/radio/_error.scss';
-  const content: string = await getFile(contentPath);
+  const contentPath = './src/styles/components/form/radio/';
+  const contentFile = '_error.scss';
+  const content: string = await getFile(contentPath, contentFile);
 
   return (
     <>
