@@ -50,6 +50,7 @@
     "eslint": "^8.57.1",
     "eslint-config-next": "14.2.3",
     "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-react": "^7.37.1",
     "highlight.js": "^11.9.0",
     "html-react-parser": "^5.1.10",
     "markuplint": "^4.9.3",
