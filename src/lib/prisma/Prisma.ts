@@ -4,7 +4,7 @@ const prismaClientSingleton = () => {
   return new PrismaClient();
 };
 
-// biome-ignore lint: reason
+/* eslint-disable */
 declare const globalThis: {
   prismaGlobal: ReturnType<typeof prismaClientSingleton>;
 } & typeof global;

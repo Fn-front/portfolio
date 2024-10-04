@@ -33,7 +33,7 @@ export const POST = async (req: Request) => {
 
     return NextResponse.json({ user }, { status: 201 });
 
-    // biome-ignore lint: error
+    /* eslint-disable */
   } catch (error: any) {
     return NextResponse.json({ message: error.message }, { status: 500 });
   }
