@@ -4,8 +4,7 @@ const prismaClientSingleton = () => {
   return new PrismaClient();
 };
 
-/* eslint-disable */ lint: reason;
-declare const globalThis: {
+/* eslint-disable */ declare const globalThis: {
   prismaGlobal: ReturnType<typeof prismaClientSingleton>;
 } & typeof global;
 

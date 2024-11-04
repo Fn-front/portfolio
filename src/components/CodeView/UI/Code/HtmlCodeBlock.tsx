@@ -12,7 +12,7 @@ type Props = {
 
 export const HtmlCodeBlock = (props: Props) => {
   const [code, setCode] = useState<string>('');
-  /* eslint-disable */ lint: reason
+  /* eslint-disable */
   const [viewStatus, setViewStatus] = useState<boolean>(true);
 
   (async () => {

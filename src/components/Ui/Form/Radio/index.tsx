@@ -5,7 +5,7 @@ type props = {
   error: FieldError | undefined;
   data: Array<string>;
   onBlur: Noop;
-  /* eslint-disable */ lint: reason
+  /* eslint-disable */
   onChange: (...event: any[]) => void;
   value: string;
 };

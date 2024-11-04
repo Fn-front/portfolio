@@ -21,7 +21,7 @@ export const StyleCodeBlock = (props: Props) => {
     language: 'scss',
   }).value;
 
-  /* eslint-disable */ lint: reason
+  /* eslint-disable */
   const handleCopyCodeBlock = (e: any) => {
     const copyResult = handleCopyToClipboard(
       e.parentNode.querySelector('.scss'),

@@ -6,7 +6,7 @@ type Props = {
   errorBg?: boolean;
   placeholder: string;
   onBlur: Noop;
-  /* eslint-disable */ lint: reason
+  /* eslint-disable */
   onChange: (...event: any[]) => void;
 };
 
