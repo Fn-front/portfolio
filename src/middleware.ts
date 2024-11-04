@@ -3,10 +3,10 @@ import { withAuth } from 'next-auth/middleware';
 
 // 管理者権限が必要なパス一覧
 const adminOnlyPathRegex = [
-  new RegExp(`^/user/register.*$`),
-  new RegExp(`^/xxx/.*$`),
-  new RegExp(`^/xxx/.*$`),
-  new RegExp(`^/xxx/.*$`),
+  new RegExp('^/user/register.*$'),
+  new RegExp('^/xxx/.*$'),
+  new RegExp('^/xxx/.*$'),
+  new RegExp('^/xxx/.*$'),
 ];
 
 export default withAuth(
