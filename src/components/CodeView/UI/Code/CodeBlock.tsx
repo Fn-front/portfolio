@@ -24,7 +24,7 @@ export const CodeBlock = (props: Props) => {
   return (
     <>
       {viewCodeBlock && (
-        <div className='p_code_block u_mt16'>
+        <div className={`p_code_block u_mt16 ${!viewHtml || !viewStyle ? 'p_code_block_single' : ''}`}>
           <ul className='l_list_icon_switch'>
             <li className='l_list_icon_switch_item'>
               <div

@@ -1,7 +1,7 @@
 import { z } from 'zod';
 import {
   errorMessageMaxLength,
-  errorMessageInputText,
+  // errorMessageInputText,
   errorMessageAlphanumeric,
   errorMessageEmail,
 } from '@/functions/constants/schema';
