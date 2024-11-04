@@ -1,0 +1,20 @@
+.flex_overflow {
+  text-align: center;
+
+  &_wrapper {
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+}
+
+.c_card_list {
+  display: inline-flex;
+  grid-template-columns: inherit;
+  justify-content: center;
+  text-align: left;
+
+  &_item {
+    flex-shrink: 0;
+    width: 300px;
+  }
+}

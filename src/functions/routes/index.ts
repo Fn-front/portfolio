@@ -31,6 +31,11 @@ export const route = () => {
       breadcrumb: 'カードリスト',
     },
     {
+      path: '/codeView/ui/layout/flex',
+      segment: 'flex',
+      breadcrumb: 'flex',
+    },
+    {
       path: '/codeView/useCase/startingStyle',
       segment: 'startingStyle',
       breadcrumb: 'starting-style',

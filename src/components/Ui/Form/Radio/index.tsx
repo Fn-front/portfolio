@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { Noop, type FieldError } from 'react-hook-form';
 
 type props = {
@@ -5,7 +6,7 @@ type props = {
   error: FieldError | undefined;
   data: Array<string>;
   onBlur: Noop;
-  // biome-ignore lint:reason
+  /* eslint-disable */
   onChange: (...event: any[]) => void;
   value: string;
 };

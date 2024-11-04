@@ -71,7 +71,7 @@ const options: NextAuthOptions = {
       return token;
     },
     async session({ session, token }) {
-      token.accessToken;
+      // token.accessToken;
       return {
         ...session,
         user: {
