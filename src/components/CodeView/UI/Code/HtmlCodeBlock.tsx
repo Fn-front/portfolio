@@ -12,7 +12,7 @@ type Props = {
 
 export const HtmlCodeBlock = (props: Props) => {
   const [code, setCode] = useState<string>('');
-  // biome-ignore lint: reason
+  /* eslint-disable */ lint: reason
   const [viewStatus, setViewStatus] = useState<boolean>(true);
 
   (async () => {

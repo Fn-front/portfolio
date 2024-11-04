@@ -6,7 +6,7 @@ type Props = {
   errorBg?: boolean;
   placeholder: string;
   onBlur: Noop;
-  // biome-ignore lint:reason
+  /* eslint-disable */ lint: reason
   onChange: (...event: any[]) => void;
 };
 

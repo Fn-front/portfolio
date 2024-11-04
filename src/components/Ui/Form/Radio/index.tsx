@@ -5,7 +5,7 @@ type props = {
   error: FieldError | undefined;
   data: Array<string>;
   onBlur: Noop;
-  // biome-ignore lint:reason
+  /* eslint-disable */ lint: reason
   onChange: (...event: any[]) => void;
   value: string;
 };
