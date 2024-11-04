@@ -3,8 +3,8 @@ import { getFile } from '@/features/ReadFile';
 import ComponentWrapper from '@/components/Layout/ComponentWrapper';
 
 const Default = async () => {
-  const contentPath = './src/styles/components/card/';
-  const contentFile = '_dark.scss';
+  const contentPath = './src/styles/components/codeView/flex/';
+  const contentFile = '_overflow_center.scss';
   const content: string = await getFile(contentPath, contentFile);
 
   return (
