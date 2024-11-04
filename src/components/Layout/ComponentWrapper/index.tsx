@@ -10,7 +10,7 @@ export const ComponentWrapper = ({
   styleCode,
 }: Readonly<{
   children: React.ReactNode;
-  styleCode: string;
+  styleCode?: string;
 }>) => {
   const ref = useRef<HTMLDivElement>(null);
   const [element, setElement] = useState<string>('');
@@ -24,24 +24,33 @@ export const ComponentWrapper = ({
 
   return (
     <>
-      <div className='c_code_copy'>
-        <div
-          className='c_icon_code'
-          onClick={() => setCodeOpen((prev) => !prev)}
-        >
-          <Icon>
-            <CodeTwoToneIcon fontSize='large' />
-          </Icon>
-        </div>
+      {styleCode &&
+        <>
+          <div className='c_code_copy'>
+            <div
+              className='c_icon_code'
+              onClick={() => setCodeOpen((prev) => !prev)}
+            >
+              <Icon>
+                <CodeTwoToneIcon fontSize='large' />
+              </Icon>
+            </div>
+            <div className='l_component_wrapper u_mt16' ref={ref}>
+              {children}
+            </div>
+          </div>
+          <CodeBlock
+            styleCode={styleCode}
+            htmlCode={element}
+            viewStatus={codeOpen}
+          />
+        </>
+      }
+      {!styleCode &&
         <div className='l_component_wrapper u_mt16' ref={ref}>
           {children}
         </div>
-      </div>
-      <CodeBlock
-        styleCode={styleCode}
-        htmlCode={element}
-        viewStatus={codeOpen}
-      />
+      }
     </>
   );
 };
