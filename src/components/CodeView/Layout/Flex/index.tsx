@@ -1,10 +1,9 @@
-// import Default from './CardListDefault';
-// import Dark from './CardListDark';
+import FlexOverCardCenter from './CardOverCenter'
 
 const Flex = () => {
   return (
     <>
-      <p>あああ</p>
+      <FlexOverCardCenter />
     </>
   );
 };
