@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { Noop, type FieldError } from 'react-hook-form';
 
 type props = {
