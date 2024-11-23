@@ -16,10 +16,12 @@ export const UiHeaderLogout = (props: Props) => {
 
   const handleNameLength = (char: string) => {
     const maxLength = 5;
-    const length = char.length;
+    if (char) {
+      const length = char.length;
 
-    if (length > maxLength) {
-      char = char.slice(0, maxLength) + '...';
+      if (length > maxLength) {
+        char = char.slice(0, maxLength) + '...';
+      }
     }
 
     return char;
