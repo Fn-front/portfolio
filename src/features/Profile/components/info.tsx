@@ -10,8 +10,8 @@ export const ProfileInfo = () => {
     <>
       <h1 className='c_h2'>Profile</h1>
       <div className='c_profile_info u_mt24'>
-        <p>2018年に新卒でWeb制作会社に入社。</p>
-        <p>2023年からWebアプリケーションのフロントエンドエンジニアとして携わっております。</p>
+        <p className='c_profile_text_small'>2018年に新卒でWeb制作会社に入社。</p>
+        <p className='c_profile_text_small'>2023年からWebアプリケーションのフロントエンドエンジニアとして携わっております。</p>
         <div className='c_profile_info_block u_mt40'>
           <div>
             <div className='c_profile_info_block_about'>
