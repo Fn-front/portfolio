@@ -1,0 +1,25 @@
+$sp: 767px;
+$pc: 768px;
+
+
+@mixin sp {
+  @media screen and (max-width: $sp) {
+    @content
+  }
+}
+
+;
+
+@mixin pc {
+  @media screen and (min-width: $pc) {
+    @content
+  }
+}
+
+;
+
+@function px($size) {
+  @return $size * 4px
+}
+
+;
