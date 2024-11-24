@@ -57,6 +57,7 @@
     "prettier": "^3.3.3",
     "prisma": "^5.18.0",
     "react-hook-form": "^7.53.0",
+    "recharts": "^2.13.3",
     "stylelint": "^16.9.0",
     "stylelint-config-prettier-scss": "^1.0.0",
     "stylelint-config-recess-order": "^5.1.0",
