@@ -1,10 +1,5 @@
 @use '../../mixin/mixin' as m;
-
-%baseContainer {
-  max-width: 960px;
-  margin-right: auto;
-  margin-left: auto;
-}
+@use './base';
 
 .c_profile_info {
   @extend %baseContainer;

@@ -1,1 +1,6 @@
-@use './info'
+@use './info';
+@use './skill';
+
+.c_profile_text_small {
+  font-size: 1.4rem;
+}
