@@ -68,6 +68,7 @@ export const ProfileSkill = () => {
         </div>
         <h2 className='c_h3 u_mt36'>Tool Experience</h2>
         <div style={{ width: '100%', height: '350px' }}>
+          <div className='c_profile_text_small u_mt8' style={{ textIndent: '-1em', paddingLeft: '1em' }}>※デザインツールの経験年数は、Web・アプリケーション開発における使用歴です。<br />デザイン制作歴ではありません。</div>
           <ProfileSkillChart data={toolData} />
         </div>
       </div>
