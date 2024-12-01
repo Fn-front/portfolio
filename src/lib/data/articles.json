@@ -1,0 +1,14 @@
+[
+  {
+    "id": "1",
+    "title": "最初の記事",
+    "content": "これは最初の記事の内容です。",
+    "imagePath": "profile.png"
+  },
+  {
+    "id": "2",
+    "title": "2番目の記事",
+    "content": "これは2番目の記事の内容です。",
+    "imagePath": "article2.jpg"
+  }
+]
