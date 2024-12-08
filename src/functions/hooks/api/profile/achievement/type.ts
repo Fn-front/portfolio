@@ -4,3 +4,7 @@ export type Achievement = {
   content: string;
   imagePath: string;
 };
+
+export type AchievementDetailProps = {
+  id: string;
+};
