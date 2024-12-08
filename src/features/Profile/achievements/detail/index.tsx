@@ -1,4 +1,5 @@
-// import Image from 'next/image'
+import { handleFetchError } from '@/utils/errorHandler';
+import Image from 'next/image'
 
 type ProfileAchievementsDetailProps = {
   params: string;
@@ -9,27 +10,44 @@ export const ProfileAchievementsDetail = async (
     params
   }: Readonly<ProfileAchievementsDetailProps>) => {
 
-  const response = await fetch(`http://localhost:2937/api/profile/achievement/${params}`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ id: params }),
-  });
+  let response;
+  let data;
+  let errorMessage;
 
-  const data = await response.json()
+  try {
+    response = await fetch(`http://localhost:2937/api/profile/achievement/${params}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ id: params }),
+    });
 
-  console.log(data);
+    if (response.ok) {
+      data = await response.json()
+    }
+    else {
+      errorMessage = handleFetchError(response)
+    }
 
+  } catch {
+    errorMessage = handleFetchError(response!)
+  }
 
   return (
     <>
-      {data && (
+      {data && !errorMessage && (
         <>
           <p>{data.title}</p>
           <p>{data.content}</p>
+          {data.imagePath.map((item: string, index: number) => (
+            <div key={index}>
+              <Image src={item} alt='' width={100} height={100} priority />
+            </div>
+          ))}
         </>
       )}
+      {errorMessage && <p>{errorMessage}</p>}
     </>
   )
 }
