@@ -1,8 +1,14 @@
+import ProfileAchievementsDetail from '@/features/Profile/achievements/detail';
 
-export default function ProfileAchievementsAboutPage() {
+export default async function ProfileAchievementsAboutPage({
+  params,
+}: {
+  params: { id: string };
+}) {
+
   return (
     <>
-      <p>Achievements</p>
+      <ProfileAchievementsDetail params={params.id} />
     </>
   )
 }
