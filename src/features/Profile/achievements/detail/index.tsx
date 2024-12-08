@@ -30,8 +30,9 @@ export const ProfileAchievementsDetail = async (
       errorMessage = handleFetchError(response)
     }
 
-  } catch {
-    errorMessage = handleFetchError(response!)
+  } catch (error) {
+    // response が undefined の可能性があるためエラーオブジェクトを使用
+    errorMessage = error instanceof Error ? error.message : 'An error occurred';
   }
 
   return (
