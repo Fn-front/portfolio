@@ -18,7 +18,7 @@ export const ProfileAchievements = async () => {
 
   return (
     <>
-      {data && errorMessage && (
+      {data && !errorMessage && (
         <ul className='c_card_list c_card_list_dark'>
           {data.map((item: Achievement) => (
             <li key={item.id} className='c_card_list_item'>
