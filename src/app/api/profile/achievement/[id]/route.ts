@@ -1,14 +1,7 @@
 import { NextResponse } from 'next/server';
 import path from 'path';
 import { promises as fs } from 'fs';
-
-// データの型定義
-interface Achievement {
-  id: string;
-  title: string;
-  content: string;
-  imagePath: string;
-}
+import { Achievement } from '@/functions/types/achievement';
 
 // 特定の記事を取得するAPI
 export async function POST(request: Request) {
@@ -35,7 +28,10 @@ export async function POST(request: Request) {
 
     return NextResponse.json({
       ...achievement,
-      imagePath: `/assets/img/achievements/${achievement.imagePath}`,
+      thumbnail: `/assets/img/achievements/${achievement.imagePath}`,
+      imagePath: achievement.imagePath.map(
+        (a) => `/assets/img/achievements/${a}`,
+      ),
     });
   } catch (error) {
     return NextResponse.json(

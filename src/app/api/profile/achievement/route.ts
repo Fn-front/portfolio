@@ -1,14 +1,7 @@
 import { NextResponse } from 'next/server';
 import path from 'path';
 import { promises as fs } from 'fs';
-
-// データの型定義
-interface Achievement {
-  id: string;
-  title: string;
-  content: string;
-  imagePath: string;
-}
+import { Achievement } from '@/functions/types/achievement';
 
 // 全記事を取得するAPI
 export async function GET() {
@@ -23,6 +16,7 @@ export async function GET() {
 
     const achievementsWithAbsolutePaths = achievements.map((achievement) => ({
       ...achievement,
+      thumbnail: `/assets/img/achievements/${achievement.imagePath}`,
       imagePath: `/assets/img/achievements/${achievement.imagePath}`,
     }));
 
