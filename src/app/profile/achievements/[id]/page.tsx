@@ -8,7 +8,7 @@ export default async function ProfileAchievementsAboutPage({
 
   return (
     <>
-      <ProfileAchievementsDetail params={params.id} />
+      <ProfileAchievementsDetail id={params.id} />
     </>
   )
 }

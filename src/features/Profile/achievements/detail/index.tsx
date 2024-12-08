@@ -2,12 +2,12 @@ import { handleFetchError } from '@/utils/errorHandler';
 import Image from 'next/image'
 
 type ProfileAchievementsDetailProps = {
-  params: string;
+  id: string;
 }
 
 export const ProfileAchievementsDetail = async (
   {
-    params
+    id
   }: Readonly<ProfileAchievementsDetailProps>) => {
 
   let response;
@@ -15,12 +15,12 @@ export const ProfileAchievementsDetail = async (
   let errorMessage;
 
   try {
-    response = await fetch(`http://localhost:2937/api/profile/achievement/${params}`, {
+    response = await fetch(`http://localhost:2937/api/profile/achievement/${id}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ id: params }),
+      body: JSON.stringify({ id: id }),
     });
 
     if (response.ok) {
