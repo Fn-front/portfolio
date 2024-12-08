@@ -35,7 +35,7 @@ export async function POST(request: Request) {
 
     return NextResponse.json({
       ...achievement,
-      imagePath: `/images/${achievement.imagePath}`,
+      imagePath: `/assets/img/achievements/${achievement.imagePath}`,
     });
   } catch (error) {
     return NextResponse.json(
