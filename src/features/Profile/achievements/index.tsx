@@ -11,7 +11,12 @@ export const ProfileAchievements = async () => {
   try {
     response = await fetch('http://localhost:2937/api/profile/achievement');
 
-    data = await response.json()
+    if (response.ok) {
+      data = await response.json()
+    }
+    else {
+      errorMessage = handleFetchError(response)
+    }
   } catch {
     errorMessage = handleFetchError(response!)
   }
