@@ -16,7 +16,7 @@ export async function GET() {
 
     const achievementsWithAbsolutePaths = achievements.map((achievement) => ({
       ...achievement,
-      thumbnail: `/assets/img/achievements/${achievement.imagePath}`,
+      thumbnail: `/assets/img/achievements/${achievement.thumbnail}`,
       imagePath: `/assets/img/achievements/${achievement.imagePath}`,
     }));
 
