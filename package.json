@@ -4,19 +4,14 @@
   "private": true,
   "scripts": {
     "dev": "next dev -p 2937",
-    "build": "npx prisma generate && next build",
+    "build": "next build",
     "start": "next start",
     "lint": "eslint './src/**/*.{js,ts,tsx}'",
     "e2e": "cross-env APP_ENV=\"./src/tests\" npx playwright test && npx playwright show-report",
     "e2e:actions": "cross-env APP_ENV=\"./src/tests\" npx playwright test --reporter='./playwright-reporter.ts'",
     "snapshot": "cross-env APP_ENV=\"./src/snapshot\" npx playwright test",
-    "prisma:migrate": "npx prisma migrate dev --name init",
-    "prisma:seed": "npx prisma db seed",
     "format": "prettier --write './src/**/*.{js,ts,tsx,json}'",
     "markuplint": "markuplint \"./src/**/*.tsx\""
-  },
-  "prisma": {
-    "seed": "ts-node --compilerOptions {\"module\":\"CommonJS\"} prisma/seeder/seed.ts"
   },
   "dependencies": {
     "@emotion/cache": "^11.11.0",
@@ -35,7 +30,6 @@
     "@markuplint/jsx-parser": "^4.7.6",
     "@markuplint/react-spec": "^4.5.6",
     "@playwright/test": "^1.46.1",
-    "@prisma/client": "^5.18.0",
     "@types/highlight.js": "^10.1.0",
     "@types/node": "^20",
     "@types/prettier": "^3.0.0",
@@ -52,7 +46,6 @@
     "html-react-parser": "^5.1.10",
     "markuplint": "^4.9.3",
     "prettier": "^3.3.3",
-    "prisma": "^5.18.0",
     "react-hook-form": "^7.53.0",
     "recharts": "^2.13.3",
     "sharp": "^0.33.5",
@@ -63,7 +56,6 @@
     "stylelint-config-standard": "^36.0.1",
     "stylelint-order": "^6.0.4",
     "swr": "^2.2.5",
-    "ts-node": "^10.9.2",
     "typescript": "^5",
     "zod": "^3.23.8"
   }
