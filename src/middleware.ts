@@ -43,5 +43,5 @@ export const config = {
   // matcher: ['/((?!register|api|login|).*)'],
 
   // register・api・loginはリダイレクト対象から外す
-  matcher: ['/((?!register|api|login).*)'],
+  matcher: ['/((?!register|api|login|profile|assets|_next).*)'],
 };

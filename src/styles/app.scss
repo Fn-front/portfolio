@@ -1,6 +1,9 @@
 // foundation
 @use './foundation/reset';
 
+// foundation
+@use './mixin/mixin';
+
 // component
 @use './components/breadcrumbs/breadcrumbs';
 @use './components/button/button';
@@ -19,6 +22,7 @@
 @use './components/icon/icon';
 @use './components/iframe/iframe';
 @use './components/image/image';
+@use './components/profile/profile';
 @use './components/system/system';
 @use './components/text/explanation';
 @use './components/text/text_error';

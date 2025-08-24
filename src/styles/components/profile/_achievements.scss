@@ -1,0 +1,7 @@
+@use '../../mixin/mixin' as m;
+@use './base';
+
+.c_achievements {
+  @extend %baseContainer;
+  letter-spacing: 0.05em;
+}

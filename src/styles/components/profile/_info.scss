@@ -1,0 +1,81 @@
+@use '../../mixin/mixin' as m;
+@use './base';
+
+.c_profile_info {
+  @extend %baseContainer;
+  letter-spacing: 0.05em;
+}
+
+.c_profile_info_block {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+
+  @include m.sp {
+    flex-direction: column-reverse;
+  }
+
+  &_image {
+    flex-shrink: 0;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 500px;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &_about {
+
+    ruby {
+
+      &:nth-of-type(2) {
+        padding-left: 8px;
+      }
+    }
+
+    rt {
+      margin-bottom: 4px;
+      font-size: 1.4rem;
+    }
+  }
+
+  .c_h3 {
+    font-size: 1.8rem;
+  }
+}
+
+.c_profile_link_column {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.c_profile_link_item {
+  color: rgba(var(--color-white), .7);
+  text-decoration: underline;
+
+  @include m.pc {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.c_profile_icon_github {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  font-size: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}

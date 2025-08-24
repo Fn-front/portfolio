@@ -1,21 +1,7 @@
 .u_mt {
-  &8 {
-    margin-top: calc(var(--base-px)*1px);
-  }
-
-  &16 {
-    margin-top: calc(var(--base-px)*2px);
-  }
-
-  &24 {
-    margin-top: calc(var(--base-px)*3px);
-  }
-
-  &32 {
-    margin-top: calc(var(--base-px)*4px);
-  }
-
-  &40 {
-    margin-top: calc(var(--base-px)*5px);
+  @for $i from 1 through 20 {
+    &#{$i * 4} {
+      margin-top: #{$i * 4px};
+    }
   }
 }
