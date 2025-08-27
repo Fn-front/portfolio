@@ -1,11 +1,16 @@
 'use client';
 
+import { useEffect } from 'react';
 import { Achievement } from '@/functions/types/achievement';
 import { useAchievements } from '@/functions/hooks/useAchievements';
 import Image from 'next/image'
 
 export const ProfileAchievements = () => {
-  const { data, errorMessage, loading } = useAchievements();
+  const { data, errorMessage, loading, fetchAchievements } = useAchievements();
+
+  useEffect(() => {
+    fetchAchievements();
+  }, [fetchAchievements]);
 
   if (loading) {
     return <p>Loading...</p>;
