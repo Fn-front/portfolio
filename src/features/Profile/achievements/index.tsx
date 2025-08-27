@@ -1,25 +1,14 @@
+'use client';
+
 import { Achievement } from '@/functions/types/achievement';
-import { handleFetchError } from '@/utils/errorHandler';
+import { useAchievements } from '@/functions/hooks/useAchievements';
 import Image from 'next/image'
 
-export const ProfileAchievements = async () => {
+export const ProfileAchievements = () => {
+  const { data, errorMessage, loading } = useAchievements();
 
-  let response;
-  let data;
-  let errorMessage;
-
-  try {
-    response = await fetch('http://localhost:2937/api/profile/achievement');
-
-    if (response.ok) {
-      data = await response.json()
-    }
-    else {
-      errorMessage = handleFetchError(response)
-    }
-  } catch (error) {
-    // response が undefined の可能性があるためエラーオブジェクトを使用
-    errorMessage = error instanceof Error ? error.message : 'An error occurred';
+  if (loading) {
+    return <p>Loading...</p>;
   }
 
   return (
@@ -28,7 +17,7 @@ export const ProfileAchievements = async () => {
         <ul className='c_card_list c_card_list_dark'>
           {data.map((item: Achievement) => (
             <li key={item.id} className='c_card_list_item'>
-              <a href={`/profile/achievements/${item.id}`}>
+              <a href={`/achievements/${item.id}`}>
                 <div className='c_card_list_item_main'>
                   <div className='c_next_image_wrapper'>
                     <Image
