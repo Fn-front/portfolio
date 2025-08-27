@@ -1,0 +1,6 @@
+@use './base';
+
+.c_profile_skill {
+  @extend %baseContainer;
+  letter-spacing: 0.05em;
+}

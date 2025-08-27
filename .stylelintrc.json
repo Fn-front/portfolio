@@ -10,6 +10,14 @@
     "media-feature-name-value-no-unknown": true,
     "color-named": "never",
     "declaration-no-important": true,
-    "no-invalid-position-at-import-rule": null
+    "no-invalid-position-at-import-rule": null,
+    "selector-class-pattern": [
+      "^[a-z][a-z0-9]*(_[a-z0-9]+)*$",
+      {
+        "message": "クラス名はスネークケースで記述してください (例: my_component, button_primary)",
+        "resolveNestedSelectors": true,
+        "severity": "error"
+      }
+    ]
   }
 }

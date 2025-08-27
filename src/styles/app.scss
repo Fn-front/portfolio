@@ -1,13 +1,13 @@
 // foundation
 @use './foundation/reset';
 
+// foundation
+@use './mixin/mixin';
+
 // component
 @use './components/breadcrumbs/breadcrumbs';
 @use './components/button/button';
 @use './components/card/card_list';
-@use './components/code/code_block';
-@use './components/code/code_copy';
-@use './components/codeView/flex/flex';
 @use './components/error/error';
 @use './components/form/checkBox/check_box';
 @use './components/form/inputText/input_text';
@@ -15,10 +15,10 @@
 @use './components/head/h1';
 @use './components/head/h2';
 @use './components/head/h3';
-@use './components/header/c_header';
 @use './components/icon/icon';
 @use './components/iframe/iframe';
 @use './components/image/image';
+@use './components/profile/profile';
 @use './components/system/system';
 @use './components/text/explanation';
 @use './components/text/text_error';
@@ -27,7 +27,6 @@
 @use './global/globals';
 
 // layout
-@use './layout/auth/form_sign';
 @use './layout/form/form_list';
 @use './layout/form/form_column';
 @use './layout/icon/list_icon_switch';
@@ -39,9 +38,6 @@
 @use './layout/sidebar';
 
 // project
-@use './project/auth/form_component';
-@use './project/codeViewCardList/codeViewCardList';
-@use './project/codeBlock/codeBlock';
 @use './project/useCase/startingStyle/starting_style';
 @use './project/useCase/startingStyle/starting_style_animation';
 @use './project/useCase/startingStyle/starting_style_transition';
