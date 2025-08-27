@@ -58,7 +58,7 @@ export const ProfileSkill = () => {
           <ProfileSkillChart data={technicalData} />
         </div>
         <h2 className='c_h3 u_mt36'>Others Library Experience</h2>
-        <div style={{ width: '100%', height: '380px' }}>
+        <div style={{ width: '100%', height: '400px' }}>
           <ProfileSkillChart data={othersLibrary} />
         </div>
         <h2 className='c_h3 u_mt36'>Tool Experience</h2>

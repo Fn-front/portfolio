@@ -1,7 +1,12 @@
-import { TECHNICAL_SKILLS, OTHERS_LIBRARY_SKILLS, TOOL_SKILLS } from './skillsData';
+import {
+  TECHNICAL_SKILLS,
+  OTHERS_LIBRARY_SKILLS,
+  TOOL_SKILLS,
+} from './skillsData';
 
 export const SKILL_TAGS = {
   TECHNICAL: {
+    JQUERY: 'JQuery',
     REACT: 'React',
     NEXT_JS: 'Next.js',
     VUE_JS: 'Vue.js',
@@ -21,6 +26,7 @@ export const SKILL_TAGS = {
   OTHERS_LIBRARY: {
     RADIX_UI: 'Radix UI',
     SHADCN_UI: 'shadcn/ui',
+    MATERIAL_UI: 'Material UI',
     REACT_HOOK_FORM: 'react-hook-form',
     ZOD: 'zod',
     ESLINT: 'ESLint',
