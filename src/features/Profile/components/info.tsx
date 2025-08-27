@@ -22,7 +22,7 @@ export const ProfileInfo = () => {
               <h2 className='c_h3 u_mt36'>Business</h2>
               <div className='u_mt16'>
                 <p>Web制作（HTML・CSS・JavaScript・レスポンシブ対応・CMS実装）</p>
-                <p className='u_mt4'>Webアプリケーション（機能要件・詳細設計・開発）</p>
+                <p className='u_mt4'>Webアプリケーション（機能要件・詳細設計・開発・運用）</p>
               </div>
               <h2 className='c_h3 u_mt36'>URL</h2>
               <p className='c_profile_link_column u_mt16'>
