@@ -1,6 +1,7 @@
 'use client'
 
 import dynamic from 'next/dynamic'
+import { TECHNICAL_SKILLS, OTHERS_LIBRARY_SKILLS, TOOL_SKILLS } from '@/functions/constants/skillsData'
 
 const ProfileSkillChart = dynamic(() => import('./skillChart'), {
   ssr: false
@@ -11,16 +12,19 @@ export const ProfileSkill = () => {
   const calculatePeriod = (
     startYear: number,
     startMonth: number,
-    endYear: number,
-    endMonth: number
+    endYear?: number,
+    endMonth?: number
   ) => {
+    const nowDate = new Date();
+    const actualEndYear = endYear ?? nowDate.getFullYear();
+    const actualEndMonth = endMonth ?? nowDate.getMonth();
 
-    if (isNaN(startYear) || isNaN(startMonth) || isNaN(endYear) || isNaN(endMonth)) {
+    if (isNaN(startYear) || isNaN(startMonth) || isNaN(actualEndYear) || isNaN(actualEndMonth)) {
       return 0;
     }
 
     const start = startYear * 12 + startMonth;
-    const end = endYear * 12 + endMonth;
+    const end = actualEndYear * 12 + actualEndMonth;
     const diffMonths = end - start;
 
     const years = Math.floor(diffMonths / 12);
@@ -30,41 +34,32 @@ export const ProfileSkill = () => {
     return decimalYears;
   };
 
-  const nowDate = new Date();
+  const technicalData = TECHNICAL_SKILLS.map(skillData => ({
+    skill: skillData.skill,
+    years: calculatePeriod(skillData.startYear, skillData.startMonth, skillData.endYear, skillData.endMonth)
+  }));
 
-  const technicalData = [
-    { skill: 'React', years: calculatePeriod(2023, 1, nowDate.getFullYear(), nowDate.getMonth()) },
-    { skill: 'Next.js', years: calculatePeriod(2023, 1, nowDate.getFullYear(), nowDate.getMonth()) },
-    { skill: 'Vue.js', years: calculatePeriod(2021, 12, 2023, 11) },
-    { skill: 'TypeScript', years: calculatePeriod(2021, 12, nowDate.getFullYear(), nowDate.getMonth()) },
-    { skill: 'Tailwind', years: calculatePeriod(2024, 4, 2024, 11) },
-    { skill: 'HTML/Pug/Ejs', years: calculatePeriod(2018, 4, nowDate.getFullYear(), nowDate.getMonth()) },
-    { skill: 'CSS/SASS', years: calculatePeriod(2018, 4, nowDate.getFullYear(), nowDate.getMonth()) },
-    { skill: 'JavaScript', years: calculatePeriod(2018, 4, nowDate.getFullYear(), nowDate.getMonth()) },
-    { skill: 'laravel', years: calculatePeriod(2024, 1, 2024, 11) },
-    { skill: 'MovableType', years: calculatePeriod(2021, 4, 2023, 11) },
-    { skill: 'WordPress', years: calculatePeriod(2021, 4, 2022, 4) },
-    { skill: 'Webpack', years: calculatePeriod(2020, 1, 2024, 1) },
-    { skill: 'Gulp', years: calculatePeriod(2020, 4, 2022, 1) },
-  ];
+  const othersLibrary = OTHERS_LIBRARY_SKILLS.map(skillData => ({
+    skill: skillData.skill,
+    years: calculatePeriod(skillData.startYear, skillData.startMonth, skillData.endYear, skillData.endMonth)
+  }));
 
-  const toolData = [
-    { skill: 'PhotoShop', years: calculatePeriod(2018, 4, 2023, 11) },
-    { skill: 'Illustrator', years: calculatePeriod(2018, 4, 2023, 11) },
-    { skill: 'XD', years: calculatePeriod(2018, 4, 2023, 11) },
-    { skill: 'Figma', years: calculatePeriod(2023, 12, nowDate.getFullYear(), nowDate.getMonth()) },
-    { skill: 'Github', years: calculatePeriod(2018, 4, nowDate.getFullYear(), nowDate.getMonth()) },
-    { skill: 'VSCode', years: calculatePeriod(2018, 4, nowDate.getFullYear(), nowDate.getMonth()) },
-    { skill: 'Backlog', years: calculatePeriod(2018, 4, nowDate.getFullYear(), nowDate.getMonth()) },
-  ];
+  const toolData = TOOL_SKILLS.map(skillData => ({
+    skill: skillData.skill,
+    years: calculatePeriod(skillData.startYear, skillData.startMonth, skillData.endYear, skillData.endMonth)
+  }));
 
   return (
     <>
       <h1 className='c_h2 u_mt40'>Skills</h1>
       <div className='c_profile_skill u_mt24'>
         <h2 className='c_h3 u_mt36'>Technical Experience</h2>
-        <div style={{ width: '100%', height: '600px' }}>
+        <div style={{ width: '100%', height: '650px' }}>
           <ProfileSkillChart data={technicalData} />
+        </div>
+        <h2 className='c_h3 u_mt36'>Others Library Experience</h2>
+        <div style={{ width: '100%', height: '380px' }}>
+          <ProfileSkillChart data={othersLibrary} />
         </div>
         <h2 className='c_h3 u_mt36'>Tool Experience</h2>
         <div className='c_profile_text_small u_mt8' style={{ textIndent: '-1em', paddingLeft: '1em' }}>※デザインツールの経験年数は、Web・アプリケーション開発における使用歴です。<br />デザイン制作歴ではありません。</div>
