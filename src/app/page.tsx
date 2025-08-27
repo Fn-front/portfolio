@@ -1,3 +1,9 @@
-export default function Home() {
-  return <p>トップページ</p>;
+import Profile from '@/features/Profile';
+
+export default function ProfilePage() {
+  return (
+    <>
+      <Profile />
+    </>
+  )
 }
