@@ -1,7 +1,5 @@
 import { NextResponse } from 'next/server';
-import path from 'path';
-import { promises as fs } from 'fs';
-import { Achievement } from '@/functions/types/achievement';
+import { articles } from '@/lib/data/articles';
 
 const formatImagePath = (imagePath: string[]): string => {
   return imagePath.length > 0
@@ -12,15 +10,7 @@ const formatImagePath = (imagePath: string[]): string => {
 // 全記事を取得するAPI
 export async function GET() {
   try {
-    const jsonDirectory = path.join(process.cwd(), 'src', 'lib', 'data');
-    const fileContents = await fs.readFile(
-      jsonDirectory + '/articles.json',
-      'utf8',
-    );
-
-    const achievements: Achievement[] = JSON.parse(fileContents);
-
-    const achievementsWithAbsolutePaths = achievements.map((achievement) => ({
+    const achievementsWithAbsolutePaths = articles.map((achievement) => ({
       ...achievement,
       thumbnail: `/assets/img/${formatImagePath(achievement.imagePath)}${achievement.thumbnail}`,
       imagePath: formatImagePath(achievement.imagePath),

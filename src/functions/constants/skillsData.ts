@@ -1,4 +1,4 @@
-import { SKILL_TAGS } from './skills';
+import { SKILL_TAGS } from './skillTags';
 
 interface SkillData {
   skill: string;
