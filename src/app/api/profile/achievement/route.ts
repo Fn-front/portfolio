@@ -3,6 +3,12 @@ import path from 'path';
 import { promises as fs } from 'fs';
 import { Achievement } from '@/functions/types/achievement';
 
+const formatImagePath = (imagePath: string[]): string => {
+  return imagePath.length > 0
+    ? imagePath.map((path) => `${path}`).join('/') + '/'
+    : '';
+};
+
 // 全記事を取得するAPI
 export async function GET() {
   try {
@@ -16,8 +22,8 @@ export async function GET() {
 
     const achievementsWithAbsolutePaths = achievements.map((achievement) => ({
       ...achievement,
-      thumbnail: `/assets/img/achievements/${achievement.thumbnail}`,
-      imagePath: `/assets/img/achievements/${achievement.imagePath}`,
+      thumbnail: `/assets/img/${formatImagePath(achievement.imagePath)}${achievement.thumbnail}`,
+      imagePath: formatImagePath(achievement.imagePath),
     }));
 
     return NextResponse.json(achievementsWithAbsolutePaths);
