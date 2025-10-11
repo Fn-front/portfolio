@@ -23,7 +23,8 @@
     "react-dom": "^18",
     "react-markdown": "^10.1.0",
     "remark-gfm": "^4.0.1",
-    "sass": "^1.77.4"
+    "sass": "^1.77.4",
+    "simple-icons": "^15.16.1"
   },
   "devDependencies": {
     "@markuplint/jsx-parser": "^4.7.6",
