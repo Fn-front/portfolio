@@ -18,6 +18,7 @@ export default async function ProfileAchievementsAboutPage({
         content={result.content!}
         title={result.title!}
         date={result.date!}
+        techStack={result.techStack || []}
       />
     </>
   );

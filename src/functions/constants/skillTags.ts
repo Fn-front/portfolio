@@ -27,6 +27,7 @@ export const SKILL_TAGS = {
     PRETTIER: 'Prettier',
     STYLELINT: 'Stylelint',
     MARKUPLINT: 'Markuplint',
+    STORYBOOK: 'Storybook',
   },
   TOOL: {
     PHOTOSHOP: 'PhotoShop',

@@ -9,7 +9,11 @@ import {
   siDocker,
   siSwagger,
   siEslint,
-  siPrettier
+  siPrettier,
+  siStylelint,
+  siZod,
+  siReacthookform,
+  siMermaid
 } from 'simple-icons';
 
 type TechIconProps = {
@@ -30,6 +34,10 @@ export const TechIcon = ({ name, size = 16 }: TechIconProps) => {
     'swagger': { path: siSwagger.path, hex: siSwagger.hex },
     'eslint': { path: siEslint.path, hex: siEslint.hex },
     'prettier': { path: siPrettier.path, hex: siPrettier.hex },
+    'stylelint': { path: siStylelint.path, hex: siStylelint.hex },
+    'zod': { path: siZod.path, hex: siZod.hex },
+    'reacthookform': { path: siReacthookform.path, hex: siReacthookform.hex },
+    'mermaid': { path: siMermaid.path, hex: siMermaid.hex },
   };
 
   const icon = iconMap[name.toLowerCase()];

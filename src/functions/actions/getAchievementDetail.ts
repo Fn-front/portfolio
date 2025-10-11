@@ -2,11 +2,18 @@
 
 import path from 'path';
 import { promises as fs } from 'fs';
+import matter from 'gray-matter';
+
+type TechStack = {
+  name: string;
+  icon?: string;
+};
 
 export async function getAchievementDetail(id: string): Promise<{
   content?: string;
   title?: string;
   date?: string;
+  techStack?: TechStack[];
   error?: string
 }> {
   try {
@@ -24,25 +31,14 @@ export async function getAchievementDetail(id: string): Promise<{
 
     const fileContent = await fs.readFile(filePath, 'utf8');
 
-    // フロントマターを抽出
-    const frontmatterRegex = /^---\s*\n([\s\S]*?)\n---\s*\n/;
-    const match = fileContent.match(frontmatterRegex);
+    // gray-matterでフロントマターをパース
+    const { data, content } = matter(fileContent);
 
-    let title = '';
-    let date = '';
+    const title = data.title || '';
+    const date = data.date || '';
+    const techStack = data.techStack || [];
 
-    if (match && match[1]) {
-      const frontmatter = match[1];
-      const titleMatch = frontmatter.match(/title:\s*['"](.+?)['"]/);
-      const dateMatch = frontmatter.match(/date:\s*['"](.+?)['"]/);
-
-      if (titleMatch) title = titleMatch[1];
-      if (dateMatch) date = dateMatch[1];
-    }
-
-    const content = fileContent.replace(frontmatterRegex, '').trim();
-
-    return { content, title, date };
+    return { content, title, date, techStack };
   } catch (error) {
     if ((error as NodeJS.ErrnoException).code === 'ENOENT') {
       return { error: '記事が見つかりません' };
