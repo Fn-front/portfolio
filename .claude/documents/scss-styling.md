@@ -9,16 +9,34 @@
 - ✅ **正しい**: `src/styles/` 配下にSCSSファイルを作成・編集
 - ❌ **禁止**: コンポーネントディレクトリ内に `.scss` / `.module.scss` ファイルを作成
 - ❌ **禁止**: インラインスタイル（`style` 属性）の使用
+- ❌ **禁止**: JSX内での `style={{}}` オブジェクトの使用
 - ❌ **禁止**: `sx` prop の多用（一時的な調整のみ許可）
 
 ### 理由
 - プロジェクト全体のスタイルを一元管理するため
 - FLOCSS アーキテクチャに準拠するため
 - スタイルの重複を防ぎ、保守性を高めるため
+- インラインスタイルはCSS詳細度の問題を引き起こし、デバッグが困難になる
 
 ### 例外
 - **Material-UI のテーマ設定**: `src/lib/mui/theme.ts` など
 - **グローバルスタイルのインポート**: `github-markdown-css` など外部CSSライブラリ
+
+### 正しいスタイル適用の手順
+
+```tsx
+// ❌ Bad: インラインスタイル
+<div style={{ marginRight: '4px', display: 'inline-block' }}>
+
+// ✅ Good: クラス名を使用
+<div className="tech_icon">
+
+// src/styles/components/tech_stack/tech_stack.scss
+.tech_icon {
+  display: inline-block;
+  margin-right: 4px;
+}
+```
 
 ## FLOCSS アーキテクチャ
 
@@ -586,6 +604,56 @@ $button_base: (
 }
 ```
 
+## 余白管理の原則
+
+**【必須】marginは上方向のみで調整する**
+
+```scss
+// ✅ Good: margin-topで調整
+.section {
+  margin-top: 2rem;
+}
+
+.heading {
+  margin-top: 1.5rem;
+}
+
+// ❌ Bad: margin-bottomは使用しない
+.section {
+  margin-bottom: 2rem; // 禁止
+}
+
+.heading {
+  margin-bottom: 1.5rem; // 禁止
+}
+```
+
+### 理由
+- レイアウトの崩れを防ぐため
+- 余白の予測可能性を高める
+- コンポーネント間の余白管理を統一
+
+### 例外
+- **padding**: 上下左右どの方向でも使用可能
+- **最初の要素**: `margin-top: 0` で余白をリセット
+
+```scss
+// ✅ Good: 最初の要素は余白をリセット
+.container {
+  > *:first-child {
+    margin-top: 0;
+  }
+
+  .section {
+    margin-top: 2rem;
+  }
+
+  .heading {
+    margin-top: 1.5rem;
+  }
+}
+```
+
 ## 禁止事項
 
 ### 絶対禁止
@@ -594,6 +662,7 @@ $button_base: (
 - ❌ 色名の使用（`red`, `blue`等）
 - ❌ `!important` の使用
 - ❌ インライン CSS（`style` 属性）
+- ❌ `margin-bottom` の使用（margin-topのみ使用）
 
 ### 推奨しない
 - ⚠️ 4階層以上のネスト
