@@ -33,10 +33,10 @@ export const MarkdownRenderer = (props: Props) => {
     <ReactMarkdown
       remarkPlugins={[remarkGfm]}
       components={{
-        a: ({ node, ...props }) => (
+        a: ({ ...props }) => (
           <a {...props} target='_blank' rel='noopener noreferrer' />
         ),
-        li: ({ node, children, ...props }) => {
+        li: ({ children, ...props }) => {
           const text = String(children);
           let iconName: string | null = null;
 
@@ -61,7 +61,7 @@ export const MarkdownRenderer = (props: Props) => {
             </li>
           );
         },
-        p: ({ node, children, ...props }) => {
+        p: ({ children, ...props }) => {
           // <achievement-stats>を検出
           const text = String(children);
           if (text.includes('achievement-stats')) {
