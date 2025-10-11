@@ -11,14 +11,18 @@ type Props = {
     segment: string;
     breadcrumb: string;
   }[][];
+  dynamicTitle?: string;
 };
 
 export const Breadcrumbs = (props: Props) => {
-  const { segment, segments, breadcrumbs } = props;
+  const { segments, breadcrumbs, dynamicTitle } = props;
 
   // クエリパラメータにiframeが含まれていたらパンくずを非表示
   const searchParams = useSearchParams();
   const getParams = searchParams.get('iframe');
+
+  // 動的セグメントかどうかをチェック（パラメータIDが数字の場合）
+  const isDynamicSegment = segments.some((s) => /^\d+$/.test(s));
 
   return (
     <ul className={`c_breadcrumbs ${getParams ? 'c_breadcrumbs_hidden' : ''}`}>
@@ -30,13 +34,14 @@ export const Breadcrumbs = (props: Props) => {
         </li>
       )}
       {breadcrumbs.map((item, index) => {
+        const isLast = index === breadcrumbs.length - 1 && !isDynamicSegment;
         return (
           <li
             key={index}
-            className={`c_breadcrumbs_item ${item[0].segment == segment ? 'c_breadcrumbs_item_disabled' : null}`}
+            className={`c_breadcrumbs_item ${isLast ? 'c_breadcrumbs_item_disabled' : ''}`}
           >
             <Link
-              href={item[0].segment !== segment ? item[0].path : ''}
+              href={!isLast ? item[0].path : ''}
               className={'c_breadcrumbs_item_link'}
             >
               {item[0].breadcrumb}
@@ -44,6 +49,11 @@ export const Breadcrumbs = (props: Props) => {
           </li>
         );
       })}
+      {isDynamicSegment && dynamicTitle && (
+        <li className='c_breadcrumbs_item c_breadcrumbs_item_disabled'>
+          <span className='c_breadcrumbs_item_link'>{dynamicTitle}</span>
+        </li>
+      )}
     </ul>
   );
 };

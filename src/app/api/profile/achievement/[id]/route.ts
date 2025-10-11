@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import path from 'path';
 import { promises as fs } from 'fs';
+import matter from 'gray-matter';
 
 export async function GET(
   request: NextRequest,
@@ -22,10 +23,13 @@ export async function GET(
     );
 
     const fileContents = await fs.readFile(filePath, 'utf8');
+    const { data, content } = matter(fileContents);
 
     return NextResponse.json({
       id,
-      content: fileContents,
+      title: data.title || '',
+      date: data.date || '',
+      content,
     });
   } catch (error) {
     if ((error as NodeJS.ErrnoException).code === 'ENOENT') {
