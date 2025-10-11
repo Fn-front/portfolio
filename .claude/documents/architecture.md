@@ -444,6 +444,44 @@ Profile/
 
 詳細は `.claude/naming-conventions.md` を参照。
 
+## データ管理の重要な注意事項
+
+### 実績データの同期
+
+**【MUST】実績データの二重管理**
+
+実績データは以下の2箇所で管理されています：
+1. `src/content/achievements/*.md` - Markdownファイル（詳細コンテンツ）
+2. `src/lib/data/articles.ts` - データ配列（一覧表示用メタデータ）
+
+**重要**: `src/content/achievements/` の内容を変更した場合、**必ず** `src/lib/data/articles.ts` も更新してください。
+
+#### 更新が必要なケース
+- 新しい実績を追加したとき
+- 実績のタイトルを変更したとき
+- サムネイル画像を変更したとき
+- 技術タグを追加・変更したとき
+
+#### 更新例
+```typescript
+// src/lib/data/articles.ts
+export const articles: Achievement[] = [
+  {
+    id: '1',                              // Markdownファイル名と一致
+    title: '自社SaaS フロントエンドリアーキテクチャ',  // Markdownの見出しと一致
+    content: 'これは最初の記事の内容です。',
+    thumbnail: 'no_image_yoko.jpg',       // public/images/ 配下の画像
+    imagePath: [],
+    tags: [                               // Markdownで使用している技術と一致
+      SKILL_TAGS.TECHNICAL.REACT,
+      SKILL_TAGS.TECHNICAL.NEXT_JS,
+      SKILL_TAGS.TECHNICAL.TYPESCRIPT,
+    ],
+  },
+  // ...
+];
+```
+
 ## 参考資料
 
 - [Next.js App Router Documentation](https://nextjs.org/docs/app)
