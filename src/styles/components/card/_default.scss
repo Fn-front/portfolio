@@ -4,12 +4,25 @@
   gap: 16px;
 
   &_item {
+    overflow: hidden;
     border: 1px solid rgba(var(--color-black), .2);
     border-radius: 8px;
-    overflow: hidden;
 
     &_other {
       padding: 16px;
+    }
+
+    &_tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px 8px;
+      font-size: 1.2rem;
+
+      &_item {
+        padding: 1px 8px;
+        border: 1px solid rgba(var(--color-white), 0.5);
+        border-radius: 100px;
+      }
     }
   }
 }
