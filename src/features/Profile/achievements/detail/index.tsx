@@ -1,6 +1,7 @@
 'use client';
 
 import MarkdownRenderer from '@/components/Formatters/MarkdownRenderer';
+import 'github-markdown-css/github-markdown.css';
 
 type ProfileAchievementsDetailProps = {
   content: string;
@@ -10,7 +11,7 @@ export const ProfileAchievementsDetail = ({
   content
 }: Readonly<ProfileAchievementsDetailProps>) => {
   return (
-    <div>
+    <div className="markdown_body">
       <MarkdownRenderer content={content} />
     </div>
   );

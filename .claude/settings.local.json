@@ -13,7 +13,16 @@
       "mcp__chrome-devtools__list_network_requests",
       "mcp__chrome-devtools__get_network_request",
       "mcp__chrome-devtools__take_snapshot",
-      "Bash(git restore:*)"
+      "Bash(git restore:*)",
+      "Bash(npm install:*)",
+      "mcp__chrome-devtools__take_screenshot",
+      "Bash(lsof:*)",
+      "Bash(xargs kill:*)",
+      "mcp__chrome-devtools__click",
+      "mcp__chrome-devtools__select_page",
+      "mcp__chrome-devtools__evaluate_script",
+      "mcp__chrome-devtools__hover",
+      "WebSearch"
     ],
     "deny": [],
     "ask": []

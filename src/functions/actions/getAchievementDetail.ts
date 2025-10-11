@@ -17,7 +17,11 @@ export async function getAchievementDetail(id: string): Promise<{ content?: stri
       `${id}.md`
     );
 
-    const content = await fs.readFile(filePath, 'utf8');
+    const fileContent = await fs.readFile(filePath, 'utf8');
+
+    // フロントマターを除外
+    const frontmatterRegex = /^---\s*\n[\s\S]*?\n---\s*\n/;
+    const content = fileContent.replace(frontmatterRegex, '').trim();
 
     return { content };
   } catch (error) {
