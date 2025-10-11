@@ -25,7 +25,8 @@
       "WebSearch",
       "Bash(node:*)",
       "Bash(npm run format:*)",
-      "mcp__chrome-devtools__new_page"
+      "mcp__chrome-devtools__new_page",
+      "Bash(npm run markuplint:*)"
     ],
     "deny": [],
     "ask": []

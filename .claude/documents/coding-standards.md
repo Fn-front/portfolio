@@ -240,8 +240,23 @@ const MemoizedList = React.memo(UserList);
 
 ### 実行タイミング
 - **保存時**: 自動フォーマット推奨
-- **コミット前**: `npm run lint` 実行必須
+- **コード修正後**: 必ず以下のコマンドを順次実行
+  ```bash
+  npm run lint      # ESLintでコード品質チェック
+  npm run format    # Prettierでコードフォーマット
+  npm run markuplint # Markuplintでマークアップ検証
+  ```
+- **コミット前**: すべてのリンターがパスすることを確認
 - **プッシュ前**: `npm run build` 成功確認
+
+### 【MUST】コード修正時のリンター実行
+コードを修正した場合、**必ず**以下のすべてのリンターを実行してください：
+
+1. **ESLint**: JavaScript/TypeScriptの構文・品質チェック
+2. **Prettier**: コードフォーマットの統一
+3. **Markuplint**: HTMLマークアップの検証
+
+すべてのリンターがエラー・警告なしでパスすることを確認してからコミットしてください。
 
 ## 参考資料
 
