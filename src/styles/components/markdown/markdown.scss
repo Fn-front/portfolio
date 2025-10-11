@@ -23,17 +23,10 @@
     }
 
     &.has_icon {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-
-      &::marker {
-        content: none;
-      }
-
-      &::before {
-        content: '•';
-        margin-right: 0.5rem;
+      > div {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
       }
 
       .tech_icon {

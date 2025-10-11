@@ -50,8 +50,14 @@ export const MarkdownRenderer = (props: Props) => {
 
           return (
             <li {...props} className={iconName ? 'has_icon' : ''}>
-              {iconName && <TechIcon name={iconName} size={16} />}
-              {children}
+              {iconName ? (
+                <div>
+                  <TechIcon name={iconName} size={16} />
+                  {children}
+                </div>
+              ) : (
+                children
+              )}
             </li>
           );
         },
