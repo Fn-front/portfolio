@@ -4,11 +4,16 @@ import { SKILL_TAGS } from '@/functions/constants/skillTags';
 export const articles: Achievement[] = [
   {
     id: '1',
-    title: '自社SaaSサービス開発',
+    title: '自社SaaS フロントエンドリアーキテクチャ',
     content: 'これは最初の記事の内容です。',
     thumbnail: 'no_image_yoko.jpg',
     imagePath: [],
-    tags: [SKILL_TAGS.TECHNICAL.REACT, SKILL_TAGS.TECHNICAL.NEXT_JS, SKILL_TAGS.TECHNICAL.TYPESCRIPT, SKILL_TAGS.TECHNICAL.LARAVEL]
+    tags: [
+      SKILL_TAGS.TECHNICAL.REACT,
+      SKILL_TAGS.TECHNICAL.NEXT_JS,
+      SKILL_TAGS.TECHNICAL.TYPESCRIPT,
+      SKILL_TAGS.TECHNICAL.LARAVEL,
+    ],
   },
   {
     id: '2',
@@ -16,7 +21,12 @@ export const articles: Achievement[] = [
     content: 'これは最初の記事の内容です。',
     thumbnail: 'no_image_yoko.jpg',
     imagePath: [],
-    tags: [SKILL_TAGS.TECHNICAL.PYTHON, SKILL_TAGS.TECHNICAL.REACT, SKILL_TAGS.TECHNICAL.TYPESCRIPT, SKILL_TAGS.TECHNICAL.NEXT_JS]
+    tags: [
+      SKILL_TAGS.TECHNICAL.PYTHON,
+      SKILL_TAGS.TECHNICAL.REACT,
+      SKILL_TAGS.TECHNICAL.TYPESCRIPT,
+      SKILL_TAGS.TECHNICAL.NEXT_JS,
+    ],
   },
   {
     id: '3',
@@ -24,6 +34,10 @@ export const articles: Achievement[] = [
     content: 'これは2番目の記事の内容です。',
     thumbnail: 'no_image_yoko.jpg',
     imagePath: [],
-    tags: [SKILL_TAGS.TECHNICAL.LARAVEL, SKILL_TAGS.TECHNICAL.JAVASCRIPT, SKILL_TAGS.TECHNICAL.CSS_SASS]
-  }
+    tags: [
+      SKILL_TAGS.TECHNICAL.LARAVEL,
+      SKILL_TAGS.TECHNICAL.JAVASCRIPT,
+      SKILL_TAGS.TECHNICAL.CSS_SASS,
+    ],
+  },
 ];

@@ -1,7 +1,7 @@
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import TechIcon from '@/components/Icons/TechIcon';
-import AchievementStats from '@/components/AchievementStats/AchievementStats';
+import AchievementStats from '@/components/Ui/AchievementStats/AchievementStats';
 
 type Props = {
   content: string;

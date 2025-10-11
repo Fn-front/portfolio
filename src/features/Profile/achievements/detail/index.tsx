@@ -1,6 +1,6 @@
 'use client';
 
-import AchievementHeader from '@/components/AchievementHeader/AchievementHeader';
+import AchievementHeader from '@/components/Ui/AchievementHeader/AchievementHeader';
 import MarkdownRenderer from '@/components/Formatters/MarkdownRenderer';
 import TechStackList from '@/components/TechStack/TechStackList';
 import 'github-markdown-css/github-markdown.css';
