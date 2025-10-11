@@ -14,7 +14,11 @@ export default async function ProfileAchievementsAboutPage({
 
   return (
     <>
-      <ProfileAchievementsDetail content={result.content!} />
+      <ProfileAchievementsDetail
+        content={result.content!}
+        title={result.title!}
+        date={result.date!}
+      />
     </>
   );
 }
