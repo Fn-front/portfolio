@@ -14,7 +14,7 @@ export async function getAchievementDetail(id: string): Promise<{
   title?: string;
   date?: string;
   techStack?: TechStack[];
-  error?: string
+  error?: string;
 }> {
   try {
     if (!id || !/^\d+$/.test(id)) {
@@ -26,7 +26,7 @@ export async function getAchievementDetail(id: string): Promise<{
       'src',
       'content',
       'achievements',
-      `${id}.md`
+      `${id}.md`,
     );
 
     const fileContent = await fs.readFile(filePath, 'utf8');

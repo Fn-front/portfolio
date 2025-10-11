@@ -4,16 +4,13 @@ import { promises as fs } from 'fs';
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: { id: string } },
 ) {
   try {
     const id = params.id;
 
     if (!id || !/^\d+$/.test(id)) {
-      return NextResponse.json(
-        { error: '無効なIDです' },
-        { status: 400 },
-      );
+      return NextResponse.json({ error: '無効なIDです' }, { status: 400 });
     }
 
     const filePath = path.join(
@@ -21,7 +18,7 @@ export async function GET(
       'src',
       'content',
       'achievements',
-      `${id}.md`
+      `${id}.md`,
     );
 
     const fileContents = await fs.readFile(filePath, 'utf8');

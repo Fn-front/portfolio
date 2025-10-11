@@ -1,25 +1,33 @@
-'use client'
+'use client';
 
-import dynamic from 'next/dynamic'
-import { TECHNICAL_SKILLS, OTHERS_LIBRARY_SKILLS, TOOL_SKILLS } from '@/functions/constants/skillsData'
+import dynamic from 'next/dynamic';
+import {
+  TECHNICAL_SKILLS,
+  OTHERS_LIBRARY_SKILLS,
+  TOOL_SKILLS,
+} from '@/functions/constants/skillsData';
 
 const ProfileSkillChart = dynamic(() => import('./skillChart'), {
-  ssr: false
-})
+  ssr: false,
+});
 
 export const ProfileSkill = () => {
-
   const calculatePeriod = (
     startYear: number,
     startMonth: number,
     endYear?: number,
-    endMonth?: number
+    endMonth?: number,
   ) => {
     const nowDate = new Date();
     const actualEndYear = endYear ?? nowDate.getFullYear();
     const actualEndMonth = endMonth ?? nowDate.getMonth();
 
-    if (isNaN(startYear) || isNaN(startMonth) || isNaN(actualEndYear) || isNaN(actualEndMonth)) {
+    if (
+      isNaN(startYear) ||
+      isNaN(startMonth) ||
+      isNaN(actualEndYear) ||
+      isNaN(actualEndMonth)
+    ) {
       return 0;
     }
 
@@ -29,24 +37,39 @@ export const ProfileSkill = () => {
 
     const years = Math.floor(diffMonths / 12);
     const months = diffMonths % 12;
-    const decimalYears = Number((years + (months / 12)).toFixed(1));
+    const decimalYears = Number((years + months / 12).toFixed(1));
 
     return decimalYears;
   };
 
-  const technicalData = TECHNICAL_SKILLS.map(skillData => ({
+  const technicalData = TECHNICAL_SKILLS.map((skillData) => ({
     skill: skillData.skill,
-    years: calculatePeriod(skillData.startYear, skillData.startMonth, skillData.endYear, skillData.endMonth)
+    years: calculatePeriod(
+      skillData.startYear,
+      skillData.startMonth,
+      skillData.endYear,
+      skillData.endMonth,
+    ),
   }));
 
-  const othersLibrary = OTHERS_LIBRARY_SKILLS.map(skillData => ({
+  const othersLibrary = OTHERS_LIBRARY_SKILLS.map((skillData) => ({
     skill: skillData.skill,
-    years: calculatePeriod(skillData.startYear, skillData.startMonth, skillData.endYear, skillData.endMonth)
+    years: calculatePeriod(
+      skillData.startYear,
+      skillData.startMonth,
+      skillData.endYear,
+      skillData.endMonth,
+    ),
   }));
 
-  const toolData = TOOL_SKILLS.map(skillData => ({
+  const toolData = TOOL_SKILLS.map((skillData) => ({
     skill: skillData.skill,
-    years: calculatePeriod(skillData.startYear, skillData.startMonth, skillData.endYear, skillData.endMonth)
+    years: calculatePeriod(
+      skillData.startYear,
+      skillData.startMonth,
+      skillData.endYear,
+      skillData.endMonth,
+    ),
   }));
 
   return (
@@ -62,13 +85,20 @@ export const ProfileSkill = () => {
           <ProfileSkillChart data={othersLibrary} />
         </div>
         <h2 className='c_h3 u_mt36'>Tool Experience</h2>
-        <div className='c_profile_text_small u_mt8' style={{ textIndent: '-1em', paddingLeft: '1em' }}>※デザインツールの経験年数は、Web・アプリケーション開発における使用歴です。<br />デザイン制作歴ではありません。</div>
+        <div
+          className='c_profile_text_small u_mt8'
+          style={{ textIndent: '-1em', paddingLeft: '1em' }}
+        >
+          ※デザインツールの経験年数は、Web・アプリケーション開発における使用歴です。
+          <br />
+          デザイン制作歴ではありません。
+        </div>
         <div style={{ width: '100%', height: '350px' }}>
           <ProfileSkillChart data={toolData} />
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default ProfileSkill
+export default ProfileSkill;

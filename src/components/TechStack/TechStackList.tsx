@@ -13,7 +13,7 @@ type TechStackListProps = {
 
 export const TechStackList = ({ techStack }: TechStackListProps) => {
   return (
-    <div className="tech_stack_list">
+    <div className='tech_stack_list'>
       {techStack.map((tech, index) => (
         <TechBadge key={index} name={tech.name} iconName={tech.icon} />
       ))}

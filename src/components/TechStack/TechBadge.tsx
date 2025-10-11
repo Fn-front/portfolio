@@ -7,9 +7,9 @@ type TechBadgeProps = {
 
 export const TechBadge = ({ name, iconName }: TechBadgeProps) => {
   return (
-    <span className="tech_badge">
+    <span className='tech_badge'>
       {iconName && <TechIcon name={iconName} size={16} />}
-      <span className="tech_badge_text">{name}</span>
+      <span className='tech_badge_text'>{name}</span>
     </span>
   );
 };

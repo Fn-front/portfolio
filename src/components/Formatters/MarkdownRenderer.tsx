@@ -9,29 +9,32 @@ type Props = {
 
 const techKeywords: Record<string, string> = {
   'Next.js': 'nextjs',
-  'TypeScript': 'typescript',
-  'React': 'react',
-  'MUI': 'mui',
-  'Firebase': 'firebase',
-  'Storybook': 'storybook',
-  'Docker': 'docker',
-  'Swagger': 'swagger',
-  'ESLint': 'eslint',
-  'Prettier': 'prettier',
+  TypeScript: 'typescript',
+  React: 'react',
+  MUI: 'mui',
+  Firebase: 'firebase',
+  Storybook: 'storybook',
+  Docker: 'docker',
+  Swagger: 'swagger',
+  ESLint: 'eslint',
+  Prettier: 'prettier',
 };
 
 export const MarkdownRenderer = (props: Props) => {
   const { content } = props;
 
   // [ACHIEVEMENT_STATS]マーカーを検出してコンポーネントに置き換え
-  const processedContent = content.replace('[ACHIEVEMENT_STATS]', '<achievement-stats></achievement-stats>');
+  const processedContent = content.replace(
+    '[ACHIEVEMENT_STATS]',
+    '<achievement-stats></achievement-stats>',
+  );
 
   return (
     <ReactMarkdown
       remarkPlugins={[remarkGfm]}
       components={{
         a: ({ node, ...props }) => (
-          <a {...props} target="_blank" rel="noopener noreferrer" />
+          <a {...props} target='_blank' rel='noopener noreferrer' />
         ),
         li: ({ node, children, ...props }) => {
           const text = String(children);

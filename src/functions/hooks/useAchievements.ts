@@ -19,7 +19,7 @@ export const useAchievements = (): UseAchievementsReturn => {
   const fetchAchievements = useCallback(async () => {
     setLoading(true);
     setErrorMessage(null);
-    
+
     try {
       const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:2937';
       const response = await fetch(`${apiUrl}/api/profile/achievement`);
@@ -33,7 +33,9 @@ export const useAchievements = (): UseAchievementsReturn => {
         setData(null);
       }
     } catch (error) {
-      setErrorMessage(error instanceof Error ? error.message : 'An error occurred');
+      setErrorMessage(
+        error instanceof Error ? error.message : 'An error occurred',
+      );
       setData(null);
     } finally {
       setLoading(false);

@@ -8,7 +8,7 @@ export const ProfileAchievements = () => {
         <AchievementsList />
       </div>
     </>
-  )
-}
+  );
+};
 
-export default ProfileAchievements
+export default ProfileAchievements;
