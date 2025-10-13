@@ -38,7 +38,9 @@ export const AchievementsList = () => {
               </div>
             </div>
             <div className='c_card_list_item_other'>
-              <p>{item.title}</p>
+              <p className='c_card_list_item_other_title u_text_ellipsis_2'>
+                {item.title}
+              </p>
               <ul className='c_card_list_item_tags u_mt8'>
                 {item.tags.map((tag, index) => (
                   <li key={index} className='c_card_list_item_tags_item'>
