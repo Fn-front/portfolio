@@ -23,6 +23,8 @@ export const SKILL_TAGS = {
     MATERIAL_UI: 'Material UI',
     REACT_HOOK_FORM: 'react-hook-form',
     ZOD: 'zod',
+    TAILWIND_CSS: 'Tailwind CSS',
+    DOCKER: 'Docker',
     ESLINT: 'ESLint',
     PRETTIER: 'Prettier',
     STYLELINT: 'Stylelint',
