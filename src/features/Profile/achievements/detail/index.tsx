@@ -3,6 +3,7 @@
 import AchievementHeader from '@/components/Ui/AchievementHeader/AchievementHeader';
 import MarkdownRenderer from '@/components/Formatters/MarkdownRenderer';
 import TechStackList from '@/components/TechStack/TechStackList';
+import BreadcrumbsList from '@/features/BreadcrumbsList';
 import 'github-markdown-css/github-markdown.css';
 
 type TechStack = {
@@ -25,6 +26,7 @@ export const ProfileAchievementsDetail = ({
 }: Readonly<ProfileAchievementsDetailProps>) => {
   return (
     <>
+      <BreadcrumbsList dynamicTitle={title} />
       <AchievementHeader title={title} date={date} />
       <div className='markdown_body'>
         <h2>使用技術</h2>
