@@ -63,7 +63,8 @@ src/styles/
 │   └── _profile.scss
 ├── utility/              # ユーティリティクラス
 │   ├── _margin.scss
-│   └── _text.scss
+│   ├── _text_align.scss
+│   └── _text_ellipsis.scss
 └── mixin/                # Mixin
     └── _breakpoint.scss
 ```
@@ -87,7 +88,8 @@ src/styles/
 @import 'project/profile';
 
 @import 'utility/margin';
-@import 'utility/text';
+@import 'utility/text_align';
+@import 'utility/text_ellipsis';
 ```
 
 ## 命名規則
@@ -707,6 +709,64 @@ $button_base: (
 
 // 6. ユーティリティ（上書きするため最後）
 @import 'utility/margin';
+@import 'utility/text_align';
+@import 'utility/text_ellipsis';
+```
+
+## ユーティリティクラス
+
+### テキスト省略（text_ellipsis）
+
+複数行テキストを省略記号（...）で表示するクラス。
+
+```scss
+// utility/_text_ellipsis.scss
+.u_text_ellipsis_2 {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.u_text_ellipsis_3 {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+```
+
+**使用例**:
+```tsx
+// 2行で省略
+<p className='u_text_ellipsis_2'>長いテキスト...</p>
+
+// 3行で省略
+<p className='u_text_ellipsis_3'>長いテキスト...</p>
+```
+
+**注意**:
+- `line-height` は親要素または別クラスで指定すること
+- `-webkit-` プレフィックスは必須（標準仕様として定義されていないため）
+
+### マージン（margin）
+
+標準的なマージンユーティリティクラス。
+
+```scss
+// 例
+.u_mt8 { margin-top: 8px; }
+.u_mb16 { margin-bottom: 16px; }
+```
+
+### テキスト配置（text_align）
+
+テキストの配置を制御するクラス。
+
+```scss
+// 例
+.u_text_center { text-align: center; }
+.u_text_right { text-align: right; }
 ```
 
 ## デバッグ・メンテナンス

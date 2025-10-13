@@ -606,6 +606,126 @@ const StyledButton = styled(Button)(({ theme }) => ({
 - ⚠️ getServerSideProps（Server Componentを使用）
 - ⚠️ useContext の乱用（パフォーマンス問題の原因）
 
+## 【重要】パンくずリスト（BreadcrumbsList）の実装パターン
+
+### 配置場所
+
+パンくずリストは**レイアウトではなく、各ページテンプレート側で配置**してください。
+
+#### ❌ 非推奨: レイアウトでの配置
+
+```tsx
+// app/layout.tsx
+export default function RootLayout({ children }: { children: React.Node }) {
+  return (
+    <html>
+      <body>
+        <Header />
+        <BreadcrumbsList /> {/* ❌ レイアウトでは配置しない */}
+        {children}
+      </body>
+    </html>
+  );
+}
+```
+
+**理由**: `useSelectedLayoutSegments` がレイアウト外では空配列を返すため、正しいセグメント情報が取得できない。
+
+#### ✅ 推奨: ページテンプレートでの配置
+
+```tsx
+// features/Profile/achievements/detail/index.tsx
+'use client';
+
+import BreadcrumbsList from '@/features/BreadcrumbsList';
+
+export const ProfileAchievementsDetail = ({ title, content }) => {
+  return (
+    <>
+      <BreadcrumbsList dynamicTitle={title} /> {/* ✅ ページ側で配置 */}
+      <div>{content}</div>
+    </>
+  );
+};
+```
+
+### 動的タイトルの渡し方
+
+動的ルート（例: `/achievements/[id]`）でタイトルを表示する場合は、サーバー側で取得したデータを `dynamicTitle` として渡してください。
+
+```tsx
+// app/achievements/[id]/page.tsx
+export default async function AchievementPage({ params }) {
+  const data = await getAchievementDetail(params.id);
+
+  return (
+    <ProfileAchievementsDetail
+      title={data.title}  // ← BreadcrumbsListに渡される
+      content={data.content}
+    />
+  );
+}
+```
+
+```tsx
+// features/Profile/achievements/detail/index.tsx
+export const ProfileAchievementsDetail = ({ title, content }) => {
+  return (
+    <>
+      <BreadcrumbsList dynamicTitle={title} /> {/* ✅ 即座に表示される */}
+      <AchievementHeader title={title} />
+      <div>{content}</div>
+    </>
+  );
+};
+```
+
+### usePathnameの使用
+
+`BreadcrumbsList` 内部では `usePathname` を使用してセグメント情報を取得しています。
+
+```tsx
+// features/BreadcrumbsList/index.tsx
+'use client';
+
+import { usePathname } from 'next/navigation';
+
+export const BreadcrumbsList = ({ dynamicTitle = '' }) => {
+  const pathname = usePathname();
+  const segments = pathname.split('/').filter((s) => s);
+
+  // segments: ['achievements', '1']
+  // dynamicTitle: '自社SaaS フロントエンドリアーキテクチャ'
+
+  return <Breadcrumbs segments={segments} dynamicTitle={dynamicTitle} />;
+};
+```
+
+### 各ページでの配置例
+
+```tsx
+// features/Profile/achievements/index.tsx（一覧ページ）
+export const ProfileAchievements = () => {
+  return (
+    <>
+      <BreadcrumbsList /> {/* タイトル不要 */}
+      <AchievementsList />
+    </>
+  );
+};
+
+// features/Profile/achievements/detail/index.tsx（詳細ページ）
+export const ProfileAchievementsDetail = ({ title, content }) => {
+  return (
+    <>
+      <BreadcrumbsList dynamicTitle={title} /> {/* タイトル必要 */}
+      <AchievementHeader title={title} />
+      <div>{content}</div>
+    </>
+  );
+};
+```
+
 ## 参考資料
 
 - [Next.js 14 Documentation](https://nextjs.org/docs)
