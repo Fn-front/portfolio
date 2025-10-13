@@ -32,7 +32,8 @@
       "WebFetch(domain:authjs.dev)",
       "WebFetch(domain:github.com)",
       "WebFetch(domain:recharts.org)",
-      "WebFetch(domain:jotai.org)"
+      "WebFetch(domain:jotai.org)",
+      "mcp__chrome-devtools__close_page"
     ],
     "deny": [],
     "ask": []
