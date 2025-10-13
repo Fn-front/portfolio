@@ -26,7 +26,13 @@
       "Bash(node:*)",
       "Bash(npm run format:*)",
       "mcp__chrome-devtools__new_page",
-      "Bash(npm run markuplint:*)"
+      "Bash(npm run markuplint:*)",
+      "WebFetch(domain:simpleicons.org)",
+      "Bash(npm view:*)",
+      "WebFetch(domain:authjs.dev)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:recharts.org)",
+      "WebFetch(domain:jotai.org)"
     ],
     "deny": [],
     "ask": []
