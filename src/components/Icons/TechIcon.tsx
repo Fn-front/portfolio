@@ -14,6 +14,9 @@ import {
   siZod,
   siReacthookform,
   siMermaid,
+  siSwr,
+  siAxios,
+  siTailwindcss,
 } from 'simple-icons';
 
 type TechIconProps = {
@@ -38,6 +41,9 @@ export const TechIcon = ({ name, size = 16 }: TechIconProps) => {
     zod: { path: siZod.path, hex: siZod.hex },
     reacthookform: { path: siReacthookform.path, hex: siReacthookform.hex },
     mermaid: { path: siMermaid.path, hex: siMermaid.hex },
+    swr: { path: siSwr.path, hex: siSwr.hex },
+    axios: { path: siAxios.path, hex: siAxios.hex },
+    tailwindcss: { path: siTailwindcss.path, hex: siTailwindcss.hex },
   };
 
   const icon = iconMap[name.toLowerCase()];
