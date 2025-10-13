@@ -4,17 +4,35 @@
   gap: 16px;
 
   &_item {
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
     border: 1px solid rgba(var(--color-black), .2);
     border-radius: 8px;
 
+    a {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+    }
+
     &_other {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
       padding: 16px;
+
+      &_title {
+        min-height: 3em;
+        line-height: 1.5;
+      }
     }
 
     &_tags {
       display: flex;
+      flex: 1;
       flex-wrap: wrap;
+      align-content: flex-start;
       gap: 4px 8px;
       font-size: 1.2rem;
 
