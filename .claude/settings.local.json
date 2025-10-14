@@ -33,7 +33,9 @@
       "WebFetch(domain:github.com)",
       "WebFetch(domain:recharts.org)",
       "WebFetch(domain:jotai.org)",
-      "mcp__chrome-devtools__close_page"
+      "mcp__chrome-devtools__close_page",
+      "Bash(npm audit:*)",
+      "Bash(npm run e2e:*)"
     ],
     "deny": [],
     "ask": []
