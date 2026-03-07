@@ -1,0 +1,59 @@
+'use client';
+
+import { useEffect } from 'react';
+import { Achievement } from '@/functions/types/achievement';
+import { useAchievements } from '@/functions/hooks/useAchievements';
+import Image from 'next/image';
+
+export const AchievementsList = () => {
+  const { data, errorMessage, loading, fetchAchievements } = useAchievements();
+
+  useEffect(() => {
+    fetchAchievements();
+  }, [fetchAchievements]);
+
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+
+  if (errorMessage) {
+    return <p>{errorMessage}</p>;
+  }
+
+  return (
+    <ul className='c_card_list c_card_list_dark'>
+      {data?.map((item: Achievement) => (
+        <li key={item.id} className='c_card_list_item'>
+          <a href={`/achievements/${item.id}`}>
+            <div className='c_card_list_item_main'>
+              <div className='c_next_image_wrapper'>
+                <Image
+                  src={item.thumbnail}
+                  alt='Sample Image'
+                  className='c_next_image'
+                  style={{ objectFit: 'contain' }}
+                  fill
+                  priority
+                />
+              </div>
+            </div>
+            <div className='c_card_list_item_other'>
+              <p className='c_card_list_item_other_title u_text_ellipsis_2'>
+                {item.title}
+              </p>
+              <ul className='c_card_list_item_tags u_mt8'>
+                {item.tags.map((tag, index) => (
+                  <li key={index} className='c_card_list_item_tags_item'>
+                    {tag}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </a>
+        </li>
+      ))}
+    </ul>
+  );
+};
+
+export default AchievementsList;

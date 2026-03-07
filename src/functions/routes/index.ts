@@ -6,6 +6,11 @@ export const route = () => {
       breadcrumb: 'ホーム',
     },
     {
+      path: '/achievements',
+      segment: 'achievements',
+      breadcrumb: '実績一覧',
+    },
+    {
       path: '/codeView',
       segment: 'codeView',
       breadcrumb: 'コードビュー',

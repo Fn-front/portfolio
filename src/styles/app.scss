@@ -5,6 +5,8 @@
 @use './mixin/mixin';
 
 // component
+@use './components/achievement_header/achievement_header';
+@use './components/achievement_stats/achievement_stats';
 @use './components/breadcrumbs/breadcrumbs';
 @use './components/button/button';
 @use './components/card/card_list';
@@ -18,8 +20,10 @@
 @use './components/icon/icon';
 @use './components/iframe/iframe';
 @use './components/image/image';
+@use './components/markdown/markdown';
 @use './components/profile/profile';
 @use './components/system/system';
+@use './components/tech_stack/tech_stack';
 @use './components/text/explanation';
 @use './components/text/text_error';
 
@@ -46,3 +50,4 @@
 // utility
 @use './utility/margin';
 @use './utility/text_align';
+@use './utility/text_ellipsis';

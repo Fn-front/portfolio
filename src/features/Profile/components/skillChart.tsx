@@ -6,20 +6,19 @@ import {
   CartesianGrid,
   Tooltip,
   Legend,
-  ResponsiveContainer
+  ResponsiveContainer,
 } from 'recharts';
 
 type SkillData = {
   skill: string;
   years: number;
-}
+};
 
 type ProfileSkillChartProps = {
   data: SkillData[];
-}
+};
 
 export const ProfileSkillChart = ({ data }: ProfileSkillChartProps) => {
-
   return (
     <ResponsiveContainer width='100%' height='100%'>
       <BarChart
@@ -29,7 +28,7 @@ export const ProfileSkillChart = ({ data }: ProfileSkillChartProps) => {
           top: 20,
           right: 30,
           left: 100,
-          bottom: 5
+          bottom: 5,
         }}
       >
         <CartesianGrid
@@ -58,13 +57,13 @@ export const ProfileSkillChart = ({ data }: ProfileSkillChartProps) => {
             backgroundColor: '#262626',
             border: '1px solid #404040',
             color: '#e5e5e5',
-            borderRadius: '4px'
+            borderRadius: '4px',
           }}
           labelStyle={{ color: '#e5e5e5' }}
         />
         <Legend
           wrapperStyle={{
-            color: '#9ca3af'
+            color: '#9ca3af',
           }}
         />
         <Bar
@@ -75,7 +74,7 @@ export const ProfileSkillChart = ({ data }: ProfileSkillChartProps) => {
         />
       </BarChart>
     </ResponsiveContainer>
-  )
+  );
 };
 
-export default ProfileSkillChart
+export default ProfileSkillChart;

@@ -2,7 +2,6 @@ import { Suspense } from 'react';
 import type { Metadata } from 'next';
 import { Noto_Sans_JP } from 'next/font/google';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
-import BreadcrumbsList from '@/features/BreadcrumbsList';
 import Sidebar from '@/components/Ui/SideBar';
 import Header from '@/features/Ui/Header';
 import Footer from '@/components/Ui/Footer';
@@ -38,7 +37,6 @@ export default function RootLayout({
               <Sidebar />
               <main className='l_main'>
                 <div className='l_container'>
-                  <BreadcrumbsList />
                   {children}
                 </div>
               </main>

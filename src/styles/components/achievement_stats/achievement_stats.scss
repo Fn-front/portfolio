@@ -1,0 +1,43 @@
+.achievement_stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.stat_card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.25rem 1rem;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 8px;
+  text-align: center;
+  transition: all 0.2s ease;
+
+  &:hover {
+    border-color: #444;
+  }
+}
+
+.stat_card_icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  opacity: 0.8;
+}
+
+.stat_card_value {
+  margin-top: 0.5rem;
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.stat_card_label {
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  color: #888;
+}

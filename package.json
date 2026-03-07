@@ -14,37 +14,42 @@
     "markuplint": "markuplint \"./src/**/*.tsx\""
   },
   "dependencies": {
-    "@emotion/cache": "^11.11.0",
-    "@emotion/react": "^11.11.4",
-    "@emotion/styled": "^11.11.5",
     "@mui/icons-material": "^5.15.20",
     "@mui/material": "^5.15.20",
     "@mui/material-nextjs": "^5.15.11",
-    "next": "14.2.3",
+    "axios": "^1.12.2",
+    "form-data": "^4.0.4",
+    "github-markdown-css": "^5.8.1",
+    "gray-matter": "^4.0.3",
+    "next": "^15.5.12",
     "react": "^18",
     "react-dom": "^18",
-    "sass": "^1.77.4"
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1",
+    "sass": "^1.97.3",
+    "simple-icons": "^15.16.1"
+  },
+  "overrides": {
+    "@markuplint/file-resolver": {
+      "minimatch": "^10.2.3"
+    }
   },
   "devDependencies": {
-    "@hookform/resolvers": "^3.9.0",
     "@markuplint/jsx-parser": "^4.7.6",
     "@markuplint/react-spec": "^4.5.6",
     "@playwright/test": "^1.46.1",
     "@types/highlight.js": "^10.1.0",
     "@types/node": "^20",
     "@types/prettier": "^3.0.0",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
+    "@types/react": "^18.3.28",
+    "@types/react-dom": "^18.3.7",
     "@typescript-eslint/eslint-plugin": "^8.5.0",
     "@typescript-eslint/parser": "^8.5.0",
-    "axios": "^1.7.8",
     "cross-env": "^7.0.3",
     "eslint": "^8.57.1",
-    "eslint-config-next": "14.2.3",
+    "eslint-config-next": "^15.5.12",
     "eslint-config-prettier": "^9.1.0",
-    "highlight.js": "^11.9.0",
-    "html-react-parser": "^5.1.10",
-    "markuplint": "^4.9.3",
+    "markuplint": "^4.14.1",
     "prettier": "^3.3.3",
     "react-hook-form": "^7.53.0",
     "recharts": "^2.13.3",
@@ -55,7 +60,6 @@
     "stylelint-config-recommended-scss": "^14.1.0",
     "stylelint-config-standard": "^36.0.1",
     "stylelint-order": "^6.0.4",
-    "swr": "^2.2.5",
     "typescript": "^5",
     "zod": "^3.23.8"
   }
