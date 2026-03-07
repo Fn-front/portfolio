@@ -4,9 +4,10 @@ import ProfileAchievementsDetail from '@/features/Profile/achievements/detail';
 export default async function ProfileAchievementsAboutPage({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
-  const result = await getAchievementDetail(params.id);
+  const { id } = await params;
+  const result = await getAchievementDetail(id);
 
   if (result.error) {
     return <div>{result.error}</div>;

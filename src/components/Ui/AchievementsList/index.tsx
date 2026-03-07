@@ -31,7 +31,7 @@ export const AchievementsList = () => {
                   src={item.thumbnail}
                   alt='Sample Image'
                   className='c_next_image'
-                  objectFit='contain'
+                  style={{ objectFit: 'contain' }}
                   fill
                   priority
                 />

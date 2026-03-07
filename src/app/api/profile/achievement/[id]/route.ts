@@ -5,10 +5,10 @@ import matter from 'gray-matter';
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } },
+  { params }: { params: Promise<{ id: string }> },
 ) {
   try {
-    const id = params.id;
+    const { id } = await params;
 
     if (!id || !/^\d+$/.test(id)) {
       return NextResponse.json({ error: '無効なIDです' }, { status: 400 });
