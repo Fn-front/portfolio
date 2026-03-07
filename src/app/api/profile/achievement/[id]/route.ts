@@ -1,41 +1,46 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import path from 'path';
 import { promises as fs } from 'fs';
-import { Achievement } from '@/functions/types/achievement';
+import matter from 'gray-matter';
 
-// 特定の記事を取得するAPI
-export async function POST(request: Request) {
+export async function GET(
+  request: NextRequest,
+  { params }: { params: Promise<{ id: string }> },
+) {
   try {
-    const { id } = await request.json();
+    const { id } = await params;
 
-    const jsonDirectory = path.join(process.cwd(), 'src', 'lib', 'data');
-    const fileContents = await fs.readFile(
-      jsonDirectory + '/articles.json',
-      'utf8',
+    if (!id || !/^\d+$/.test(id)) {
+      return NextResponse.json({ error: '無効なIDです' }, { status: 400 });
+    }
+
+    const filePath = path.join(
+      process.cwd(),
+      'src',
+      'content',
+      'achievements',
+      `${id}.md`,
     );
-    const achievements: Achievement[] = JSON.parse(fileContents);
 
-    const achievement = achievements.find(
-      (achievement) => achievement.id === id,
-    );
+    const fileContents = await fs.readFile(filePath, 'utf8');
+    const { data, content } = matter(fileContents);
 
-    if (!achievement) {
+    return NextResponse.json({
+      id,
+      title: data.title || '',
+      date: data.date || '',
+      content,
+    });
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code === 'ENOENT') {
       return NextResponse.json(
-        { error: '記事は存在しません' },
+        { error: '記事が見つかりません' },
         { status: 404 },
       );
     }
 
-    return NextResponse.json({
-      ...achievement,
-      thumbnail: `/assets/img/achievements/${achievement.imagePath}`,
-      imagePath: achievement.imagePath.map(
-        (a) => `/assets/img/achievements/${a}`,
-      ),
-    });
-  } catch (error) {
     return NextResponse.json(
-      { error: `記事を取得できませんでした ${error}` },
+      { error: `記事を取得できませんでした: ${error}` },
       { status: 500 },
     );
   }

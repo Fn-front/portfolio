@@ -1,14 +1,20 @@
 'use client';
 
-import { useSelectedLayoutSegments } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import Breadcrumbs from '@/components/Ui/Breadcrumbs';
 import { route } from '@/functions/routes';
 
 const routes = route();
 
-export const BreadcrumbsList = () => {
-  // 現在の表示しているページのディレクトリまですべての情報
-  const segments = useSelectedLayoutSegments();
+type BreadcrumbsListProps = {
+  dynamicTitle?: string;
+};
+
+export const BreadcrumbsList = ({ dynamicTitle = '' }: BreadcrumbsListProps) => {
+  const pathname = usePathname();
+
+  // pathnameからセグメントを抽出
+  const segments = pathname.split('/').filter((s) => s);
 
   // 現在の表示しているページのディレクトリ
   const segment = segments[segments.length - 1];
@@ -26,6 +32,7 @@ export const BreadcrumbsList = () => {
       segment={segment}
       segments={segments}
       breadcrumbs={breadcrumbs}
+      dynamicTitle={dynamicTitle}
     />
   );
 };
